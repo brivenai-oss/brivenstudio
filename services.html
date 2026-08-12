@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services — Briven AI Studio</title>
+<meta name="description" content="Four AI and automation services for small businesses: an AI chatbot widget, Google review responses, workflow automation, and spreadsheet dashboards.">
+
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <img src="assets/icon_mark.png" alt="Briven AI Studio mark">
+      <span class="brand-word">BRIVEN <span>AI STUDIO</span></span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="about.html#contact" class="btn btn-accent btn-sm">Get in touch</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">SERVICES</span>
+      <h1 style="max-width:20ch;">What we build for you</h1>
+      <p class="lede">The AI chatbot is our lead service, ready to demo today. The other three are real, established services. Get in touch about any of them and we'll scope it for your business.</p>
+    </div>
+  </section>
+
+  <!-- ================= CHATBOT DEEP DIVE ================= -->
+  <section id="chatbot">
+    <div class="container">
+      <div class="two-col" style="margin-bottom:70px;">
+        <div class="reveal">
+          <span class="eyebrow">FLAGSHIP SERVICE</span>
+          <h2>The AI Chatbot Widget</h2>
+          <p class="lede">A chat assistant trained specifically on your business (your hours, services, pricing, and FAQs) installed directly on your website. It answers visitors in seconds and quietly captures leads while you're busy doing everything else.</p>
+          <div class="hero-actions" style="margin-top:26px;">
+            <a href="about.html#contact" class="btn btn-primary">Ask about pricing</a>
+          </div>
+        </div>
+
+        <div class="browser-mock reveal">
+          <div class="browser-bar">
+            <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+            <span class="browser-url">yourbusiness.com</span>
+          </div>
+          <div class="browser-body">
+            <div class="site-skeleton">
+              <div class="sk-line w60"></div>
+              <div class="sk-line w80"></div>
+              <div class="sk-block"></div>
+            </div>
+            <div class="chat-widget" data-chat-demo='[
+                {"role":"visitor","text":"How much for a standard cleaning?"},
+                {"role":"bot","text":"Standard cleanings start at a flat rate based on square footage. Want me to grab your name and number so we can send an exact quote?"},
+                {"role":"visitor","text":"Sure, it'\''s Maria, 555-0148"},
+                {"role":"bot","text":"Got it, Maria — I'\''ll pass this to the team and someone will text you shortly."}
+              ]'>
+              <div class="chat-widget-head">
+                <span class="chat-live-dot"></span>
+                <strong>Chat with us</strong>
+              </div>
+              <div class="chat-widget-body">
+                <div class="bubble visitor">How much for a standard cleaning?</div>
+                <div class="bubble bot">Standard cleanings start at a flat rate based on square footage. Want me to grab your name and number so we can send an exact quote?</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- feature grid -->
+      <div class="grid grid-3 reveal" style="margin-bottom:70px;">
+        <div class="card">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M10 2l1.6 4.9L16.5 8l-4.9 1.6L10 14.5 8.4 9.6 3.5 8l4.9-1.1L10 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="margin-top:16px;">Guardrails built in</h3>
+          <p class="muted">It never claims to book, charge, or access anything it can't actually do. It redirects to your phone number or site instead of guessing.</p>
+        </div>
+        <div class="card">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M4 6h12v9H8l-4 3V6z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="margin-top:16px;">Opt-in lead capture</h3>
+          <p class="muted">If a visitor shares their name and phone or email, it's saved to a private spreadsheet, only after they're told it's being saved.</p>
+        </div>
+        <div class="card">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM2 10h16M10 2c2 2.3 3 5 3 8s-1 5.7-3 8c-2-2.3-3-5-3-8s1-5.7 3-8z" stroke="currentColor" stroke-width="1.3"/></svg>
+          </div>
+          <h3 style="margin-top:16px;">Speaks their language</h3>
+          <p class="muted">Replies automatically in whichever language a visitor writes in, no extra setup or translation work on your end.</p>
+        </div>
+        <div class="card">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M4 4h12v9H9l-3 3v-3H4V4z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="margin-top:16px;">Full transcript logging</h3>
+          <p class="muted">Optional add-on: every exchange saved to its own spreadsheet, not just the ones that turn into leads.</p>
+        </div>
+        <div class="card">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M4 16l3-8 3 5 2-3 4 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="margin-top:16px;">Matched to your brand</h3>
+          <p class="muted">Your logo, your colors, your tone. It's built to sound like your business, not a generic bot bolted onto your site.</p>
+        </div>
+        <div class="card">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M10 2v4M10 14v4M4 10H2M18 10h-2M5.6 5.6L4.2 4.2M15.8 5.6l1.4-1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </div>
+          <h3 style="margin-top:16px;">Live in 2 business days</h3>
+          <p class="muted">From the first conversation about your business to a working demo you can try yourself.</p>
+        </div>
+      </div>
+
+      <!-- demo vs full -->
+      <div class="reveal" style="margin-bottom:24px;">
+        <span class="eyebrow">WHAT YOU'RE TRYING VS. WHAT YOU'D GET</span>
+        <h2>The demo is real, the full version is sharper</h2>
+      </div>
+      <div class="compare reveal" style="margin-bottom:80px;">
+        <div class="compare-col">
+          <span class="tag">Free demo</span>
+          <h3 style="margin-top:14px;">What you can try right now</h3>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Runs on a quick, lightweight demo engine</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Shows the concept working with your own business details</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>No cost, no obligation, nothing installed on your site</li>
+          </ul>
+        </div>
+        <div class="compare-col highlight">
+          <span class="tag">Full installation</span>
+          <h3 style="margin-top:14px;">What you get if you go ahead</h3>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Rebuilt on a stronger model, tuned to your business</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Installed on your real site and matched to your branding</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Lead capture on by default, transcript logging optional</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Guardrails reviewed with you before it goes live</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- packages -->
+      <div class="reveal" style="margin-bottom:24px;">
+        <span class="eyebrow">PACKAGES</span>
+        <h2>Two ways to get started</h2>
+        <p class="lede">Pricing is quoted per business once we understand your traffic and needs. Get in touch and we'll send exact numbers.</p>
+      </div>
+      <div class="grid grid-2 reveal">
+        <div class="plan-card">
+          <span class="plan-name">Standard Setup</span>
+          <span class="plan-note">For most small businesses</span>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Installed on your real site, matched to your branding</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Trained on your hours, services, pricing, and FAQs</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Guardrails built in from day one</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Lead capture: name + phone or email, to a private spreadsheet</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Comfortable capacity for typical small-business traffic</li>
+          </ul>
+          <a href="about.html#contact" class="btn btn-ghost">Ask about pricing</a>
+        </div>
+        <div class="plan-card featured">
+          <span class="plan-name">Premium Setup</span>
+          <span class="plan-note">For busier sites</span>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Standard Setup</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Full conversation transcripts logged, not just leads</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Higher monthly conversation capacity</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Priority support for changes and tweaks</li>
+          </ul>
+          <a href="about.html#contact" class="btn btn-accent">Ask about pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GOOGLE REVIEW RESPONSES ================= -->
+  <section id="reviews" style="background:var(--surface); border-top:1px solid var(--line);">
+    <div class="container">
+      <div class="two-col" style="margin-bottom:70px;">
+        <div class="review-mock reveal">
+          <div class="review-mock-head">
+            <div class="review-avatar">M</div>
+            <div>
+              <strong>Maria T.</strong>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <span class="review-time">2 days ago</span>
+          </div>
+          <p class="review-text">Booked a last-minute appointment and they still fit me in. Really friendly staff, and the place was spotless.</p>
+          <div class="review-reply">
+            <div class="review-reply-label">✦ Drafted reply</div>
+            <p>Thank you so much, Maria! We're glad our team could fit you in and that you had a great visit. Hope to see you again soon!</p>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <span class="eyebrow">REPUTATION MANAGEMENT</span>
+          <h2>Google Review Responses</h2>
+          <p class="lede">Most small businesses get new Google reviews regularly and answer almost none of them, usually because there's no time or no one's sure what to say to a tricky one. We monitor your profile and draft a thoughtful, on-brand reply to every new review, positive or negative, so your business always looks like it's paying attention.</p>
+          <div class="hero-actions" style="margin-top:26px;">
+            <a href="about.html#contact" class="btn btn-primary">Ask about pricing</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3 reveal" style="margin-bottom:70px;">
+        <div class="card">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M4 16l3-8 3 5 2-3 4 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="margin-top:16px;">Sounds like you, not a template</h3>
+          <p class="muted">Every reply references something specific from the actual review and matches the tone you've told us fits your business, warm and casual or calm and professional.</p>
+        </div>
+        <div class="card">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M10 2l1.6 4.9L16.5 8l-4.9 1.6L10 14.5 8.4 9.6 3.5 8l4.9-1.1L10 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="margin-top:16px;">Difficult reviews handled with care</h3>
+          <p class="muted">Negative reviews get a calm, non-defensive reply that never admits unconfirmed fault. Anything sensitive (legal concerns, a suspected fake review, a health or medical detail) gets flagged straight to you instead of a standard response.</p>
+        </div>
+        <div class="card">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M10 2v4M10 14v4M4 10H2M18 10h-2M5.6 5.6L4.2 4.2M15.8 5.6l1.4-1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </div>
+          <h3 style="margin-top:16px;">48-hour turnaround</h3>
+          <p class="muted">New reviews get a drafted response within 48 hours of posting, delivered for your approval or posted directly if you'd rather hand it off completely.</p>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-bottom:24px;">
+        <span class="eyebrow">PACKAGES</span>
+        <h2>Three ways to get started</h2>
+        <p class="lede">Pricing is quoted once we know how many reviews you typically get and which platforms matter to you. Get in touch and we'll send exact numbers.</p>
+      </div>
+      <div class="grid grid-3 reveal">
+        <div class="plan-card">
+          <span class="plan-name">Starter</span>
+          <span class="plan-note">Single platform</span>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Google reviews only</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Every review responded to within 48 hours</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Sensitive reviews flagged, never auto-answered</li>
+          </ul>
+          <a href="about.html#contact" class="btn btn-ghost">Ask about pricing</a>
+        </div>
+        <div class="plan-card">
+          <span class="plan-name">Standard</span>
+          <span class="plan-note">Most popular for single locations</span>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Starter</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Faster turnaround on new reviews</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Monthly summary report of ratings and response activity</li>
+          </ul>
+          <a href="about.html#contact" class="btn btn-ghost">Ask about pricing</a>
+        </div>
+        <div class="plan-card featured">
+          <span class="plan-name">Premium</span>
+          <span class="plan-note">Multi-platform</span>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Standard</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Google plus Yelp and/or Facebook reviews</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Templates to encourage more happy customers to leave reviews</li>
+          </ul>
+          <a href="about.html#contact" class="btn btn-accent">Ask about pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WORKFLOW AUTOMATION ================= -->
+  <section id="automation">
+    <div class="container">
+      <div class="two-col" style="margin-bottom:70px;">
+        <div class="reveal">
+          <span class="eyebrow">WORKFLOW AUTOMATION</span>
+          <h2>Business Process Automation</h2>
+          <p class="lede">If you're manually copying a form submission into a spreadsheet, forwarding the same kind of email every day, or checking a database by hand, that's exactly the kind of repetitive task automation removes. We build a custom workflow that connects the apps you already use, so it happens automatically going forward.</p>
+          <div class="hero-actions" style="margin-top:26px;">
+            <a href="about.html#contact" class="btn btn-primary">Ask about pricing</a>
+          </div>
+        </div>
+
+        <div class="flow-mock reveal">
+          <div class="flow-node active">
+            <span class="tag">Trigger</span>
+            <strong>New form submitted</strong>
+          </div>
+          <div class="flow-arrow">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="flow-node">
+            <span class="tag">Action</span>
+            <strong>Add row to spreadsheet</strong>
+          </div>
+          <div class="flow-arrow">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="flow-node">
+            <span class="tag">Action</span>
+            <strong>Notify the team on Slack</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3 reveal" style="margin-bottom:70px;">
+        <div class="card">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M4 6h12v9H8l-4 3V6z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="margin-top:16px;">Connects what you already use</h3>
+          <p class="muted">Forms, spreadsheets, email, CRMs, and messaging apps like Slack, linked together so information moves on its own instead of being copy-pasted by hand.</p>
+        </div>
+        <div class="card">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM10 6v4l3 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="margin-top:16px;">Built and tested one step at a time</h3>
+          <p class="muted">Every step is tested individually before the full chain is tested end to end, with at least one edge case (a blank field, a duplicate entry) checked before delivery.</p>
+        </div>
+        <div class="card">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M10 2l1.6 4.9L16.5 8l-4.9 1.6L10 14.5 8.4 9.6 3.5 8l4.9-1.1L10 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="margin-top:16px;">Error handling, not silent failure</h3>
+          <p class="muted">A fallback path notifies you if a step ever fails, instead of the automation quietly doing nothing. It's delivered inside your own account, so you own it long-term.</p>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-bottom:24px;">
+        <span class="eyebrow">PACKAGES</span>
+        <h2>Three ways to get started</h2>
+        <p class="lede">Pricing depends on how many steps and conditions your workflow needs. Get in touch and we'll send exact numbers.</p>
+      </div>
+      <div class="grid grid-3 reveal">
+        <div class="plan-card">
+          <span class="plan-name">Basic</span>
+          <span class="plan-note">One automation</span>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>A single trigger connected to one or two actions</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Example: new form submission → CRM entry → Slack alert</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Built inside your own account</li>
+          </ul>
+          <a href="about.html#contact" class="btn btn-ghost">Ask about pricing</a>
+        </div>
+        <div class="plan-card">
+          <span class="plan-name">Standard</span>
+          <span class="plan-note">Multi-step logic</span>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Basic</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Conditional routing (if/then branches)</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Basic error notification, plus plain-language documentation</li>
+          </ul>
+          <a href="about.html#contact" class="btn btn-ghost">Ask about pricing</a>
+        </div>
+        <div class="plan-card featured">
+          <span class="plan-name">Premium</span>
+          <span class="plan-note">AI-enhanced</span>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Standard</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>An AI-enhanced step: classifying, summarizing, or drafting a first-pass reply</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Full documentation plus a recorded walkthrough</li>
+          </ul>
+          <a href="about.html#contact" class="btn btn-accent">Ask about pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SPREADSHEET DASHBOARDS ================= -->
+  <section id="dashboards" style="background:var(--surface); border-top:1px solid var(--line);">
+    <div class="container">
+      <div class="two-col" style="margin-bottom:70px;">
+        <div class="dash-mock reveal">
+          <div class="dash-kpis">
+            <div class="kpi"><span class="kpi-num">$18.4k</span><span class="kpi-label">REVENUE</span></div>
+            <div class="kpi"><span class="kpi-num">312</span><span class="kpi-label">ORDERS</span></div>
+            <div class="kpi"><span class="kpi-num">+12%</span><span class="kpi-label">GROWTH</span></div>
+          </div>
+          <div class="dash-chart">
+            <div class="bar" style="height:38%"></div>
+            <div class="bar" style="height:55%"></div>
+            <div class="bar" style="height:44%"></div>
+            <div class="bar" style="height:70%"></div>
+            <div class="bar" style="height:60%"></div>
+            <div class="bar" style="height:90%"></div>
+            <div class="bar" style="height:76%"></div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <span class="eyebrow">DATA &amp; REPORTING</span>
+          <h2>Spreadsheet Dashboards</h2>
+          <p class="lede">If your spreadsheet has become something you're almost afraid to open (duplicate rows, broken formulas, dates that won't sort), we'll clean it up and turn it into a dashboard that actually answers your real business questions at a glance. In Excel or Google Sheets, whichever you already use.</p>
+          <div class="hero-actions" style="margin-top:26px;">
+            <a href="about.html#contact" class="btn btn-primary">Ask about pricing</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3 reveal" style="margin-bottom:70px;">
+        <div class="card">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M4 16l3-8 3 5 2-3 4 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="margin-top:16px;">Actually cleaned, not just tidied</h3>
+          <p class="muted">Duplicates removed, broken number and date formats fixed, inconsistent categories standardized, and every change spot-checked against your original file.</p>
+        </div>
+        <div class="card">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M4 6h12v9H8l-4 3V6z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="margin-top:16px;">Built around your actual question</h3>
+          <p class="muted">Pivot tables, charts, and KPI cards designed around what you're trying to answer (sales by region, top products, this month's trend), not every possible metric at once.</p>
+        </div>
+        <div class="card">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M10 2v4M10 14v4M4 10H2M18 10h-2M5.6 5.6L4.2 4.2M15.8 5.6l1.4-1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </div>
+          <h3 style="margin-top:16px;">Updates itself, on the Premium tier</h3>
+          <p class="muted">Paste new rows into the source tab and everything downstream refreshes with one click. Tested with sample data before delivery, so it's not a surprise later.</p>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-bottom:24px;">
+        <span class="eyebrow">PACKAGES</span>
+        <h2>Three ways to get started</h2>
+        <p class="lede">Pricing depends on file size and how many views or dashboards you need. Get in touch and we'll send exact numbers.</p>
+      </div>
+      <div class="grid grid-3 reveal">
+        <div class="plan-card">
+          <span class="plan-name">Basic</span>
+          <span class="plan-note">One-time cleanup</span>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Clean and de-duplicate one spreadsheet</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Standardized formatting and data types</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Delivered in Excel or Google Sheets</li>
+          </ul>
+          <a href="about.html#contact" class="btn btn-ghost">Ask about pricing</a>
+        </div>
+        <div class="plan-card">
+          <span class="plan-name">Standard</span>
+          <span class="plan-note">Cleaning + summary</span>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Basic</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>A pivot-table summary answering a specific business question</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>A simple chart-based dashboard view</li>
+          </ul>
+          <a href="about.html#contact" class="btn btn-ghost">Ask about pricing</a>
+        </div>
+        <div class="plan-card featured">
+          <span class="plan-name">Premium</span>
+          <span class="plan-note">Recurring-ready</span>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Standard</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Paste new data in and everything refreshes automatically</li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Delivered with a short how-to-use guide</li>
+          </ul>
+          <a href="about.html#contact" class="btn btn-accent">Ask about pricing</a>
+        </div>
+      </div>
+
+      <p class="muted" style="margin-top:36px; font-size:.88rem;">This service covers spreadsheet-based cleaning and dashboards. For live syncing between business systems, that's the <a href="services.html#automation" style="color:var(--periwinkle-ink); text-decoration:underline;">automation service</a> above.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="cta-band reveal">
+        <h2>Ready to see it on your own business?</h2>
+        <p style="max-width:46ch; margin:0 auto 26px;">Send us a few details and we'll put together something you can actually try.</p>
+        <a href="about.html#contact" class="btn btn-on-dark">
+          Get in touch
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <img src="assets/icon_mark.png" alt="Briven AI Studio mark" style="height:30px;">
+          <span class="brand-word">BRIVEN <span>AI STUDIO</span></span>
+        </a>
+        <p>AI services for small businesses: chatbots, automation, and tools that quietly save you time.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About &amp; Contact</a>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <a href="mailto:hello@brivenstudio.com">hello@brivenstudio.com</a>
+        <a href="about.html#contact">Contact form</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Briven AI Studio. All rights reserved.</span>
+      <span class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="dot"></span>
+        <a href="terms.html">Terms of Use</a>
+      </span>
+      <span>brivenstudio.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

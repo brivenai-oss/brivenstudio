@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About &amp; Contact — Briven AI Studio</title>
+<meta name="description" content="Briven AI Studio is a small, independent studio building AI chatbots and automation for small businesses. Get in touch to see it on your own business.">
+
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <img src="assets/icon_mark.png" alt="Briven AI Studio mark">
+      <span class="brand-word">BRIVEN <span>AI STUDIO</span></span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html" class="active">About &amp; Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="about.html#contact" class="btn btn-accent btn-sm">Get in touch</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">ABOUT</span>
+      <h1 style="max-width:20ch;">A small studio, built to move fast</h1>
+      <p class="lede">No account managers, no big-agency overhead. Just AI tools built and tuned by hand for the business they're going into.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container two-col">
+      <div class="reveal">
+        <h2>What we're about</h2>
+        <p class="lede">Briven AI Studio builds practical AI tools for small businesses, starting with chatbots that actually know your business, not a generic script. Everything is set up specifically for the business it's built for: your hours, your services, your tone, your guardrails.</p>
+        <p class="lede">We keep things straightforward. You try it before you commit to anything, you approve it before it goes live, and you can walk away anytime after that.</p>
+      </div>
+      <ul class="icon-list reveal">
+        <li>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Built around your business, not a generic template
+        </li>
+        <li>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          You see and approve it before anything goes live
+        </li>
+        <li>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          No long-term lock-in, cancel anytime
+        </li>
+        <li>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Straight answers if something isn't a fit for your business
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" style="background:var(--surface); border-top:1px solid var(--line);">
+    <div class="container two-col" style="align-items:flex-start;">
+      <div class="reveal">
+        <span class="eyebrow">GET IN TOUCH</span>
+        <h2>Tell us about your business</h2>
+        <p class="lede">A couple of lines is plenty: what you do, and what you're hoping to fix or save time on. We usually reply within one business day.</p>
+        <p class="muted" style="margin-top:28px;">Prefer email?</p>
+        <a href="mailto:hello@brivenstudio.com" class="btn btn-ghost" style="margin-top:8px;">
+          hello@brivenstudio.com
+        </a>
+      </div>
+
+      <form id="contact-form" class="form-grid reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="business">Business name</label>
+          <input type="text" id="business" name="business" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="message">What are you hoping to fix or save time on?</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <p class="form-note" style="margin-top:12px;">We'll only use this to reply to you, nothing else.</p>
+        </div>
+        <div id="form-status" class="form-status" role="status"></div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <img src="assets/icon_mark.png" alt="Briven AI Studio mark" style="height:30px;">
+          <span class="brand-word">BRIVEN <span>AI STUDIO</span></span>
+        </a>
+        <p>AI services for small businesses: chatbots, automation, and tools that quietly save you time.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About &amp; Contact</a>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <a href="mailto:hello@brivenstudio.com">hello@brivenstudio.com</a>
+        <a href="about.html#contact">Contact form</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Briven AI Studio. All rights reserved.</span>
+      <span class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="dot"></span>
+        <a href="terms.html">Terms of Use</a>
+      </span>
+      <span>brivenstudio.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
