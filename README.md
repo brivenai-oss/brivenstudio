@@ -43,9 +43,9 @@ If you'd rather switch providers later (e.g. a Cloudflare Pages Function), just 
 
 ## Official brand assets
 
-`assets/brand/` now has real assets from your brand board: `logo-lockup-light.png` / `logo-lockup-dark.png` (full lockups for light/dark backgrounds), four `icon-*.png` icon variants, `pattern-texture.jpg` (used subtly in the footer background), and `services-overview-banner.jpg` (the "Smart Solutions. Real Impact." graphic, used as-is on the About page).
+`assets/icon_mark.png` is now your official transparent logo mark, used in the nav and footer on every page, with the favicon set (`favicon.ico`, `favicon-16/32/48/180/192/512.png`) regenerated from it too.
 
-The nav/footer still use `assets/icon_mark.png`, an earlier crop from your original logo file, since that's what was available when the site was first built. If you'd like the nav icon upgraded to match the new official mark, just say so — the new crops are already sitting in `assets/brand/icon-*.png`, ready to swap in.
+`assets/brand/` also has extra assets from your brand board: `logo-lockup-light.png` / `logo-lockup-dark.png` (full lockups for light/dark backgrounds), four `icon-*.png` icon variants, and `about-what-we-do.jpg` (used on the About page). The footer's decorative wave pattern is no longer an image — it's a crisp inline SVG defined directly in `css/styles.css`, so it stays sharp at any screen size instead of showing JPEG compression artifacts.
 
 ## Adding pricing
 
