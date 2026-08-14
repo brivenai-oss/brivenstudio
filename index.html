@@ -13,7 +13,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -98,39 +98,52 @@
   <!-- ================= SERVICES OVERVIEW ================= -->
   <section id="services">
     <div class="container">
-      <span class="eyebrow">WHAT WE BUILD</span>
-      <h2>Four services, one focus first</h2>
-      <p class="lede" style="margin-bottom:44px;">The AI chatbot is our lead service, live and ready to demo today. The other three are just as real, with full detail on the services page.</p>
+      <div class="section-head">
+        <span class="eyebrow">WHAT WE BUILD</span>
+        <h2>Practical AI tools for small business</h2>
+        <p class="lede">From answering customers instantly to cleaning up a messy spreadsheet, we build tools that quietly save you time. Right now, the AI chatbot is where we're focused first. See it in action below, or explore all four on the services page.</p>
+      </div>
 
-      <div class="service-feature-card reveal" style="margin-bottom:24px;">
-        <span class="eyebrow">FLAGSHIP SERVICE</span>
-        <h3>AI Chatbot Widget</h3>
-        <p style="max-width:56ch;">A chat assistant trained on your business (hours, services, pricing, FAQs) that answers visitors instantly and captures leads while you're busy or closed.</p>
-        <a href="services.html#chatbot" class="btn btn-on-dark btn-sm" style="margin-top:8px;">
-          See how it works
-          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+      <div class="service-feature-card reveal stack-md">
+        <div class="service-feature-content">
+          <span class="eyebrow">FLAGSHIP SERVICE</span>
+          <h3>AI Chatbot Widget</h3>
+          <p>A chat assistant trained on your business (hours, services, pricing, FAQs) that answers visitors instantly and captures leads while you're busy or closed.</p>
+          <a href="services.html#chatbot" class="btn btn-on-dark btn-sm" style="margin-top:8px;">
+            See how it works
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="service-feature-visual">
+          <div class="mini-chat">
+            <div class="mini-chat-head"><span></span><span></span><span></span></div>
+            <div class="mini-chat-body">
+              <div class="bubble visitor">Do you deliver on weekends?</div>
+              <div class="bubble bot">Yes, Saturdays until 4pm. Want the link to book?</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="grid grid-3">
         <div class="card reveal">
           <span class="tag">Reputation</span>
-          <h3 style="margin-top:14px;">Google Review Responses</h3>
-          <p class="muted" style="margin-bottom:16px;">Every new review gets a thoughtful, on-brand reply within 48 hours, so your profile never looks abandoned.</p>
+          <h3>Google Review Responses</h3>
+          <p class="muted">Every new review gets a thoughtful, on-brand reply within 48 hours, so your profile never looks abandoned.</p>
           <a href="services.html#reviews" class="btn btn-ghost btn-sm">Learn more</a>
         </div>
 
         <div class="card reveal">
           <span class="tag">Automation</span>
-          <h3 style="margin-top:14px;">Workflow Automation</h3>
-          <p class="muted" style="margin-bottom:16px;">We connect the apps you already use so the copy-pasting between them stops happening by hand.</p>
+          <h3>Workflow Automation</h3>
+          <p class="muted">We connect the apps you already use so the copy-pasting between them stops happening by hand.</p>
           <a href="services.html#automation" class="btn btn-ghost btn-sm">Learn more</a>
         </div>
 
         <div class="card reveal">
           <span class="tag">Data</span>
-          <h3 style="margin-top:14px;">Spreadsheet Dashboards</h3>
-          <p class="muted" style="margin-bottom:16px;">Messy exports cleaned up and turned into a dashboard that updates itself the moment you paste in new data.</p>
+          <h3>Spreadsheet Dashboards</h3>
+          <p class="muted">Messy exports cleaned up and turned into a dashboard that updates itself the moment you paste in new data.</p>
           <a href="services.html#dashboards" class="btn btn-ghost btn-sm">Learn more</a>
         </div>
       </div>
@@ -140,37 +153,68 @@
   <!-- ================= HOW IT WORKS ================= -->
   <section style="background:var(--surface); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
     <div class="container">
-      <span class="eyebrow">HOW IT WORKS</span>
-      <h2>From a quick chat to a live assistant</h2>
-      <p class="lede" style="margin-bottom:52px;">A real four-step process, in the order it actually happens.</p>
+      <div class="section-head-row">
+        <div class="section-head reveal">
+          <span class="eyebrow">HOW IT WORKS</span>
+          <h2>From a quick chat to a <span style="color:var(--periwinkle);">live assistant</span></h2>
+          <p class="lede">A real four-step process, in the order it actually happens.</p>
+        </div>
+        <div class="section-head-brand">
+          <img src="assets/icon_mark.png" alt="">
+          <span class="brand-word">BRIVEN <span>AI STUDIO</span></span>
+        </div>
+      </div>
 
-      <div class="steps">
-        <div class="step reveal">
-          <span class="step-num">01 / TELL US</span>
-          <h3>Share your business info</h3>
-          <p class="muted">Hours, services, pricing, FAQs, and the tone you want it to sound like. Takes about ten minutes.</p>
+      <div class="icon-steps">
+        <div class="icon-step reveal">
+          <div class="icon-step-badge">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5h16v10.5H11l-4 3.5v-3.5H4V5.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="9" cy="10.5" r=".9" fill="currentColor"/><circle cx="12" cy="10.5" r=".9" fill="currentColor"/><circle cx="15" cy="10.5" r=".9" fill="currentColor"/></svg>
+          </div>
+          <div class="icon-step-card">
+            <span class="step-num">01 / TELL US</span>
+            <h3>Share your business info</h3>
+            <p class="muted">Hours, services, pricing, FAQs, and the tone you want it to sound like. Takes about ten minutes.</p>
+          </div>
         </div>
-        <div class="step reveal">
-          <span class="step-num">02 / WE BUILD</span>
-          <h3>We build a live demo</h3>
-          <p class="muted">Trained on your actual business, ready for you to try on a working demo within a couple of days.</p>
+
+        <div class="icon-step reveal">
+          <div class="icon-step-badge">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.5"/><path d="M12 3v2.4M12 18.6V21M21 12h-2.4M5.4 12H3M18.4 5.6l-1.7 1.7M7.3 16.7l-1.7 1.7M18.4 18.4l-1.7-1.7M7.3 7.3L5.6 5.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="icon-step-card">
+            <span class="step-num">02 / WE BUILD</span>
+            <h3>We build a live demo</h3>
+            <p class="muted">Trained on your actual business, ready for you to try on a working demo within a couple of days.</p>
+          </div>
         </div>
-        <div class="step reveal">
-          <span class="step-num">03 / YOU APPROVE</span>
-          <h3>You review it first</h3>
-          <p class="muted">Nothing ships to your real site until you've tried it yourself and you're happy with how it sounds.</p>
+
+        <div class="icon-step reveal">
+          <div class="icon-step-badge">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5l7 3v5c0 4.6-3 7.7-7 8.9-4-1.2-7-4.3-7-8.9v-5l7-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="icon-step-card">
+            <span class="step-num">03 / YOU APPROVE</span>
+            <h3>You review it first</h3>
+            <p class="muted">Nothing ships to your real site until you've tried it yourself and you're happy with how it sounds.</p>
+          </div>
         </div>
-        <div class="step reveal">
-          <span class="step-num">04 / IT WORKS</span>
-          <h3>It goes to work</h3>
-          <p class="muted">Live on your site, answering visitors and quietly logging leads, day and night, without you touching it.</p>
+
+        <div class="icon-step reveal">
+          <div class="icon-step-badge">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2.5c2.5 2.4 3.6 5.8 3.6 9.1V16h-7.2v-4.4c0-3.3 1.1-6.7 3.6-9.1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="9" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M8.4 12.5L5 16.5l3.4-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.6 12.5L19 16.5l-3.4-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.8 16h4.4l-1.4 3.5a.8.8 0 01-1.6 0L9.8 16z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="icon-step-card">
+            <span class="step-num">04 / IT WORKS</span>
+            <h3>It goes to work</h3>
+            <p class="muted">Live on your site, answering visitors and quietly logging leads, day and night, without you touching it.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ================= WHY ================= -->
-  <section>
+  <section class="section-flush-bottom">
     <div class="container two-col">
       <div class="reveal">
         <span class="eyebrow">WHY IT'S WORTH HAVING</span>

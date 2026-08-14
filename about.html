@@ -13,7 +13,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -46,31 +46,99 @@
     </div>
   </section>
 
-  <section>
-    <div class="container two-col">
-      <div class="reveal">
-        <h2>What we're about</h2>
-        <p class="lede">Briven AI Studio builds practical AI tools for small businesses, starting with chatbots that actually know your business, not a generic script. Everything is set up specifically for the business it's built for: your hours, your services, your tone, your guardrails.</p>
-        <p class="lede">We keep things straightforward. You try it before you commit to anything, you approve it before it goes live, and you can walk away anytime after that.</p>
+  <!-- ================= THE PROBLEM ================= -->
+  <section style="background:var(--surface); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">THE PROBLEM</span>
+        <h2>The busywork that quietly costs small businesses</h2>
+        <p class="lede">None of these are dramatic problems on their own. They're just small, repeated ones that eat a business owner's week, one at a time.</p>
       </div>
-      <ul class="icon-list reveal">
-        <li>
-          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Built around your business, not a generic template
-        </li>
-        <li>
-          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          You see and approve it before anything goes live
-        </li>
-        <li>
-          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          No long-term lock-in, cancel anytime
-        </li>
-        <li>
-          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Straight answers if something isn't a fit for your business
-        </li>
-      </ul>
+
+      <div class="grid grid-2">
+        <div class="problem-card reveal">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M4 6h12v9H8l-4 3V6z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Messages that go unanswered after hours</h3>
+          <p class="muted">A question comes in once you've closed for the day. By the time you reply the next morning, that customer's often already booked somewhere else.</p>
+          <a href="services.html#chatbot" class="problem-fix">
+            Fixed by the AI Chatbot Widget
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="problem-card reveal">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M10 2l1.8 5.6L17.5 8l-4.7 3.4L14.3 17 10 13.6 5.7 17l1.6-5.6L2.5 8l5.7-.4L10 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Reviews that pile up unanswered</h3>
+          <p class="muted">New Google reviews come in every week. Most small businesses respond to almost none of them, not because they don't care, but because there's never quite enough time.</p>
+          <a href="services.html#reviews" class="problem-fix">
+            Fixed by Google Review Responses
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="problem-card reveal">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M4 5v3.5h3.5M16 15v-3.5h-3.5M4.8 12a6 6 0 0010.4 2.5M15.2 8a6 6 0 00-10.4-2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>The same task, redone by hand, every time</h3>
+          <p class="muted">Copying a new form entry into a spreadsheet. Forwarding the same kind of email every day. Checking a database for updates that should really happen on their own.</p>
+          <a href="services.html#automation" class="problem-fix">
+            Fixed by Workflow Automation
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="problem-card reveal">
+          <div class="mark-badge">
+            <svg viewBox="0 0 20 20" fill="none" width="20" height="20"><rect x="3" y="3" width="14" height="14" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M3 8.3h14M3 13.6h14M8.3 3v14M13.6 3v14" stroke="currentColor" stroke-width="1.3"/></svg>
+          </div>
+          <h3>A spreadsheet you're almost afraid to open</h3>
+          <p class="muted">Duplicate rows, broken formulas, dates that won't sort, until a simple question about the business takes an hour to answer instead of ten seconds.</p>
+          <a href="services.html#dashboards" class="problem-fix">
+            Fixed by Spreadsheet Dashboards
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHAT WE'RE ABOUT ================= -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="showcase-panel reveal">
+        <img src="assets/brand/about-what-we-do.jpg" alt="What we're about: Built for your business, not a template. We automate the busywork so you can focus on what matters. Human-checked, tested in the real world, every time. Technology that works, people you can trust. Practical AI, real results. Built for growth, designed for you.">
+      </div>
+
+      <!-- Text equivalent of the graphic above, shown only on small screens
+           where the graphic's built-in text becomes too small to read. -->
+      <div class="showcase-mobile-fallback">
+        <span class="eyebrow">WHAT WE'RE ABOUT</span>
+        <div class="card">
+          <div class="mark-badge"><svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M4 6h12v9H8l-4 3V6z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+          <h3>Built for your business, not a template</h3>
+          <p class="muted">Briven AI Studio builds practical AI tools for small businesses, starting with chatbots that actually know your business, not a generic script. Everything is set up specifically for the business it's built for: your hours, your services, your tone, your guardrails.</p>
+        </div>
+        <div class="card">
+          <div class="mark-badge"><svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM10 6v4l3 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>We automate the busywork so you can focus on what matters</h3>
+          <p class="muted">Most of what we build follows the same idea: find the repetitive, manual part of running a business, the after-hours messages, the unanswered reviews, the copy-pasting between apps, the spreadsheet nobody wants to open, and quietly replace it with something that runs in the background. Less busywork, more room for the parts of the business that actually need you.</p>
+        </div>
+        <div class="card">
+          <div class="mark-badge"><svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M10 3l6 2.5v4.5c0 3.5-2.4 6.4-6 7.3-3.6-.9-6-3.8-6-7.3V5.5L10 3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M7.3 10l1.9 1.9L12.9 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Human-checked. Tested in the real world, every time</h3>
+          <p class="muted">We lean on AI to move fast, but nothing goes live without a person checking it first. Every chatbot, automation, and dashboard is tested against real scenarios before it ever reaches your customers, not just demoed once and shipped.</p>
+        </div>
+        <div class="showcase-tagline-strip">
+          <div>Technology that works<span>People you can trust</span></div>
+          <div>Practical AI<span>Real results</span></div>
+          <div>Built for growth<span>Designed for you</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -81,6 +149,22 @@
         <span class="eyebrow">GET IN TOUCH</span>
         <h2>Tell us about your business</h2>
         <p class="lede">A couple of lines is plenty: what you do, and what you're hoping to fix or save time on. We usually reply within one business day.</p>
+
+        <ul class="icon-list" style="margin-top:32px;">
+          <li>
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            We reply within one business day, usually sooner
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            We'll ask a few quick questions about your business
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            You'll see a working demo before anything goes live
+          </li>
+        </ul>
+
         <p class="muted" style="margin-top:28px;">Prefer email?</p>
         <a href="mailto:hello@brivenstudio.com" class="btn btn-ghost" style="margin-top:8px;">
           hello@brivenstudio.com
@@ -88,6 +172,9 @@
       </div>
 
       <form id="contact-form" class="form-grid reveal" action="https://formsubmit.co/hello@brivenstudio.com" method="POST">
+        <input type="hidden" name="_subject" value="New inquiry from brivenstudio.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="position:absolute; left:-9999px;" tabindex="-1" autocomplete="off">
         <div class="field">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required autocomplete="name">

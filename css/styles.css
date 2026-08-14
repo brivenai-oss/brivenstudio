@@ -4,20 +4,21 @@
    ============================================================ */
 
 :root{
-  /* --- Color tokens (sampled from the Briven mark) --- */
-  --ink:        #111C28;   /* primary text / headings, matches logo navy */
-  --ink-2:      #1B2A3B;   /* secondary dark surface (footer, panels) */
+  /* --- Color tokens (official Briven Studio brand palette) --- */
+  --ink:        #0B1120;   /* primary text / headings */
+  --ink-2:      #1D2433;   /* secondary dark surface (footer, panels) */
+  --slate:      #3A4156;   /* brand mid-slate, used for borders on dark */
   --muted:      #5B6478;   /* secondary / body copy */
   --muted-2:    #8991A6;   /* tertiary / captions */
   --paper:      #F7F7FB;   /* page background */
   --surface:    #FFFFFF;   /* card / surface background */
   --line:       #E3E5F0;   /* hairline borders */
   --line-2:     #ECEDF6;
-  --periwinkle:      #7787DB; /* brand accent, sampled from the mark's sparkle */
-  --periwinkle-deep:  #5866C2; /* hover / pressed */
-  --periwinkle-ink:   #3C4796; /* on-light emphasis text */
-  --periwinkle-soft:  #EEF0FC; /* tint background */
-  --periwinkle-line:  #D6DAF6; /* tint border */
+  --periwinkle:      #798BFF; /* brand accent */
+  --periwinkle-deep:  #5A6BE0; /* hover / pressed */
+  --periwinkle-ink:   #4650B8; /* on-light emphasis text */
+  --periwinkle-soft:  #E8E9FF; /* tint background */
+  --periwinkle-line:  #CDD1FA; /* tint border */
   --good: #3F9A6E;
 
   --shadow-sm: 0 1px 2px rgba(17,28,40,.06);
@@ -30,7 +31,7 @@
 
   --container: 1160px;
 
-  --font-display: 'Space Grotesk', 'Arial Narrow', sans-serif;
+  --font-display: 'Poppins', 'Arial Narrow', sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 }
@@ -74,7 +75,33 @@ input, textarea{ font-family: var(--font-body); }
 section{ padding: 96px 0; }
 @media (max-width: 720px){ section{ padding: 64px 0; } }
 
-.section-tight{ padding: 56px 0; }
+.section-tight{ padding: 48px 0; }
+@media (max-width: 720px){ .section-tight{ padding: 36px 0; } }
+
+/* Trims bottom padding on a section that sits directly above a CTA band,
+   so the two don't stack their padding into a dead gap. */
+.section-flush-bottom{ padding-bottom: 40px; }
+@media (max-width: 720px){ .section-flush-bottom{ padding-bottom: 28px; } }
+
+/* ---------- Spacing scale ----------
+   Applied as trailing margin on a block, so vertical rhythm stays
+   consistent instead of one-off inline pixel values scattered per page. */
+.stack-xs{ margin-bottom: 20px; }
+.stack-sm{ margin-bottom: 32px; }
+.stack-md{ margin-bottom: 48px; }
+.stack-lg{ margin-bottom: 72px; }
+.stack-xl{ margin-bottom: 88px; }
+@media (max-width: 720px){
+  .stack-md{ margin-bottom: 36px; }
+  .stack-lg{ margin-bottom: 48px; }
+  .stack-xl{ margin-bottom: 56px; }
+}
+
+/* Standard "eyebrow + heading + lede" block that opens a section or
+   sub-section. Consistent bottom margin everywhere it's used. */
+.section-head{ margin-bottom: 48px; }
+.section-head > *:last-child{ margin-bottom: 0; }
+@media (max-width: 720px){ .section-head{ margin-bottom: 32px; } }
 
 /* ---------- Type helpers ---------- */
 .eyebrow{
@@ -366,26 +393,71 @@ h3{ font-size: 1.28rem; font-weight: 600; }
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 26px;
+  padding: 28px;
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  display: flex;
+  flex-direction: column;
 }
 .card:hover{ transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--periwinkle-line); }
+.card p{ flex: 1; }
+.card .btn{ margin-top: 4px; align-self: flex-start; }
+.card > .tag{ align-self: flex-start; }
+.card > .tag + h3{ margin-top: 14px; }
+.card > .mark-badge{ align-self: flex-start; }
+.card .mark-badge + h3{ margin-top: 16px; }
+.compare-col .tag + h3{ margin-top: 14px; }
 
 .service-feature-card{
-  grid-column: span 2;
-  padding: 34px;
+  padding: 40px;
   background: linear-gradient(155deg, var(--ink) 0%, #212F44 100%);
   color: #fff;
   border: none;
   position: relative;
   overflow:hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.service-feature-card::after{
+  content:"";
+  position:absolute; inset:0;
+  background: radial-gradient(420px 260px at 88% 15%, rgba(119,135,219,.28), transparent 65%);
+  pointer-events:none;
 }
 .service-feature-card .eyebrow{ color: #B9C1F5; }
 .service-feature-card .eyebrow::before{ background: #B9C1F5; }
 .service-feature-card h3{ color:#fff; font-size: 1.5rem; }
 .service-feature-card p{ color: rgba(255,255,255,.72); }
-@media (max-width: 980px){ .service-feature-card{ grid-column: span 2; } }
-@media (max-width: 640px){ .service-feature-card{ grid-column: span 1; } }
+.service-feature-content{ max-width: 480px; position: relative; z-index: 1; }
+.service-feature-visual{
+  flex-shrink: 0;
+  width: 220px;
+  position: relative;
+  z-index: 1;
+  transform: rotate(2deg);
+}
+@media (max-width: 900px){
+  .service-feature-card{ flex-direction: column; align-items: flex-start; }
+  .service-feature-visual{ display:none; }
+}
+
+/* Small decorative chat card used inside the flagship banner */
+.mini-chat{
+  background: var(--surface);
+  border-radius: 14px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.mini-chat-head{
+  display:flex; align-items:center; gap:7px;
+  padding: 10px 12px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.mini-chat-head span{ width:6px; height:6px; border-radius:50%; background: var(--line); }
+.mini-chat-body{ padding: 12px; display:flex; flex-direction:column; gap:8px; }
+.mini-chat-body .bubble{ opacity:1; transform:none; animation:none; font-size:.76rem; padding:8px 10px; }
 
 .tag{
   display:inline-block;
@@ -427,6 +499,87 @@ h3{ font-size: 1.28rem; font-weight: 600; }
   margin-bottom: 14px;
   display:block;
 }
+
+/* ---------- Section head with an inline brand lockup (desktop only) ---------- */
+.section-head-row{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+.section-head-row .section-head{ margin-bottom: 0; flex: 1; }
+.section-head-brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  padding-top: 6px;
+}
+.section-head-brand img{ height: 42px; width: auto; }
+.section-head-brand .brand-word{ font-size: 1.3rem; }
+@media (max-width: 860px){ .section-head-brand{ display:none; } }
+
+/* ---------- Icon steps (illustrated process row) ---------- */
+.icon-steps{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 56px;
+}
+@media (max-width: 900px){ .icon-steps{ grid-template-columns: repeat(2,1fr); row-gap: 48px; } }
+@media (max-width: 560px){ .icon-steps{ grid-template-columns: 1fr; row-gap: 40px; } }
+
+.icon-step{
+  position: relative;
+  padding: 0 16px;
+}
+.icon-step:first-child{ padding-left: 0; }
+.icon-step:last-child{ padding-right: 0; }
+@media (max-width: 900px){
+  .icon-step:nth-child(odd){ padding-left: 0; }
+  .icon-step:nth-child(even){ padding-right: 0; }
+}
+@media (max-width: 560px){
+  .icon-step{ padding-left: 0; padding-right: 0; }
+}
+
+.icon-step-badge{
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--periwinkle-soft);
+  border: 1px solid var(--periwinkle-line);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--periwinkle-ink);
+  margin: 0 auto 24px;
+  position: relative;
+  z-index: 2;
+}
+.icon-step-badge svg{ width: 26px; height: 26px; }
+
+/* connector dot between consecutive icons, desktop 4-across row only */
+.icon-step:not(:first-child)::before{
+  content: "";
+  position: absolute;
+  left: 0; top: 32px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--periwinkle);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+@media (max-width: 900px){ .icon-step::before{ display: none; } }
+
+.icon-step-card{
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: 24px 22px;
+  text-align: left;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.icon-step-card p{ flex: 1; margin-bottom: 0; }
 
 /* ---------- Compare table ---------- */
 .compare{
@@ -497,7 +650,20 @@ h3{ font-size: 1.28rem; font-weight: 600; }
   background: var(--ink-2);
   color: rgba(255,255,255,.68);
   padding: 60px 0 28px;
+  position: relative;
+  overflow: hidden;
 }
+.site-footer::before{
+  content:"";
+  position:absolute;
+  top:0; right:0;
+  width: 620px; height: 100%;
+  background: url('../assets/brand/pattern-texture.jpg') no-repeat top right / cover;
+  -webkit-mask-image: radial-gradient(ellipse 480px 320px at 100% 0%, rgba(0,0,0,.9), transparent 72%);
+  mask-image: radial-gradient(ellipse 480px 320px at 100% 0%, rgba(0,0,0,.9), transparent 72%);
+  pointer-events:none;
+}
+.site-footer .container{ position: relative; z-index: 1; }
 .footer-grid{
   display:grid;
   grid-template-columns: 1.4fr 1fr 1fr;
@@ -575,6 +741,64 @@ h3{ font-size: 1.28rem; font-weight: 600; }
 .pill-list{ display:flex; flex-wrap:wrap; gap: 10px; }
 .icon-list li{ display:flex; gap:10px; align-items:flex-start; padding: 8px 0; color: var(--muted); font-size:.95rem; }
 .icon-list svg{ flex-shrink:0; margin-top:3px; color: var(--periwinkle); width:16px; height:16px; }
+
+/* ---------- Brand showcase image panel ---------- */
+.showcase-panel{
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  line-height: 0;
+}
+.showcase-panel img{ width: 100%; height: auto; display:block; }
+
+/* The showcase graphic's baked-in text is fine at desktop size but
+   unreadably small on a phone screen — swap to a real text version
+   below a breakpoint so the content stays accessible. */
+.showcase-mobile-fallback{ display: none; }
+@media (max-width: 640px){
+  .showcase-panel{ display: none; }
+  .showcase-mobile-fallback{ display: block; }
+}
+.showcase-mobile-fallback .card{ margin-bottom: 16px; }
+.showcase-tagline-strip{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--ink);
+  border-radius: var(--radius-md);
+  padding: 22px 20px;
+  margin-top: 8px;
+}
+.showcase-tagline-strip div{ color: #fff; font-size: .92rem; }
+.showcase-tagline-strip span{ display:block; color: var(--periwinkle-line); font-size: .82rem; margin-top: 2px; }
+
+/* ---------- Problem / solution cards ---------- */
+.problem-card{
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.problem-card:hover{ transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--periwinkle-line); }
+.problem-card .mark-badge{ align-self: flex-start; margin-bottom: 16px; }
+.problem-card h3{ font-size: 1.1rem; }
+.problem-card p{ flex: 1; }
+.problem-fix{
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-2);
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--periwinkle-ink);
+}
+.problem-fix svg{ width: 14px; height: 14px; flex-shrink:0; transition: transform .15s ease; }
+.problem-card:hover .problem-fix svg{ transform: translateX(2px); }
 
 /* ---------- Legal / long-form content pages ---------- */
 .prose{ max-width: 74ch; }

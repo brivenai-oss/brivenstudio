@@ -132,21 +132,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
       try {
         const action = form.getAttribute('action');
-        const isConfigured = action && !action.includes('YOUR_FORM_ID');
+        const isConfigured = action && !action.includes('YOUR_FORM_ID') && !action.includes('YOUR_EMAIL');
 
         if (!isConfigured) {
           // Form endpoint not wired up yet — see README for setup.
           throw new Error('not-configured');
         }
 
-        const res = await fetch(action, {
+        // formsubmit.co needs its /ajax/ variant for a fetch-based submit
+        // (the plain endpoint expects a full page navigation + redirect).
+        let endpoint = action;
+        if (endpoint.includes('formsubmit.co') && !endpoint.includes('/ajax/')) {
+          endpoint = endpoint.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+        }
+
+        const res = await fetch(endpoint, {
           method: 'POST',
           headers: { 'Accept': 'application/json' },
           body: new FormData(form)
         });
 
-        if (res.ok) {
-          status.textContent = "Thanks — that's in. We'll reply within one business day.";
+        let ok = res.ok;
+        try {
+          const data = await res.clone().json();
+          if (data && typeof data.success !== 'undefined') {
+            ok = ok && (data.success === true || data.success === 'true');
+          }
+        } catch (parseErr) {
+          // Non-JSON response is fine as long as the request itself succeeded.
+        }
+
+        if (ok) {
+          status.textContent = "Got it, thanks. We'll reply within one business day.";
           status.className = 'form-status ok';
           form.reset();
         } else {
