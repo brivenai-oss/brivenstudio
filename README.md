@@ -5,12 +5,14 @@ Static site, no build step. 3 pages + shared CSS/JS.
 ```
 index.html        Home
 services.html     Services (all 4 services fully detailed: chatbot, reviews, automation, dashboards)
+portfolio.html    Our Work — real sample proof: before/after reviews, live dashboards, automation workflows
 about.html        About & Contact (contact form lives here, id="contact")
 privacy.html      Privacy Policy
 terms.html        Terms of Use
 css/styles.css    Design system (colors, type, components)
-js/script.js      Nav toggle, scroll reveal, chat demo animation, contact form
+js/script.js      Nav toggle, scroll reveal, chat demo animation, contact form, portfolio tabs/JSON toggle
 assets/           Logo files, favicons, and brand graphics (assets/brand/)
+assets/samples/   Real sample files linked from portfolio.html (2 .xlsx, 2 n8n .json exports)
 ```
 
 ## Deploy to Cloudflare Pages
@@ -63,6 +65,14 @@ Both pages are linked in the footer on every page.
 ## Notes on the chat demo animation
 
 The looping chat exchange in the hero and on the services page is decorative (`data-chat-demo` attribute, JSON array of `{role, text}` pairs, handled in `script.js`). It's not connected to any live chatbot — it's just showing what the product looks like. To change the example conversation, edit the JSON in the `data-chat-demo` attribute directly in the HTML.
+
+## Our Work page (portfolio.html)
+
+Real sample work, not mockup placeholders: three before/after Google review responses, two live-formula spreadsheet dashboards you can flip to a "Raw Data" tab to see actual rows from the workbook, and two n8n automation workflows shown as a flow diagram with a "View raw workflow JSON" toggle that expands the actual exported file inline. Every download button on that page (`.xlsx` / `.json`) points to a real file sitting in `assets/samples/` — nothing is a dead link.
+
+`services.html` features one condensed example per service (reviews, automation, dashboards) inline, each linking to the fuller version on `portfolio.html`. If you swap in real client work later, replace the business names/data in both places — the featured version on `services.html` and the full version on `portfolio.html` currently duplicate the same example by design, so update both or they'll drift out of sync.
+
+The disclaimer line above the closing CTA on `portfolio.html` ("illustrative sample builds... not real clients") should stay until these are replaced with actual client work, or be adjusted the moment any of them become real.
 
 ## Accessibility / robustness notes
 

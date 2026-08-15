@@ -178,4 +178,32 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  /* ---- Proof-of-work tabs (dashboard vs raw data) ---- */
+  document.querySelectorAll('.proof-tabs').forEach(tabs => {
+    const buttons = tabs.querySelectorAll('.proof-tab');
+    const frame = tabs.closest('.proof-frame');
+    if (!frame) return;
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-tab-target');
+        buttons.forEach(b => b.classList.toggle('active', b === btn));
+        frame.querySelectorAll('.proof-tabpanel').forEach(panel => {
+          panel.classList.toggle('active', panel.id === target);
+        });
+      });
+    });
+  });
+
+  /* ---- Proof-of-work raw JSON toggle ---- */
+  document.querySelectorAll('.proof-json-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const targetId = toggle.getAttribute('aria-controls');
+      const panel = document.getElementById(targetId);
+      if (!panel) return;
+      const isOpen = panel.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      toggle.querySelector('.label').textContent = isOpen ? 'Hide raw workflow JSON' : 'View raw workflow JSON';
+    });
+  });
 });

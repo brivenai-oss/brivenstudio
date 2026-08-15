@@ -1,0 +1,194 @@
+{
+  "name": "Sterling Home Plumbing: Lead Capture, CRM & Routing",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "sterling-lead-form",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "1a2b3c4d-0001-4a1a-9b1a-000000000001",
+      "name": "New Website Form Submission",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [-40, 260],
+      "notes": "Fires the instant a visitor submits the quote-request form on sterlinghomeplumbing.com. Webhook URL is registered with the site's form tool."
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1Xk9pQ_STERLING_LEAD_LOG_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Leads",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Date": "={{ $now.toFormat('yyyy-MM-dd HH:mm') }}",
+            "Name": "={{ $json.body.name }}",
+            "Phone": "={{ $json.body.phone }}",
+            "Service Needed": "={{ $json.body.service_type }}",
+            "Job Value Estimate": "={{ $json.body.estimated_value }}",
+            "Source": "={{ $json.body.utm_source || 'Direct' }}",
+            "Status": "New"
+          }
+        }
+      },
+      "id": "1a2b3c4d-0002-4a1a-9b1a-000000000002",
+      "name": "Add Row to Lead Tracker (Sheets)",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [200, 260],
+      "notes": "System of record for every inbound lead, regardless of value."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "loose" },
+          "conditions": [
+            {
+              "id": "cond-1",
+              "leftValue": "={{ Number($json.body.estimated_value) }}",
+              "rightValue": 1000,
+              "operator": { "type": "number", "operation": "gte" }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "1a2b3c4d-0003-4a1a-9b1a-000000000003",
+      "name": "IF Job Value >= $1,000",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [440, 260],
+      "notes": "High-value jobs (re-pipes, water heater replacements, emergency calls) get routed to the owner directly instead of the standard queue."
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": { "__rl": true, "value": "#high-value-leads", "mode": "name" },
+        "text": "=🔥 High-value lead: *{{ $json.body.name }}*: {{ $json.body.service_type }}, est. ${{ $json.body.estimated_value }}. Phone: {{ $json.body.phone }}. Call within 15 min for best close rate.",
+        "otherOptions": {}
+      },
+      "id": "1a2b3c4d-0004-4a1a-9b1a-000000000004",
+      "name": "Slack Alert: Owner (Urgent)",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [700, 140],
+      "notes": "Posts to a dedicated Slack channel the owner has muted-except-urgent, so this doesn't get lost in general chatter."
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": { "__rl": true, "value": "#new-leads", "mode": "name" },
+        "text": "=New lead: {{ $json.body.name }}: {{ $json.body.service_type }}. Added to the tracker, standard follow-up queue.",
+        "otherOptions": {}
+      },
+      "id": "1a2b3c4d-0005-4a1a-9b1a-000000000005",
+      "name": "Slack Alert: Standard Queue",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [700, 380],
+      "notes": "Routine leads still get a lightweight notification, just to the general channel rather than paging the owner."
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "send",
+        "toList": [{ "phone": "={{ $json.body.phone }}" }],
+        "message": "Hi {{ $json.body.name }}, thanks for reaching out to Sterling Home Plumbing! We received your request and will call you back shortly."
+      },
+      "id": "1a2b3c4d-0006-4a1a-9b1a-000000000006",
+      "name": "Auto-Reply SMS to Customer",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [940, 260],
+      "notes": "Immediate acknowledgment so the customer isn't left wondering whether the form actually submitted."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "loose" },
+          "conditions": [
+            {
+              "id": "err-1",
+              "leftValue": "={{ $json.body.phone }}",
+              "rightValue": "",
+              "operator": { "type": "string", "operation": "empty" }
+            }
+          ],
+          "combinator": "or"
+        }
+      },
+      "id": "1a2b3c4d-0007-4a1a-9b1a-000000000007",
+      "name": "Missing Required Field?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [200, 460],
+      "notes": "Error-handling branch: catches malformed submissions (e.g. phone field blank) before they silently fail downstream."
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": { "__rl": true, "value": "#automation-alerts", "mode": "name" },
+        "text": "=⚠️ Lead form submitted with a missing phone number. Raw payload: {{ JSON.stringify($json.body) }}. Please follow up manually.",
+        "otherOptions": {}
+      },
+      "id": "1a2b3c4d-0008-4a1a-9b1a-000000000008",
+      "name": "Notify: Malformed Submission",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [440, 460],
+      "notes": "Fallback path so a bad submission is surfaced to a human instead of vanishing."
+    }
+  ],
+  "connections": {
+    "New Website Form Submission": {
+      "main": [
+        [
+          { "node": "Add Row to Lead Tracker (Sheets)", "type": "main", "index": 0 },
+          { "node": "Missing Required Field?", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Add Row to Lead Tracker (Sheets)": {
+      "main": [[{ "node": "IF Job Value >= $1,000", "type": "main", "index": 0 }]]
+    },
+    "IF Job Value >= $1,000": {
+      "main": [
+        [{ "node": "Slack Alert: Owner (Urgent)", "type": "main", "index": 0 }],
+        [{ "node": "Slack Alert: Standard Queue", "type": "main", "index": 0 }]
+      ]
+    },
+    "Slack Alert: Owner (Urgent)": {
+      "main": [[{ "node": "Auto-Reply SMS to Customer", "type": "main", "index": 0 }]]
+    },
+    "Slack Alert: Standard Queue": {
+      "main": [[{ "node": "Auto-Reply SMS to Customer", "type": "main", "index": 0 }]]
+    },
+    "Missing Required Field?": {
+      "main": [
+        [{ "node": "Notify: Malformed Submission", "type": "main", "index": 0 }],
+        []
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "portfolioSample": true,
+    "instructions": "Sample workflow for portfolio purposes. Replace the Google Sheet ID, Slack channel IDs, and Twilio credentials with the client's own before deploying live."
+  }
+}
