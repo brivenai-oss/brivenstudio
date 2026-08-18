@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Our Work — Briven AI Studio</title>
-<meta name="description" content="Real sample work from Briven AI Studio: before-and-after Google review responses, live-formula spreadsheet dashboards, and importable n8n automation workflows.">
+<meta name="description" content="Real sample work from Briven AI Studio: a live AI chatbot, before-and-after Google review responses, live-formula spreadsheet dashboards, and importable n8n automation workflows.">
 
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -43,8 +43,9 @@
     <div class="container">
       <span class="eyebrow">SAMPLE WORK, BEFORE AND AFTER</span>
       <h1 style="max-width:22ch;">What "handled" actually looks like</h1>
-      <p class="lede" style="max-width:60ch;">Three services, seven examples of the same underlying promise: something messy or manual, taken off your plate and turned into something clean, monitored, and running on its own.</p>
+      <p class="lede" style="max-width:60ch;">Four services, one of them you can try right now. The rest are real examples of the same underlying promise: something messy or manual, taken off your plate and turned into something clean, monitored, and running on its own.</p>
       <div class="pill-list" style="margin-top:22px;">
+        <a href="#chatbot" class="btn btn-ghost btn-sm">AI Chatbot</a>
         <a href="#reviews" class="btn btn-ghost btn-sm">Review Responses</a>
         <a href="#dashboards" class="btn btn-ghost btn-sm">Spreadsheet Dashboards</a>
         <a href="#automation" class="btn btn-ghost btn-sm">Workflow Automation</a>
@@ -52,19 +53,52 @@
     </div>
   </section>
 
+  <!-- ================= AI CHATBOT WIDGET ================= -->
+  <section id="chatbot">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">AI CHATBOT WIDGET</span>
+        <h2>This one, you don't have to imagine</h2>
+        <p class="lede">Every other example on this page is a screenshot. This one isn't: the chat bubble in the bottom-right corner of this exact page is a live, working instance, tuned to Briven AI Studio's own services, pricing, and FAQs. Ask it something.</p>
+      </div>
+
+      <div class="proof-frame reveal">
+        <div class="proof-titlebar">
+          <div>
+            <div class="biz">Briven AI Studio</div>
+            <div class="biz-type">Running live on this website, right now</div>
+          </div>
+        </div>
+        <div class="proof-body" style="text-align:center;">
+          <p class="muted" style="max-width:52ch; margin:0 auto 22px;">Click the bubble in the corner, or try one of these:</p>
+          <div class="ask-chip-row">
+            <button class="ask-chip" onclick="window.ccwAskFn && window.ccwAskFn('Do you offer free estimates?')">Do you offer free estimates?</button>
+            <button class="ask-chip" onclick="window.ccwAskFn && window.ccwAskFn('Why do I need an AI Chatbot?')">Why do I need an AI Chatbot?</button>
+            <button class="ask-chip" onclick="window.ccwAskFn && window.ccwAskFn('What does Premium add?')">What does Premium add?</button>
+            <button class="ask-chip" onclick="window.ccwAskFn && window.ccwAskFn('How quickly do you respond to reviews?')">How quickly do you respond to reviews?</button>
+          </div>
+        </div>
+        <div class="proof-flow-legend">
+          <span class="item"><span class="dot" style="background:var(--periwinkle)"></span>Captures leads who share contact info, with a clear heads-up first</span>
+          <span class="item"><span class="dot" style="background:var(--muted-2)"></span>Guardrails built in: it never invents a price, policy, or promise</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= REVIEW RESPONSES ================= -->
-  <section id="reviews">
+  <section id="reviews" style="background:var(--surface); border-top:1px solid var(--line);">
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">GOOGLE REVIEW RESPONSE SERVICE</span>
         <h2>Review responses that sound like the owner, not a template</h2>
-        <p class="lede">Three real response scenarios, spanning a regulated healthcare practice, a restaurant, and a home services company. Each shows how tone shifts by industry while staying calm, specific, and non-defensive.</p>
+        <p class="lede">Three real response scenarios, spanning a regulated healthcare practice, a restaurant, and a home services company. Each shows how tone shifts by industry while staying calm, specific, and non-defensive. All three run on the same automated monitoring: the moment a new review posts, we're alerted automatically, not whenever someone remembers to check.</p>
       </div>
 
       <div class="proof-frame reveal stack-md">
         <div class="proof-titlebar">
           <div>
-            <div class="biz">Riverside Family Dental</div>
+            <div class="biz">Family Dental Office</div>
             <div class="biz-type">Healthcare, Regulated Industry</div>
           </div>
         </div>
@@ -84,7 +118,7 @@
               Waited 45 minutes past my appointment time and no one told me what was going on. Really frustrating when you take time off work for this.
             </div>
             <div class="proof-reply">
-              <div class="proof-reply-from">Owner response, Riverside Family Dental</div>
+              <div class="proof-reply-from">Owner response, Family Dental Office</div>
               Hi Sarah, thank you for letting us know, and we're sorry your visit didn't start on time. We know your schedule matters, and we're working with our front desk team on communicating delays better going forward. We'd welcome the chance to discuss your visit directly. Please reach out to our front desk whenever works for you.
             </div>
           </div>
@@ -94,7 +128,7 @@
       <div class="proof-frame reveal stack-md">
         <div class="proof-titlebar">
           <div>
-            <div class="biz">The Copper Kettle Bistro</div>
+            <div class="biz">Bistro Restaurant</div>
             <div class="biz-type">Restaurant, Brunch Spot</div>
           </div>
         </div>
@@ -114,7 +148,7 @@
               Best brunch spot in town. The lemon ricotta pancakes are unreal and our server Dana was so attentive. Will be back every weekend!
             </div>
             <div class="proof-reply">
-              <div class="proof-reply-from">Owner response, The Copper Kettle Bistro</div>
+              <div class="proof-reply-from">Owner response, Bistro Restaurant</div>
               Marcus, this made our morning! We'll be sure to pass this along to Dana, she'll be thrilled. The lemon ricotta pancakes are a favorite of ours too. See you next weekend, we'll have a table ready!
             </div>
           </div>
@@ -124,7 +158,7 @@
       <div class="proof-frame reveal">
         <div class="proof-titlebar">
           <div>
-            <div class="biz">Sterling Home Plumbing</div>
+            <div class="biz">Local Plumbing Service</div>
             <div class="biz-type">Home Services</div>
           </div>
         </div>
@@ -144,7 +178,7 @@
               Technician was polite but showed up 2 hours after the scheduled window with no call. Work itself was fine once he got here.
             </div>
             <div class="proof-reply">
-              <div class="proof-reply-from">Owner response, Sterling Home Plumbing</div>
+              <div class="proof-reply-from">Owner response, Local Plumbing Service</div>
               Janet, thank you for the honest feedback, and we're sorry about the wait, especially without a heads-up call. That's on us. We've flagged this with dispatch so customers get a call the moment a tech is running behind. Glad the repair itself worked out. Reach out anytime if we can help again.
             </div>
           </div>
@@ -159,23 +193,23 @@
       <div class="section-head">
         <span class="eyebrow">EXCEL / SHEETS DATA CLEANING &amp; DASHBOARDS</span>
         <h2>From messy export to an auto-updating dashboard</h2>
-        <p class="lede">Two live-formula workbooks: an e-commerce sales dashboard and a property-management operations dashboard, both built on structured source tables so every KPI, summary, and chart recalculates the moment new rows are pasted in. Click "Raw Data" on either one to see the real rows behind the numbers.</p>
+        <p class="lede">Three live-formula workbooks, from a single sales table to a dashboard cross-referencing four linked tables at once. Every KPI, summary, and chart recalculates the moment new rows are pasted in. Click "Raw Data" on any of them to see the real rows behind the numbers.</p>
       </div>
 
       <div class="proof-frame reveal stack-md">
         <div class="proof-titlebar">
           <div>
-            <div class="biz">Coastal Outfitters: Sales Performance Dashboard</div>
+            <div class="biz">Retail Company: Sales Performance Dashboard</div>
             <div class="biz-type">E-commerce, Outdoor Apparel</div>
           </div>
-          <div class="file">Coastal_Outfitters_Sales_Dashboard.xlsx</div>
+          <div class="file">Retail_Company_Sales_Dashboard.xlsx</div>
         </div>
         <div class="proof-tabs">
-          <button class="proof-tab active" data-tab-target="coastal-dash">Dashboard</button>
-          <button class="proof-tab" data-tab-target="coastal-raw">Raw Data (420 rows)</button>
+          <button class="proof-tab active" data-tab-target="retail-dash">Dashboard</button>
+          <button class="proof-tab" data-tab-target="retail-raw">Raw Data (420 rows)</button>
         </div>
         <div class="proof-body">
-          <div class="proof-tabpanel active" id="coastal-dash">
+          <div class="proof-tabpanel active" id="retail-dash">
             <div class="proof-kpi-row">
               <div class="proof-kpi"><div class="proof-kpi-label">Total Revenue</div><div class="proof-kpi-value">$90,565</div></div>
               <div class="proof-kpi"><div class="proof-kpi-label">Total Orders</div><div class="proof-kpi-value">420</div></div>
@@ -210,7 +244,7 @@
               Pivot tables and charts point at the Raw Data table, not fixed cells, so pasting in new orders and recalculating updates every number above.
             </div>
           </div>
-          <div class="proof-tabpanel" id="coastal-raw">
+          <div class="proof-tabpanel" id="retail-raw">
             <div class="proof-table-wrap proof-table-scroll">
               <table class="proof-table">
                 <thead><tr><th>Order ID</th><th>Date</th><th>Region</th><th>Channel</th><th>Category</th><th>Units</th><th>Revenue</th><th>Returned?</th></tr></thead>
@@ -238,27 +272,27 @@
             <svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M8 1.5l1.6 4.9 5 .4-3.9 3.2 1.3 4.8L8 12l-4 2.8 1.3-4.8-3.9-3.2 5-.4L8 1.5z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>
             Live formulas throughout, 40 in this workbook
           </span>
-          <a href="assets/samples/Coastal_Outfitters_Sales_Dashboard.xlsx" class="btn btn-ghost btn-sm" download>
+          <a href="assets/samples/Retail_Company_Sales_Dashboard.xlsx" class="btn btn-ghost btn-sm" download>
             Download the .xlsx
             <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0l3-3m-3 3L5 7M3 13h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
 
-      <div class="proof-frame reveal">
+      <div class="proof-frame reveal stack-md">
         <div class="proof-titlebar">
           <div>
-            <div class="biz">Bluepeak Property Management: Portfolio Operations Dashboard</div>
+            <div class="biz">Property Management Company: Portfolio Operations Dashboard</div>
             <div class="biz-type">Property Management, Multi-site</div>
           </div>
-          <div class="file">Bluepeak_Property_Management_Dashboard.xlsx</div>
+          <div class="file">Property_Management_Dashboard.xlsx</div>
         </div>
         <div class="proof-tabs">
-          <button class="proof-tab active" data-tab-target="bluepeak-dash">Dashboard</button>
-          <button class="proof-tab" data-tab-target="bluepeak-raw">Work Orders (260 rows)</button>
+          <button class="proof-tab active" data-tab-target="prop-dash">Dashboard</button>
+          <button class="proof-tab" data-tab-target="prop-raw">Work Orders (260 rows)</button>
         </div>
         <div class="proof-body">
-          <div class="proof-tabpanel active" id="bluepeak-dash">
+          <div class="proof-tabpanel active" id="prop-dash">
             <div class="proof-kpi-row">
               <div class="proof-kpi"><div class="proof-kpi-label">Occupancy Rate</div><div class="proof-kpi-value">89.7%</div></div>
               <div class="proof-kpi"><div class="proof-kpi-label">Open Work Orders</div><div class="proof-kpi-value">62</div></div>
@@ -293,7 +327,7 @@
               Occupancy pulls from the Units tab, ticket metrics from Work Orders, both structured as tables so the dashboard scales as the portfolio grows.
             </div>
           </div>
-          <div class="proof-tabpanel" id="bluepeak-raw">
+          <div class="proof-tabpanel" id="prop-raw">
             <div class="proof-table-wrap proof-table-scroll">
               <table class="proof-table">
                 <thead><tr><th>Ticket ID</th><th>Property</th><th>Unit</th><th>Category</th><th>Submitted</th><th>Status</th><th>Days to Resolve</th><th>Rating</th></tr></thead>
@@ -321,7 +355,102 @@
             <svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M8 1.5l1.6 4.9 5 .4-3.9 3.2 1.3 4.8L8 12l-4 2.8 1.3-4.8-3.9-3.2 5-.4L8 1.5z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>
             Live formulas throughout, 34 in this workbook
           </span>
-          <a href="assets/samples/Bluepeak_Property_Management_Dashboard.xlsx" class="btn btn-ghost btn-sm" download>
+          <a href="assets/samples/Property_Management_Dashboard.xlsx" class="btn btn-ghost btn-sm" download>
+            Download the .xlsx
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0l3-3m-3 3L5 7M3 13h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="proof-frame reveal">
+        <div class="proof-titlebar">
+          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+            <span class="flagship-tag">Flagship example</span>
+            <div>
+              <div class="biz">Multi-Location Restaurant Group: Performance Dashboard</div>
+              <div class="biz-type">Restaurant Group, 5 Locations</div>
+            </div>
+          </div>
+          <div class="file">MultiLocation_Restaurant_Dashboard.xlsx</div>
+        </div>
+        <div class="proof-tabs">
+          <button class="proof-tab active" data-tab-target="mloc-dash">Dashboard</button>
+          <button class="proof-tab" data-tab-target="mloc-raw">Raw Data (Daily Sales)</button>
+        </div>
+        <div class="proof-body">
+          <div class="proof-tabpanel active" id="mloc-dash">
+            <div class="proof-data-model-row">
+              <span class="proof-data-model-chip">Locations</span>
+              <span class="proof-data-model-chip">Daily Sales</span>
+              <span class="proof-data-model-chip">Labor Hours</span>
+              <span class="proof-data-model-chip">Waste Log</span>
+              <span class="proof-data-model-chip" style="color:var(--periwinkle-ink); border-color:var(--periwinkle-line); background:var(--periwinkle-soft);">4 tables, cross-referenced by Location ID</span>
+            </div>
+            <div class="proof-kpi-row kpi-5">
+              <div class="proof-kpi"><div class="proof-kpi-label">Total Revenue</div><div class="proof-kpi-value">$2.58M</div></div>
+              <div class="proof-kpi"><div class="proof-kpi-label">Total Covers</div><div class="proof-kpi-value">79,242</div></div>
+              <div class="proof-kpi"><div class="proof-kpi-label">Avg Check</div><div class="proof-kpi-value">$32.57</div></div>
+              <div class="proof-kpi"><div class="proof-kpi-label">Labor % of Sales</div><div class="proof-kpi-value">29.4%</div></div>
+              <div class="proof-kpi"><div class="proof-kpi-label">Total Waste Cost</div><div class="proof-kpi-value">$17.0k</div></div>
+            </div>
+            <div class="proof-chart-row">
+              <div class="proof-chart-box">
+                <h4>Location Performance</h4>
+                <table class="proof-rank-table">
+                  <thead><tr><th>Location</th><th>Revenue</th><th>Labor %</th></tr></thead>
+                  <tbody>
+                    <tr><td>Uptown</td><td>$777,993</td><td>26.6%</td></tr>
+                    <tr><td>Downtown</td><td>$639,638</td><td>28.3%</td></tr>
+                    <tr><td>Riverside</td><td>$457,366</td><td>29.2%</td></tr>
+                    <tr><td>Harbor Point</td><td>$322,967</td><td>31.2%</td></tr>
+                    <tr><td>Westgate</td><td>$382,868</td><td><span class="proof-flag-cell">35.8%</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="proof-chart-box">
+                <h4>Revenue Trend, Month over Month</h4>
+                <div class="proof-bars" style="margin-bottom:14px;">
+                  <div class="proof-bar-col"><div class="proof-bar-value">$839k</div><div class="proof-bar alt" style="height:94%"></div><div class="proof-bar-label">Apr</div></div>
+                  <div class="proof-bar-col"><div class="proof-bar-value">$895k</div><div class="proof-bar alt" style="height:100%"></div><div class="proof-bar-label">May</div></div>
+                  <div class="proof-bar-col"><div class="proof-bar-value">$847k</div><div class="proof-bar alt" style="height:95%"></div><div class="proof-bar-label">Jun</div></div>
+                </div>
+                <span class="proof-trend-pill down">▼ 5.3% May → Jun</span>
+              </div>
+            </div>
+            <div class="proof-sheet-note">
+              <svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13z" stroke="currentColor" stroke-width="1.3"/><path d="M8 5v3.5l2.2 2.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+              Westgate's labor cost is flagged automatically once it crosses 35% of sales, so it surfaces on its own instead of getting lost in five locations' worth of numbers.
+            </div>
+          </div>
+          <div class="proof-tabpanel" id="mloc-raw">
+            <div class="proof-table-wrap proof-table-scroll">
+              <table class="proof-table">
+                <thead><tr><th>Date</th><th>Location ID</th><th>Net Sales</th><th>Covers</th><th>Comps</th></tr></thead>
+                <tbody>
+                  <tr><td>Apr 1, 2026</td><td>L1</td><td>$6,381.13</td><td>213</td><td>$217.80</td></tr>
+                  <tr><td>Apr 1, 2026</td><td>L2</td><td>$4,956.32</td><td>152</td><td>$131.77</td></tr>
+                  <tr><td>Apr 1, 2026</td><td>L3</td><td>$6,639.49</td><td>220</td><td>$114.29</td></tr>
+                  <tr><td>Apr 1, 2026</td><td>L4</td><td>$3,849.38</td><td>128</td><td>$131.95</td></tr>
+                  <tr><td>Apr 1, 2026</td><td>L5</td><td>$2,620.52</td><td>88</td><td>$32.03</td></tr>
+                  <tr><td>Apr 2, 2026</td><td>L1</td><td>$6,802.40</td><td>215</td><td>$148.24</td></tr>
+                  <tr><td>Apr 2, 2026</td><td>L2</td><td>$4,030.69</td><td>117</td><td>$81.01</td></tr>
+                  <tr><td>Apr 2, 2026</td><td>L3</td><td>$6,622.83</td><td>205</td><td>$116.61</td></tr>
+                  <tr><td>Apr 2, 2026</td><td>L4</td><td>$3,095.60</td><td>85</td><td>$83.59</td></tr>
+                  <tr><td>Apr 2, 2026</td><td>L5</td><td>$3,283.91</td><td>89</td><td>$65.24</td></tr>
+                  <tr><td>Apr 3, 2026</td><td>L1</td><td>$8,006.24</td><td>248</td><td>$161.04</td></tr>
+                  <tr><td>Apr 3, 2026</td><td>L2</td><td>$6,158.04</td><td>219</td><td>$133.03</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="proof-table-note">Showing 12 of the Daily Sales tab. Location IDs join out to Locations, Labor Hours, and Waste Log in the other 3 tabs.</p>
+          </div>
+        </div>
+        <div class="proof-footer-row">
+          <span class="note">
+            <svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M8 1.5l1.6 4.9 5 .4-3.9 3.2 1.3 4.8L8 12l-4 2.8 1.3-4.8-3.9-3.2 5-.4L8 1.5z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>
+            4 linked tables, cross-referenced by Location ID
+          </span>
+          <a href="assets/samples/MultiLocation_Restaurant_Dashboard.xlsx" class="btn btn-ghost btn-sm" download>
             Download the .xlsx
             <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0l3-3m-3 3L5 7M3 13h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -336,13 +465,13 @@
       <div class="section-head">
         <span class="eyebrow">N8N / MAKE.COM BUSINESS PROCESS AUTOMATION</span>
         <h2>Workflows that keep running after delivery</h2>
-        <p class="lede">Two real, importable workflow builds: a lead capture and routing pipeline, and an AI-enhanced support ticket triage system. Both include tested error handling and a human-review step before anything customer-facing goes out. Open "View raw workflow JSON" to see the actual exported file.</p>
+        <p class="lede">Three real, importable workflow builds, from a straightforward lead-routing pipeline up to a multi-week booking chain with nested payment logic. All three include tested error handling and a human-review step before anything customer-facing goes out. Open "View raw workflow JSON" to see the actual exported file.</p>
       </div>
 
       <div class="proof-frame reveal stack-md">
         <div class="proof-titlebar">
           <div>
-            <div class="biz">Sterling Home Plumbing: Lead Capture, CRM &amp; Routing</div>
+            <div class="biz">Local Plumbing Service: Lead Capture, CRM &amp; Routing</div>
             <div class="biz-type">Home Services</div>
           </div>
           <div class="file">n8n_lead_capture_and_routing.json</div>
@@ -395,12 +524,12 @@
               <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="proof-json-panel" id="lead-json"><pre><code>{
-  &quot;name&quot;: &quot;Sterling Home Plumbing: Lead Capture, CRM &amp; Routing&quot;,
+  &quot;name&quot;: &quot;Local Plumbing Service: Lead Capture, CRM &amp; Routing&quot;,
   &quot;nodes&quot;: [
     {
       &quot;parameters&quot;: {
         &quot;httpMethod&quot;: &quot;POST&quot;,
-        &quot;path&quot;: &quot;sterling-lead-form&quot;,
+        &quot;path&quot;: &quot;new-lead-form&quot;,
         &quot;responseMode&quot;: &quot;onReceived&quot;,
         &quot;options&quot;: {}
       },
@@ -409,7 +538,7 @@
       &quot;type&quot;: &quot;n8n-nodes-base.webhook&quot;,
       &quot;typeVersion&quot;: 2,
       &quot;position&quot;: [-40, 260],
-      &quot;notes&quot;: &quot;Fires the instant a visitor submits the quote-request form on sterlinghomeplumbing.com. Webhook URL is registered with the site&#x27;s form tool.&quot;
+      &quot;notes&quot;: &quot;Fires the instant a visitor submits the quote-request form on example.com. Webhook URL is registered with the site&#x27;s form tool.&quot;
     },
     {
       &quot;parameters&quot;: {
@@ -499,7 +628,7 @@
         &quot;resource&quot;: &quot;message&quot;,
         &quot;operation&quot;: &quot;send&quot;,
         &quot;toList&quot;: [{ &quot;phone&quot;: &quot;={{ $json.body.phone }}&quot; }],
-        &quot;message&quot;: &quot;Hi {{ $json.body.name }}, thanks for reaching out to Sterling Home Plumbing! We received your request and will call you back shortly.&quot;
+        &quot;message&quot;: &quot;Hi {{ $json.body.name }}, thanks for reaching out to Local Plumbing Service! We received your request and will call you back shortly.&quot;
       },
       &quot;id&quot;: &quot;1a2b3c4d-0006-4a1a-9b1a-000000000006&quot;,
       &quot;name&quot;: &quot;Auto-Reply SMS to Customer&quot;,
@@ -604,10 +733,10 @@
         </div>
       </div>
 
-      <div class="proof-frame reveal">
+      <div class="proof-frame reveal stack-md">
         <div class="proof-titlebar">
           <div>
-            <div class="biz">Coastal Outfitters: AI Support Ticket Triage</div>
+            <div class="biz">Retail Company: AI Support Ticket Triage</div>
             <div class="biz-type">E-commerce, Outdoor Apparel</div>
           </div>
           <div class="file">n8n_ai_support_triage.json</div>
@@ -655,12 +784,12 @@
               <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="proof-json-panel" id="triage-json"><pre><code>{
-  &quot;name&quot;: &quot;Coastal Outfitters: AI Support Ticket Triage&quot;,
+  &quot;name&quot;: &quot;Retail Company: AI Support Ticket Triage&quot;,
   &quot;nodes&quot;: [
     {
       &quot;parameters&quot;: {
         &quot;pollTimes&quot;: { &quot;item&quot;: [{ &quot;mode&quot;: &quot;everyMinute&quot; }] },
-        &quot;mailbox&quot;: &quot;support@coastaloutfitters.com&quot;,
+        &quot;mailbox&quot;: &quot;support@example.com&quot;,
         &quot;postProcessAction&quot;: &quot;read&quot;,
         &quot;options&quot;: {}
       },
@@ -865,12 +994,497 @@
           </a>
         </div>
       </div>
+
+      <div class="proof-frame reveal">
+        <div class="proof-titlebar">
+          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+            <span class="flagship-tag">Flagship example</span>
+            <div>
+              <div class="biz">Photography Studio: Booking to Deposit to Confirmation Chain</div>
+              <div class="biz-type">Photography Studio, Multi-week Chain</div>
+            </div>
+          </div>
+          <div class="file">n8n_booking_deposit_confirmation_chain.json</div>
+        </div>
+        <div class="proof-body">
+          <div class="proof-flow-canvas">
+            <div class="proof-flow-stack">
+              <div class="proof-flow-row">
+                <div class="proof-node trigger">
+                  <div class="proof-node-kind">Trigger, Webhook</div>
+                  <div class="proof-node-name">New booking submitted</div>
+                </div>
+                <div class="proof-arrow"></div>
+                <div class="proof-node">
+                  <div class="proof-node-kind">Action</div>
+                  <div class="proof-node-name">Create/update contact (CRM)</div>
+                </div>
+                <div class="proof-arrow"></div>
+                <div class="proof-node">
+                  <div class="proof-node-kind">Action</div>
+                  <div class="proof-node-name">Create deal, deposit pending</div>
+                </div>
+                <div class="proof-arrow"></div>
+                <div class="proof-node">
+                  <div class="proof-node-kind">Action</div>
+                  <div class="proof-node-name">Create 30% deposit invoice</div>
+                </div>
+                <div class="proof-arrow"></div>
+                <div class="proof-node">
+                  <div class="proof-node-kind">Action, Wait 5 days</div>
+                  <div class="proof-node-name">Send invoice email, then check status</div>
+                </div>
+                <div class="proof-arrow"></div>
+                <div class="proof-node condition">
+                  <div class="proof-node-kind">Router</div>
+                  <div class="proof-node-name">IF invoice paid</div>
+                </div>
+              </div>
+              <div class="proof-lane">
+                <div class="proof-lane-row">
+                  <span class="proof-branch-tag yes">PAID</span>
+                  <div class="proof-arrow" style="width:14px"></div>
+                  <div class="proof-node">
+                    <div class="proof-node-kind">Action</div>
+                    <div class="proof-node-name">Confirm session on calendar</div>
+                  </div>
+                  <div class="proof-arrow"></div>
+                  <div class="proof-node">
+                    <div class="proof-node-kind">Action</div>
+                    <div class="proof-node-name">Send confirmation email</div>
+                  </div>
+                  <div class="proof-arrow"></div>
+                  <div class="proof-node">
+                    <div class="proof-node-kind">Action</div>
+                    <div class="proof-node-name">Notify studio team (Slack)</div>
+                  </div>
+                </div>
+                <div class="proof-lane-row">
+                  <span class="proof-branch-tag no">UNPAID</span>
+                  <div class="proof-arrow" style="width:14px"></div>
+                  <div class="proof-node">
+                    <div class="proof-node-kind">Action, Wait 48h</div>
+                    <div class="proof-node-name">Send reminder, then re-check status</div>
+                  </div>
+                  <div class="proof-arrow"></div>
+                  <div class="proof-node condition">
+                    <div class="proof-node-kind">Router</div>
+                    <div class="proof-node-name">IF still unpaid</div>
+                  </div>
+                  <div class="proof-arrow" style="width:14px"></div>
+                  <div class="proof-node">
+                    <div class="proof-node-kind">Action</div>
+                    <div class="proof-node-name">Escalate to owner + flag at-risk in CRM</div>
+                  </div>
+                  <span class="proof-rejoin-note">If paid after the reminder, rejoins the "Paid" path above instead of dead-ending.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:20px;">
+            <button class="proof-json-toggle" aria-expanded="false" aria-controls="booking-json">
+              <span class="label">View raw workflow JSON</span>
+              <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="proof-json-panel" id="booking-json"><pre><code>{
+  &quot;name&quot;: &quot;Photography Studio: Booking to Deposit to Confirmation Chain&quot;,
+  &quot;nodes&quot;: [
+    {
+      &quot;parameters&quot;: {
+        &quot;httpMethod&quot;: &quot;POST&quot;,
+        &quot;path&quot;: &quot;studio-new-booking&quot;,
+        &quot;responseMode&quot;: &quot;onReceived&quot;,
+        &quot;options&quot;: {}
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0001-4c3c-9d3c-000000000001&quot;,
+      &quot;name&quot;: &quot;New Booking Submitted&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.webhook&quot;,
+      &quot;typeVersion&quot;: 2,
+      &quot;position&quot;: [-60, 400],
+      &quot;notes&quot;: &quot;Fires the instant a client submits the booking form on example.com (session type, date, package price).&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;resource&quot;: &quot;contact&quot;,
+        &quot;operation&quot;: &quot;upsert&quot;,
+        &quot;email&quot;: &quot;={{ $json.body.email }}&quot;,
+        &quot;additionalFields&quot;: {
+          &quot;firstName&quot;: &quot;={{ $json.body.first_name }}&quot;,
+          &quot;lastName&quot;: &quot;={{ $json.body.last_name }}&quot;,
+          &quot;phone&quot;: &quot;={{ $json.body.phone }}&quot;
+        }
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0002-4c3c-9d3c-000000000002&quot;,
+      &quot;name&quot;: &quot;Create/Update Contact (CRM)&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.hubspot&quot;,
+      &quot;typeVersion&quot;: 2,
+      &quot;position&quot;: [200, 400],
+      &quot;notes&quot;: &quot;Creates the client record if new, or updates it if they have booked before. Every booking is tracked as a deal in the CRM pipeline.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;resource&quot;: &quot;deal&quot;,
+        &quot;operation&quot;: &quot;create&quot;,
+        &quot;dealName&quot;: &quot;={{ $json.body.first_name }} {{ $json.body.last_name }}, {{ $json.body.session_type }}&quot;,
+        &quot;additionalFields&quot;: {
+          &quot;amount&quot;: &quot;={{ $json.body.package_price }}&quot;,
+          &quot;dealStage&quot;: &quot;booking_deposit_pending&quot;,
+          &quot;closeDate&quot;: &quot;={{ $json.body.session_date }}&quot;
+        }
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0003-4c3c-9d3c-000000000003&quot;,
+      &quot;name&quot;: &quot;Create Deal (Deposit Pending)&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.hubspot&quot;,
+      &quot;typeVersion&quot;: 2,
+      &quot;position&quot;: [440, 400],
+      &quot;notes&quot;: &quot;Deal stage doubles as the studio&#x27;s at-a-glance status tracker across every open booking.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;resource&quot;: &quot;invoice&quot;,
+        &quot;operation&quot;: &quot;create&quot;,
+        &quot;customer&quot;: &quot;={{ $json.body.email }}&quot;,
+        &quot;amount&quot;: &quot;={{ Math.round($json.body.package_price * 0.3 * 100) / 100 }}&quot;,
+        &quot;description&quot;: &quot;=30% deposit, {{ $json.body.session_type }} session on {{ $json.body.session_date }}&quot;,
+        &quot;dueDate&quot;: &quot;={{ $now.plus({days: 5}).toISODate() }}&quot;
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0004-4c3c-9d3c-000000000004&quot;,
+      &quot;name&quot;: &quot;Create 30% Deposit Invoice&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.stripe&quot;,
+      &quot;typeVersion&quot;: 1,
+      &quot;position&quot;: [680, 400],
+      &quot;notes&quot;: &quot;Deposit is always 30% of the package price, calculated at send time rather than hardcoded per package.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;sendTo&quot;: &quot;={{ $json.body.email }}&quot;,
+        &quot;subject&quot;: &quot;=Your studio booking, deposit invoice enclosed&quot;,
+        &quot;message&quot;: &quot;=Hi {{ $json.body.first_name }}, thanks for booking your {{ $json.body.session_type }} session! To lock in {{ $json.body.session_date }}, please pay the attached deposit invoice within 5 days. We&#x27;ll follow up automatically as the date approaches.&quot;
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0005-4c3c-9d3c-000000000005&quot;,
+      &quot;name&quot;: &quot;Send Invoice Email&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.gmail&quot;,
+      &quot;typeVersion&quot;: 2.1,
+      &quot;position&quot;: [920, 400],
+      &quot;notes&quot;: &quot;Confirms receipt of the booking immediately, before any payment status is known.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;amount&quot;: 5,
+        &quot;unit&quot;: &quot;days&quot;
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0006-4c3c-9d3c-000000000006&quot;,
+      &quot;name&quot;: &quot;Wait Until Invoice Due&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.wait&quot;,
+      &quot;typeVersion&quot;: 1.1,
+      &quot;position&quot;: [1160, 400],
+      &quot;notes&quot;: &quot;Pauses the workflow execution itself, no separate scheduled workflow needed to check back in.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;resource&quot;: &quot;invoice&quot;,
+        &quot;operation&quot;: &quot;get&quot;,
+        &quot;invoiceId&quot;: &quot;={{ $(&#x27;Create 30% Deposit Invoice&#x27;).item.json.id }}&quot;
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0007-4c3c-9d3c-000000000007&quot;,
+      &quot;name&quot;: &quot;Check Invoice Payment Status&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.stripe&quot;,
+      &quot;typeVersion&quot;: 1,
+      &quot;position&quot;: [1400, 400],
+      &quot;notes&quot;: &quot;Reads the live invoice status directly from Stripe rather than trusting a local flag.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;conditions&quot;: {
+          &quot;options&quot;: { &quot;caseSensitive&quot;: true, &quot;leftValue&quot;: &quot;&quot;, &quot;typeValidation&quot;: &quot;loose&quot; },
+          &quot;conditions&quot;: [
+            {
+              &quot;id&quot;: &quot;paid-1&quot;,
+              &quot;leftValue&quot;: &quot;={{ $json.status }}&quot;,
+              &quot;rightValue&quot;: &quot;paid&quot;,
+              &quot;operator&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;operation&quot;: &quot;equals&quot; }
+            }
+          ],
+          &quot;combinator&quot;: &quot;and&quot;
+        }
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0008-4c3c-9d3c-000000000008&quot;,
+      &quot;name&quot;: &quot;IF Invoice Paid&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.if&quot;,
+      &quot;typeVersion&quot;: 2,
+      &quot;position&quot;: [1640, 400],
+      &quot;notes&quot;: &quot;Splits the workflow into a confirmed path and a reminder/escalation path.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;calendar&quot;: &quot;={{ &#x27;studio-bookings@example.com&#x27; }}&quot;,
+        &quot;start&quot;: &quot;={{ $(&#x27;New Booking Submitted&#x27;).item.json.body.session_date }}&quot;,
+        &quot;summary&quot;: &quot;=Session, {{ $(&#x27;New Booking Submitted&#x27;).item.json.body.first_name }} {{ $(&#x27;New Booking Submitted&#x27;).item.json.body.last_name }}&quot;
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0009-4c3c-9d3c-000000000009&quot;,
+      &quot;name&quot;: &quot;Confirm Session on Calendar&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.googleCalendar&quot;,
+      &quot;typeVersion&quot;: 1.3,
+      &quot;position&quot;: [1900, 220],
+      &quot;notes&quot;: &quot;Only ever added to the studio calendar once the deposit clears, so the calendar never shows unconfirmed holds as real bookings.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;sendTo&quot;: &quot;={{ $(&#x27;New Booking Submitted&#x27;).item.json.body.email }}&quot;,
+        &quot;subject&quot;: &quot;You&#x27;re confirmed! Session details enclosed&quot;,
+        &quot;message&quot;: &quot;Deposit received, your session is officially on the calendar. We&#x27;ll send a prep guide 48 hours before your shoot.&quot;
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0010-4c3c-9d3c-00000000000a&quot;,
+      &quot;name&quot;: &quot;Send Confirmation Email&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.gmail&quot;,
+      &quot;typeVersion&quot;: 2.1,
+      &quot;position&quot;: [2140, 220],
+      &quot;notes&quot;: &quot;Distinct from the initial booking email, confirms the deposit specifically.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;select&quot;: &quot;channel&quot;,
+        &quot;channelId&quot;: { &quot;__rl&quot;: true, &quot;value&quot;: &quot;#studio-bookings&quot;, &quot;mode&quot;: &quot;name&quot; },
+        &quot;text&quot;: &quot;=Session confirmed: {{ $(&#x27;New Booking Submitted&#x27;).item.json.body.first_name }} {{ $(&#x27;New Booking Submitted&#x27;).item.json.body.last_name }}, {{ $(&#x27;New Booking Submitted&#x27;).item.json.body.session_type }} on {{ $(&#x27;New Booking Submitted&#x27;).item.json.body.session_date }}.&quot;,
+        &quot;otherOptions&quot;: {}
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0011-4c3c-9d3c-00000000000b&quot;,
+      &quot;name&quot;: &quot;Notify Studio Team&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.slack&quot;,
+      &quot;typeVersion&quot;: 2.2,
+      &quot;position&quot;: [2380, 220],
+      &quot;notes&quot;: &quot;Keeps the whole team aware of new confirmed sessions without anyone needing to check the CRM manually.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;sendTo&quot;: &quot;={{ $(&#x27;New Booking Submitted&#x27;).item.json.body.email }}&quot;,
+        &quot;subject&quot;: &quot;Friendly reminder: deposit still pending&quot;,
+        &quot;message&quot;: &quot;=Hi {{ $(&#x27;New Booking Submitted&#x27;).item.json.body.first_name }}, just a reminder that your deposit invoice for {{ $(&#x27;New Booking Submitted&#x27;).item.json.body.session_date }} is still outstanding. Let us know if you&#x27;d like a different payment method or have any questions.&quot;
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0012-4c3c-9d3c-00000000000c&quot;,
+      &quot;name&quot;: &quot;Send Payment Reminder Email&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.gmail&quot;,
+      &quot;typeVersion&quot;: 2.1,
+      &quot;position&quot;: [1900, 580],
+      &quot;notes&quot;: &quot;First reminder, kept friendly and low-pressure rather than an automatic penalty notice.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;amount&quot;: 48,
+        &quot;unit&quot;: &quot;hours&quot;
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0013-4c3c-9d3c-00000000000d&quot;,
+      &quot;name&quot;: &quot;Wait 48 Hours&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.wait&quot;,
+      &quot;typeVersion&quot;: 1.1,
+      &quot;position&quot;: [2140, 580],
+      &quot;notes&quot;: &quot;Gives the reminder email time to land before checking payment status again.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;resource&quot;: &quot;invoice&quot;,
+        &quot;operation&quot;: &quot;get&quot;,
+        &quot;invoiceId&quot;: &quot;={{ $(&#x27;Create 30% Deposit Invoice&#x27;).item.json.id }}&quot;
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0014-4c3c-9d3c-00000000000e&quot;,
+      &quot;name&quot;: &quot;Re-check Payment Status&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.stripe&quot;,
+      &quot;typeVersion&quot;: 1,
+      &quot;position&quot;: [2380, 580],
+      &quot;notes&quot;: &quot;Second live status check rather than assuming the reminder worked.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;conditions&quot;: {
+          &quot;options&quot;: { &quot;caseSensitive&quot;: true, &quot;leftValue&quot;: &quot;&quot;, &quot;typeValidation&quot;: &quot;loose&quot; },
+          &quot;conditions&quot;: [
+            {
+              &quot;id&quot;: &quot;still-unpaid-1&quot;,
+              &quot;leftValue&quot;: &quot;={{ $json.status }}&quot;,
+              &quot;rightValue&quot;: &quot;paid&quot;,
+              &quot;operator&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;operation&quot;: &quot;notEquals&quot; }
+            }
+          ],
+          &quot;combinator&quot;: &quot;and&quot;
+        }
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0015-4c3c-9d3c-00000000000f&quot;,
+      &quot;name&quot;: &quot;IF Still Unpaid&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.if&quot;,
+      &quot;typeVersion&quot;: 2,
+      &quot;position&quot;: [2620, 580],
+      &quot;notes&quot;: &quot;Second branch point. A late payment here still reconnects to the confirmed path rather than staying stuck.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;select&quot;: &quot;channel&quot;,
+        &quot;channelId&quot;: { &quot;__rl&quot;: true, &quot;value&quot;: &quot;#studio-bookings-urgent&quot;, &quot;mode&quot;: &quot;name&quot; },
+        &quot;text&quot;: &quot;=Deposit still unpaid after reminder: {{ $(&#x27;New Booking Submitted&#x27;).item.json.body.first_name }} {{ $(&#x27;New Booking Submitted&#x27;).item.json.body.last_name }}, session date {{ $(&#x27;New Booking Submitted&#x27;).item.json.body.session_date }}. Recommend a personal follow-up.&quot;,
+        &quot;otherOptions&quot;: {}
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0016-4c3c-9d3c-000000000010&quot;,
+      &quot;name&quot;: &quot;Escalate to Owner&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.slack&quot;,
+      &quot;typeVersion&quot;: 2.2,
+      &quot;position&quot;: [2860, 460],
+      &quot;notes&quot;: &quot;Escalations go to a separate, higher-attention channel than routine booking confirmations.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;resource&quot;: &quot;deal&quot;,
+        &quot;operation&quot;: &quot;update&quot;,
+        &quot;dealId&quot;: &quot;={{ $(&#x27;Create Deal (Deposit Pending)&#x27;).item.json.id }}&quot;,
+        &quot;additionalFields&quot;: {
+          &quot;dealStage&quot;: &quot;at_risk_unpaid_deposit&quot;
+        }
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0017-4c3c-9d3c-000000000011&quot;,
+      &quot;name&quot;: &quot;Flag Deal At-Risk in CRM&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.hubspot&quot;,
+      &quot;typeVersion&quot;: 2,
+      &quot;position&quot;: [2860, 640],
+      &quot;notes&quot;: &quot;So the studio&#x27;s pipeline view reflects reality without anyone updating it by hand.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;conditions&quot;: {
+          &quot;options&quot;: { &quot;caseSensitive&quot;: true, &quot;leftValue&quot;: &quot;&quot;, &quot;typeValidation&quot;: &quot;loose&quot; },
+          &quot;conditions&quot;: [
+            {
+              &quot;id&quot;: &quot;missing-1&quot;,
+              &quot;leftValue&quot;: &quot;={{ $json.body.session_date }}&quot;,
+              &quot;rightValue&quot;: &quot;&quot;,
+              &quot;operator&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;operation&quot;: &quot;empty&quot; }
+            },
+            {
+              &quot;id&quot;: &quot;missing-2&quot;,
+              &quot;leftValue&quot;: &quot;={{ $json.body.email }}&quot;,
+              &quot;rightValue&quot;: &quot;&quot;,
+              &quot;operator&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;operation&quot;: &quot;empty&quot; }
+            }
+          ],
+          &quot;combinator&quot;: &quot;or&quot;
+        }
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0018-4c3c-9d3c-000000000012&quot;,
+      &quot;name&quot;: &quot;Missing Required Booking Field?&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.if&quot;,
+      &quot;typeVersion&quot;: 2,
+      &quot;position&quot;: [200, 620],
+      &quot;notes&quot;: &quot;Error-handling branch, catches a malformed booking submission before it creates a broken CRM record or invoice.&quot;
+    },
+    {
+      &quot;parameters&quot;: {
+        &quot;select&quot;: &quot;channel&quot;,
+        &quot;channelId&quot;: { &quot;__rl&quot;: true, &quot;value&quot;: &quot;#automation-alerts&quot;, &quot;mode&quot;: &quot;name&quot; },
+        &quot;text&quot;: &quot;=Booking form submitted with a missing session date or email. Raw payload: {{ JSON.stringify($json.body) }}. Please follow up manually.&quot;,
+        &quot;otherOptions&quot;: {}
+      },
+      &quot;id&quot;: &quot;3c4d5e6f-0019-4c3c-9d3c-000000000013&quot;,
+      &quot;name&quot;: &quot;Notify - Malformed Booking&quot;,
+      &quot;type&quot;: &quot;n8n-nodes-base.slack&quot;,
+      &quot;typeVersion&quot;: 2.2,
+      &quot;position&quot;: [440, 620],
+      &quot;notes&quot;: &quot;Fallback so a bad submission is surfaced to a human instead of silently creating a broken deal or invoice.&quot;
+    }
+  ],
+  &quot;connections&quot;: {
+    &quot;New Booking Submitted&quot;: {
+      &quot;main&quot;: [
+        [
+          { &quot;node&quot;: &quot;Create/Update Contact (CRM)&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 },
+          { &quot;node&quot;: &quot;Missing Required Booking Field?&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }
+        ]
+      ]
+    },
+    &quot;Create/Update Contact (CRM)&quot;: {
+      &quot;main&quot;: [[{ &quot;node&quot;: &quot;Create Deal (Deposit Pending)&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }]]
+    },
+    &quot;Create Deal (Deposit Pending)&quot;: {
+      &quot;main&quot;: [[{ &quot;node&quot;: &quot;Create 30% Deposit Invoice&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }]]
+    },
+    &quot;Create 30% Deposit Invoice&quot;: {
+      &quot;main&quot;: [[{ &quot;node&quot;: &quot;Send Invoice Email&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }]]
+    },
+    &quot;Send Invoice Email&quot;: {
+      &quot;main&quot;: [[{ &quot;node&quot;: &quot;Wait Until Invoice Due&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }]]
+    },
+    &quot;Wait Until Invoice Due&quot;: {
+      &quot;main&quot;: [[{ &quot;node&quot;: &quot;Check Invoice Payment Status&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }]]
+    },
+    &quot;Check Invoice Payment Status&quot;: {
+      &quot;main&quot;: [[{ &quot;node&quot;: &quot;IF Invoice Paid&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }]]
+    },
+    &quot;IF Invoice Paid&quot;: {
+      &quot;main&quot;: [
+        [{ &quot;node&quot;: &quot;Confirm Session on Calendar&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }],
+        [{ &quot;node&quot;: &quot;Send Payment Reminder Email&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }]
+      ]
+    },
+    &quot;Confirm Session on Calendar&quot;: {
+      &quot;main&quot;: [[{ &quot;node&quot;: &quot;Send Confirmation Email&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }]]
+    },
+    &quot;Send Confirmation Email&quot;: {
+      &quot;main&quot;: [[{ &quot;node&quot;: &quot;Notify Studio Team&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }]]
+    },
+    &quot;Send Payment Reminder Email&quot;: {
+      &quot;main&quot;: [[{ &quot;node&quot;: &quot;Wait 48 Hours&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }]]
+    },
+    &quot;Wait 48 Hours&quot;: {
+      &quot;main&quot;: [[{ &quot;node&quot;: &quot;Re-check Payment Status&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }]]
+    },
+    &quot;Re-check Payment Status&quot;: {
+      &quot;main&quot;: [[{ &quot;node&quot;: &quot;IF Still Unpaid&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }]]
+    },
+    &quot;IF Still Unpaid&quot;: {
+      &quot;main&quot;: [
+        [
+          { &quot;node&quot;: &quot;Escalate to Owner&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 },
+          { &quot;node&quot;: &quot;Flag Deal At-Risk in CRM&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }
+        ],
+        [{ &quot;node&quot;: &quot;Confirm Session on Calendar&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }]
+      ]
+    },
+    &quot;Missing Required Booking Field?&quot;: {
+      &quot;main&quot;: [
+        [{ &quot;node&quot;: &quot;Notify - Malformed Booking&quot;, &quot;type&quot;: &quot;main&quot;, &quot;index&quot;: 0 }],
+        []
+      ]
+    }
+  },
+  &quot;active&quot;: true,
+  &quot;settings&quot;: {
+    &quot;executionOrder&quot;: &quot;v1&quot;,
+    &quot;saveManualExecutions&quot;: true,
+    &quot;callerPolicy&quot;: &quot;workflowsFromSameOwner&quot;
+  },
+  &quot;meta&quot;: {
+    &quot;templateCredsSetupCompleted&quot;: true,
+    &quot;portfolioSample&quot;: true,
+    &quot;instructions&quot;: &quot;Sample workflow for portfolio purposes. Replace the HubSpot, Stripe, Gmail, Google Calendar, and Slack credentials with the client&#x27;s own before deploying live. The late-payment branch reconnects into the same confirmed-session path rather than dead-ending, so a client who pays after the reminder still gets booked normally.&quot;
+  }
+}
+</code></pre></div>
+          </div>
+        </div>
+        <div class="proof-flow-legend">
+          <span class="item"><span class="dot" style="background:var(--periwinkle)"></span>Reads live payment status from Stripe rather than trusting a local flag</span>
+          <span class="item"><span class="dot" style="background:var(--muted-2)"></span>A late payment still reconnects to the confirmed path, it never dead-ends</span>
+        </div>
+        <div class="proof-footer-row">
+          <span class="note">Importable n8n workflow export</span>
+          <a href="assets/samples/n8n_booking_deposit_confirmation_chain.json" class="btn btn-ghost btn-sm" download>
+            Download the .json
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0l3-3m-3 3L5 7M3 13h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="section-tight">
     <div class="container">
-      <p class="muted" style="text-align:center; font-size:.85rem; max-width:70ch; margin:0 auto 36px;">All businesses, reviews, and data shown above are illustrative sample builds created to demonstrate delivery quality, and are not real clients.</p>
+      <p class="muted" style="text-align:center; font-size:.85rem; max-width:70ch; margin:0 auto 36px;">All businesses shown above are generic placeholders built to demonstrate delivery quality, not real clients.</p>
       <div class="cta-band reveal">
         <h2>Want to see this on your own business?</h2>
         <p style="max-width:46ch; margin:0 auto 26px;">Get in touch and we'll put together something built around what you actually do.</p>
@@ -920,5 +1534,246 @@
 </footer>
 
 <script src="js/script.js"></script>
+<!-- Briven Studio — AI Chat Widget — paste this whole block into your site's Custom Code / Embed section -->
+<div id="ccw-root-briven-studio"></div>
+<script>
+(function(){
+  var CONFIG = {
+    businessName: `Briven Studio`,
+    workerUrl: `https://chatbot-workersai-relay.cookandburnfat.workers.dev/`,
+    systemPromptEncoded: "WW91IGFyZSBhIGZyaWVuZGx5LCBjb25jaXNlIGN1c3RvbWVyIHN1cHBvcnQgYXNzaXN0YW50IGZvciBCcml2ZW4gU3R1ZGlvLCBhIEFJIFNlcnZpY2VzIEZvciBTbWFsbCBCdXNpbmVzcy4KT25seSBhbnN3ZXIgdXNpbmcgdGhlIGluZm9ybWF0aW9uIHByb3ZpZGVkIGJlbG93LiBJZiBzb21ldGhpbmcgaXNuJ3QgY292ZXJlZCBoZXJlLCBzYXkgeW91J3JlIG5vdCBzdXJlIGFuZCBzdWdnZXN0IHRoZXkgY29udGFjdCB0aGUgYnVzaW5lc3MgZGlyZWN0bHkgYXQgbm8gcGhvbmUgbnVtYmVyLCBjb250YWN0IGJ5IG1haWwgb3IgY2hhdGJvdCBvciB2aXNpdCBodHRwczovL2JyaXZlbnN0dWRpby5jb20uCktlZXAgYW5zd2VycyBzaG9ydCBhbmQgbmF0dXJhbCwgMiB0byA0IHNlbnRlbmNlcy4gTmV2ZXIgbWFrZSB1cCBwcmljZXMsIGhvdXJzLCBvciBwb2xpY2llcyB0aGF0IGFyZW4ndCBsaXN0ZWQgYmVsb3cuCi0tLSBCVVNJTkVTUyBJTkZPIC0tLQpMb2NhdGlvbiAvIHNlcnZpY2UgYXJlYTogU2VydmluZyBXb3JsZHdpZGUgLSBidXQgYmFzZWQgaW4gdGhlIEVVCkhvdXJzOgpXZSBvcGVyYXRlIDI0LzcgYnV0IHBlcm1pdCAxIGJ1c2luZXNzIGRheSBmb3IgZ2V0dGluZyBiYWNrIHRvIHlvdSB3aXRoIGEgcXVvdGUgb3IgYSBmcmVlIGNoYXRib3QgZGVtbyBidWlsdCBmb3IgeW91ciB3ZWJzaXRlLgpTZXJ2aWNlcyAmIFByaWNpbmc6CkFJIENoYXRib3QgLSAkMzk3IG9uZSB0aW1lIGZlZSBhbmQgJDI5IHBlciBtb250aCwgZmlyc3QgbW9udGggZnJlZSAtIFN0YW5kYXJkIFZlcnNpb246IEZ1bGx5IGNhcGFibGUgQUkgY2hhdGJvdCBidWlsdCBvbiBhIHN0cm9uZyBtb2RlbCwgZnVsbHkgdHVuZWQgdG8geW91ciBidXNpbmVzcy4gSW5zdGFsbGVkIG9uIHlvdXIgcmVhbCBzaXRlLCBtYXRjaGVkIHRvIHlvdXIgYnJhbmRpbmcuIEl0IGNhcHR1cmVzIGxlYWRzIHdobyBnaXZlIHRoZWlyIGVtYWlsL3Bob25lIG51bWJlciBhbmQgYXJlIGxvb2tpbmcgZm9yIGEgZm9sbG93LXVwLCB3aXRoIGNsZWFyIGd1YXJkcmFpbHMgYnVpbHQgdG8gbmV2ZXIgcHJvbWlzZSBzb21ldGhpbmcgaXQgY2FuJ3QgZG8uIFVwIHRvIDEwMDAgY29udmVyc2F0aW9ucyBwZXIgbW9udGggaW5jbHVkZWQuIENoYW5nZXMgYW5kIHR3ZWFrcyBhcmUgZnJlZSBhbmQgdW5saW1pdGVkKGluIGdvb2QgZmFpdGgpIGFzIGxvbmcgYXMgdGhlIHN1YnNjcmlwdGlvbiByZW1haW5zIGFjdGl2ZS4gCgpBSSBDaGF0Ym90IC0gJDQ0NyBvbmUgdGltZSBmZWUgYW5kICQzOSBwZXIgbW9udGgsIGZpcnN0IG1vbnRoIGZyZWUgLSBQcmVtaXVtIFZlcnNpb246IEZ1bGx5IGNhcGFibGUgQUkgY2hhdGJvdCBidWlsdCBvbiBhIHN0cm9uZyBtb2RlbCwgZnVsbHkgdHVuZWQgdG8geW91ciBidXNpbmVzcy4gSW5zdGFsbGVkIG9uIHlvdXIgcmVhbCBzaXRlLCBtYXRjaGVkIHRvIHlvdXIgYnJhbmRpbmcuIEl0IGNhcHR1cmVzIGxlYWRzIHdobyBnaXZlIHRoZWlyIGVtYWlsL3Bob25lIG51bWJlciBhbmQgYXJlIGxvb2tpbmcgZm9yIGEgZm9sbG93LXVwLCB3aXRoIGNsZWFyIGd1YXJkcmFpbHMgYnVpbHQgdG8gbmV2ZXIgcHJvbWlzZSBzb21ldGhpbmcgaXQgY2FuJ3QgZG8uIEl0IGFsc28gc2F2ZXMgZnVsbCBjdXN0b21lciBjb252ZXJzYXRpb25zIGluIGEgc2VwYXJhdGUgc3ByZWFkc2hlZXQoY3VzdG9tZXJzIGFyZSBpbmZvcm1lZCBvZiB0aGlzIGFuZCBnaXZlIHRoZWlyIGNvbnNlbnQpLiBIaWdoZXIgbW9udGhseSBjb252ZXJzaW9uIGNhcGFjaXR5ICB3aXRoIHVwIHRvIDI1MDAgY29udmVyc2F0aW9ucyBwZXIgbW9udGggaW5jbHVkZWQsIGFuZCBhbHNvIHByaW9yaXR5IHN1cHBvcnQgZm9yIGNoYW5nZXMgYW5kIHR3ZWFrcy4gQ2hhbmdlcyBhbmQgdHdlYWtzIGFyZSBmcmVlIGFuZCB1bmxpbWl0ZWQoaW4gZ29vZCBmYWl0aCkgYXMgbG9uZyBhcyB0aGUgc3Vic2NyaXB0aW9uIHJlbWFpbnMgYWN0aXZlLiAKClJlcHV0YXRpb24gTWFuYWdlbWVudDogR29vZ2xlIFJldmlldyBSZXNwb25zZXMgLSBTdGFydGVyIC0gJDc1L21vbnRoIC0gR29vZ2xlIHJldmlld3Mgb25seSwgRXZlcnkgcmV2aWV3IHJlc3BvbmRlZCB0byB3aXRoaW4gNDggaG91cnMsIFNlbnNpdGl2ZSByZXZpZXdzIGZsYWdnZWQsIG5ldmVyIGF1dG8tYW5zd2VyZWQuCgpSZXB1dGF0aW9uIE1hbmFnZW1lbnQ6IEdvb2dsZSBSZXZpZXcgUmVzcG9uc2VzIC0gU3RhbmRhcmQgLSAkOTUvbW9udGggLSBGYXN0ZXIgdHVybmFyb3VuZCBvbiBuZXcgcmV2aWV3cywgTW9udGhseSBzdW1tYXJ5IHJlcG9ydCBvZiByYXRpbmdzIGFuZCByZXNwb25zZSBhY3Rpdml0eQoKUmVwdXRhdGlvbiBNYW5hZ2VtZW50OiBHb29nbGUgUmV2aWV3IFJlc3BvbnNlcyAtIFByZW1pdW0gLSAkMTQ1L21vbnRoIC0gRXZlcnl0aGluZyBpbiBTdGFuZGFyZCwgR29vZ2xlIHBsdXMgWWVscCBhbmQvb3IgRmFjZWJvb2sgcmV2aWV3cywgVGVtcGxhdGVzIHRvIGVuY291cmFnZSBtb3JlIGhhcHB5IGN1c3RvbWVycyB0byBsZWF2ZSByZXZpZXdzCgpCdXNpbmVzcyBQcm9jZXNzIEF1dG9tYXRpb24gLSBCYXNpYyAtICQ5NSAtIEEgc2luZ2xlIHRyaWdnZXIgY29ubmVjdGVkIHRvIG9uZSBvciB0d28gYWN0aW9ucywgRXhhbXBsZTogbmV3IGZvcm0gc3VibWlzc2lvbiDihpIgQ1JNIGVudHJ5IOKGkiBTbGFjayBhbGVydCwgQnVpbHQgaW5zaWRlIHlvdXIgb3duIGFjY291bnQgb3IgaG9zdGVkIG9uIG44bi4gUGxlYXNlIGNvbnRhY3QgYmVmb3JlIG9yZGVyaW5nIHRvIG1ha2Ugc3VyZSB0aGUgcGFja2FnZSBpcyByaWdodCBmb3IgeW91ciBuZWVkcy4KCkJ1c2luZXNzIFByb2Nlc3MgQXV0b21hdGlvbiAtIFN0YW5kYXJkIC0gJDE0NSAtIEV2ZXJ5dGhpbmcgaW4gQmFzaWMsIENvbmRpdGlvbmFsIHJvdXRpbmcgKGlmL3RoZW4gYnJhbmNoZXMpLCBCYXNpYyBlcnJvciBub3RpZmljYXRpb24sIHBsdXMgcGxhaW4tbGFuZ3VhZ2UgZG9jdW1lbnRhdGlvbi4gUGxlYXNlIGNvbnRhY3QgYmVmb3JlIG9yZGVyaW5nIHRvIG1ha2Ugc3VyZSB0aGUgcGFja2FnZSBpcyByaWdodCBmb3IgeW91ciBuZWVkcy4KCkJ1c2luZXNzIFByb2Nlc3MgQXV0b21hdGlvbiAtIFByZW1pdW0gLSAkMjQ1IC0gRXZlcnl0aGluZyBpbiBTdGFuZGFyZCwgQW4gQUktZW5oYW5jZWQgc3RlcDogY2xhc3NpZnlpbmcsIHN1bW1hcml6aW5nLCBvciBkcmFmdGluZyBhIGZpcnN0LXBhc3MgcmVwbHksIEZ1bGwgZG9jdW1lbnRhdGlvbiBwbHVzIGEgcmVjb3JkZWQgd2Fsa3Rocm91Z2guIFBsZWFzZSBjb250YWN0IGJlZm9yZSBvcmRlcmluZyB0byBtYWtlIHN1cmUgdGhlIHBhY2thZ2UgaXMgcmlnaHQgZm9yIHlvdXIgbmVlZHMuCgpTcHJlYWRzaGVldCBEYXNoYm9hcmRzIC0gQmFzaWMgLSAkMzUgLSBPbmUgdGltZSBjbGVhbiB1cCBvZiBhIFNwcmVhZHNoZWV0LiBDbGVhbiBhbmQgZGUtZHVwbGljYXRlIG9uZSBzcHJlYWRzaGVldCwgU3RhbmRhcmRpemVkIGZvcm1hdHRpbmcgYW5kIGRhdGEgdHlwZXMsIERlbGl2ZXJlZCBpbiBFeGNlbCBvciBHb29nbGUgU2hlZXRzLgoKU3ByZWFkc2hlZXQgRGFzaGJvYXJkcyAtIFN0YW5kYXJkIC0gJDk1IC0gRXZlcnl0aGluZyBpbiBCYXNpYyBpZiBuZWNlc3NhcnksIEEgcGl2b3QtdGFibGUgc3VtbWFyeSBhbnN3ZXJpbmcgYSBzcGVjaWZpYyBidXNpbmVzcyBxdWVzdGlvbiwgQSBzaW1wbGUgY2hhcnQtYmFzZWQgZGFzaGJvYXJkIHZpZXcuCgpTcHJlYWRzaGVldCBEYXNoYm9hcmRzIC0gUHJlbWl1bSAtICQxOTUgLSBFdmVyeXRoaW5nIGluIFN0YW5kYXJkLCBSZWN1cnJpbmctcmVhZHkgdGVtcGxhdGU6IHBhc3RlIG5ldyByYXcgZGF0YSBpbiwgZGFzaGJvYXJkIHVwZGF0ZXMgYXV0b21hdGljYWxseSB2aWEgZm9ybXVsYXMvUG93ZXIgUXVlcnkg4oCUIGRlbGl2ZXJlZCB3aXRoIGEgc2hvcnQgaG93LXRvLXVzZSBndWlkZS4KRnJlcXVlbnRseSBBc2tlZCBRdWVzdGlvbnM6CiMgRnJlcXVlbnRseSBBc2tlZCBRdWVzdGlvbnMKCiMjIEdlbmVyYWwKCiMjIyBEbyB5b3Ugb2ZmZXIgY3VzdG9tIHF1b3Rlcz8KClllcywgaWYgeW91IHdhbnQgYSBwZXJzb25hbGl6ZWQgcXVvdGUgZm9yIHlvdXIgc3BlY2lmaWMgbmVlZHMsIHVzZSB0aGUgY29udGFjdCBmb3JtIGF0IGh0dHBzOi8vYnJpdmVuc3R1ZGlvLmNvbS9hYm91dCNjb250YWN0IGFuZCB0ZWxsIHVzIGV4YWN0bHkgd2hhdCB5b3UgbmVlZC4gV2UnbGwgcmV0dXJuIHdpdGggYSBjdXN0b21pemVkIGFuZCBmYWlyIHF1b3RlLgoKIyMjIFdoYXQgZG9lcyBCcml2ZW4gQUkgU3R1ZGlvIGRvPwoKQnJpdmVuIEFJIFN0dWRpbyBidWlsZHMgcHJhY3RpY2FsIEFJIHRvb2xzIGFuZCBidXNpbmVzcyBhdXRvbWF0aW9ucyBkZXNpZ25lZCB0byBzYXZlIHlvdSB0aW1lLCBpbXByb3ZlIGN1c3RvbWVyIGNvbW11bmljYXRpb24sIGFuZCBoZWxwIHlvdXIgYnVzaW5lc3MgcnVuIG1vcmUgZWZmaWNpZW50bHkuCgpPdXIgc2VydmljZXMgY3VycmVudGx5IGluY2x1ZGUgQUkgY2hhdGJvdHMsIHJlcHV0YXRpb24gbWFuYWdlbWVudCwgYnVzaW5lc3MgcHJvY2VzcyBhdXRvbWF0aW9uLCBhbmQgc3ByZWFkc2hlZXQgZGFzaGJvYXJkcy4KCiMjIyBEbyBJIG5lZWQgYW55IHRlY2huaWNhbCBrbm93bGVkZ2U/CgpOby4gV2UgaGFuZGxlIHRoZSB0ZWNobmljYWwgc2V0dXAgZm9yIHlvdS4gRGVwZW5kaW5nIG9uIHRoZSBzZXJ2aWNlLCB3ZSBtYXkgbmVlZCBhY2Nlc3MgdG8gYW4gZXhpc3RpbmcgYWNjb3VudCBvciBzb21lIGluZm9ybWF0aW9uIGFib3V0IHlvdXIgYnVzaW5lc3MsIGJ1dCB5b3UgZG9uJ3QgbmVlZCB0byBrbm93IGhvdyB0byBjb2RlIG9yIGJ1aWxkIGF1dG9tYXRpb25zIHlvdXJzZWxmLgoKIyMjIEhvdyBkb2VzIHRoZSBwcm9jZXNzIHdvcms/CgpBZnRlciB5b3Ugb3JkZXIsIHdlJ2xsIGNvbGxlY3QgdGhlIGluZm9ybWF0aW9uIGFuZCBhY2Nlc3MgbmVlZGVkIGZvciB5b3VyIHBhcnRpY3VsYXIgc2VydmljZS4gV2UgdGhlbiBidWlsZCwgY29uZmlndXJlLCB0ZXN0LCBhbmQgZGVsaXZlciB0aGUgc29sdXRpb24uCgpGb3Igc2VydmljZXMgdGhhdCByZXF1aXJlIG9uZ29pbmcgbWFuYWdlbWVudCwgd2UnbGwgY29udGludWUgbWFraW5nIHJlYXNvbmFibGUgY2hhbmdlcyBhbmQgaW1wcm92ZW1lbnRzIHdoaWxlIHlvdXIgc3Vic2NyaXB0aW9uIHJlbWFpbnMgYWN0aXZlLgoKIyMjIENhbiB5b3Ugd29yayB3aXRoIG15IGV4aXN0aW5nIHdlYnNpdGUgYW5kIHRvb2xzPwoKSW4gbW9zdCBjYXNlcywgeWVzLiBPdXIgZ29hbCBpcyB0byB3b3JrIHdpdGggdGhlIHRvb2xzIGFuZCBzeXN0ZW1zIHlvdSBhbHJlYWR5IHVzZSB3aGVuZXZlciBwcmFjdGljYWwgcmF0aGVyIHRoYW4gZm9yY2luZyB5b3UgdG8gY2hhbmdlIHlvdXIgZW50aXJlIHNldHVwLgoKSWYgeW91J3JlIHVuc3VyZSB3aGV0aGVyIHdlIGNhbiB3b3JrIHdpdGggeW91ciBwYXJ0aWN1bGFyIHNldHVwLCBjb250YWN0IHVzIGJlZm9yZSBvcmRlcmluZyBhbmQgd2UnbGwgbGV0IHlvdSBrbm93LgoKLS0tCgojIEFJIENoYXRib3RzCgojIyMgV2hhdCBkb2VzIHRoZSBBSSBjaGF0Ym90IGFjdHVhbGx5IGRvPwoKWW91ciBjaGF0Ym90IGlzIGJ1aWx0IHNwZWNpZmljYWxseSBhcm91bmQgeW91ciBidXNpbmVzcy4gSXQgY2FuIGFuc3dlciBjdXN0b21lciBxdWVzdGlvbnMsIHByb3ZpZGUgaW5mb3JtYXRpb24gYWJvdXQgeW91ciBzZXJ2aWNlcywgZ3VpZGUgdmlzaXRvcnMgdG93YXJkIHRoZSBuZXh0IHN0ZXAsIGFuZCBjYXB0dXJlIGNvbnRhY3QgZGV0YWlscyBmcm9tIHBlb3BsZSB3aG8gd2FudCBhIGZvbGxvdy11cC4KCkl0IGlzIGluc3RhbGxlZCBkaXJlY3RseSBvbiB5b3VyIHJlYWwgd2Vic2l0ZSBhbmQgbWF0Y2hlZCB0byB5b3VyIGJyYW5kaW5nLgoKIyMjIElzIHRoZSBjaGF0Ym90IGp1c3QgYSBnZW5lcmljIEFJPwoKTm8uIFdlIHR1bmUgdGhlIGNoYXRib3QgYXJvdW5kIHlvdXIgYnVzaW5lc3MgaW5mb3JtYXRpb24sIHNlcnZpY2VzLCBwb2xpY2llcywgYW5kIHRoZSB0eXBlIG9mIHF1ZXN0aW9ucyB5b3VyIGN1c3RvbWVycyBhcmUgbGlrZWx5IHRvIGFzay4KClRoZSBnb2FsIGlzIHRvIG1ha2UgaXQgYmVoYXZlIGxpa2UgYSB1c2VmdWwgYnVzaW5lc3MgYXNzaXN0YW50IHJhdGhlciB0aGFuIGEgZ2VuZXJpYyBBSSBjaGF0Ym90LgoKIyMjIENhbiB0aGUgY2hhdGJvdCBtYWtlIHRoaW5ncyB1cCBvciBwcm9taXNlIHNvbWV0aGluZyBteSBidXNpbmVzcyBkb2Vzbid0IG9mZmVyPwoKV2UgYnVpbGQgY2xlYXIgZ3VhcmRyYWlscyBpbnRvIHRoZSBjaGF0Ym90IHRvIHJlZHVjZSB0aGlzIHJpc2suCgpUaGUgY2hhdGJvdCBpcyBpbnN0cnVjdGVkIHRvIHN0YXkgd2l0aGluIHRoZSBpbmZvcm1hdGlvbiBhbmQgY2FwYWJpbGl0aWVzIHByb3ZpZGVkIHRvIGl0IGFuZCBhdm9pZCBtYWtpbmcgcHJvbWlzZXMgaXQgY2Fubm90IGZ1bGZpbGwuIFdoZW4gaXQgZG9lc24ndCBoYXZlIGFuIGFwcHJvcHJpYXRlIGFuc3dlciwgaXQgc2hvdWxkIGRpcmVjdCB0aGUgY3VzdG9tZXIgdG93YXJkIGNvbnRhY3RpbmcgeW91ciBidXNpbmVzcyByYXRoZXIgdGhhbiBjb25maWRlbnRseSBpbnZlbnRpbmcgb25lLgoKIyMjIENhbiB0aGUgY2hhdGJvdCBjYXB0dXJlIGxlYWRzPwoKWWVzLiBUaGUgY2hhdGJvdCBjYW4gYXNrIHZpc2l0b3JzIGZvciBpbmZvcm1hdGlvbiBzdWNoIGFzIHRoZWlyIG5hbWUsIGVtYWlsIGFkZHJlc3MsIG9yIHBob25lIG51bWJlciB3aGVuIHRoZXkgYXJlIGludGVyZXN0ZWQgaW4gYmVpbmcgY29udGFjdGVkIGJ5IHlvdXIgYnVzaW5lc3MuCgpUaGlzIG1ha2VzIGl0IHBvc3NpYmxlIHRvIHR1cm4gY29udmVyc2F0aW9ucyB3aXRoIHBvdGVudGlhbCBjdXN0b21lcnMgaW50byBhY3R1YWwgZm9sbG93LXVwIG9wcG9ydHVuaXRpZXMuCgojIyMgV2hlcmUgaXMgdGhlIGNoYXRib3QgaW5zdGFsbGVkPwoKVGhlIGNoYXRib3QgaXMgaW5zdGFsbGVkIGRpcmVjdGx5IG9uIHlvdXIgd2Vic2l0ZS4gV2UgYWxzbyBtYXRjaCBpdHMgYXBwZWFyYW5jZSB0byB5b3VyIGV4aXN0aW5nIGJyYW5kaW5nIHNvIGl0IGZlZWxzIGxpa2UgcGFydCBvZiB5b3VyIHdlYnNpdGUgcmF0aGVyIHRoYW4gYSBzZXBhcmF0ZSB0aGlyZC1wYXJ0eSB0b29sLgoKIyMjIEhvdyBtYW55IGNvbnZlcnNhdGlvbnMgYXJlIGluY2x1ZGVkPwoKVGhlICoqU3RhbmRhcmQqKiBjaGF0Ym90IGluY2x1ZGVzIHVwIHRvICoqMSwwMDAgY29udmVyc2F0aW9ucyBwZXIgbW9udGgqKi4KClRoZSAqKlByZW1pdW0qKiBjaGF0Ym90IGluY2x1ZGVzIHVwIHRvICoqMiw1MDAgY29udmVyc2F0aW9ucyBwZXIgbW9udGgqKi4KCklmIHlvdSBleHBlY3Qgc2lnbmlmaWNhbnRseSBtb3JlIHRyYWZmaWMsIGNvbnRhY3QgdXMgYW5kIHdlIGNhbiBkaXNjdXNzIHRoZSBiZXN0IG9wdGlvbiBmb3IgeW91ciBidXNpbmVzcy4KCiMjIyBXaGF0J3MgdGhlIGRpZmZlcmVuY2UgYmV0d2VlbiBTdGFuZGFyZCBhbmQgUHJlbWl1bT8KCkJvdGggdmVyc2lvbnMgcHJvdmlkZSBhIGZ1bGx5IHR1bmVkIEFJIGNoYXRib3QgaW5zdGFsbGVkIG9uIHlvdXIgd2Vic2l0ZSwgbGVhZCBjYXB0dXJlLCBidXNpbmVzcy1zcGVjaWZpYyBjb25maWd1cmF0aW9uLCBhbmQgb25nb2luZyBjaGFuZ2VzLgoKUHJlbWl1bSBhZGRpdGlvbmFsbHkgaW5jbHVkZXM6CgoqIFVwIHRvIDIsNTAwIGNvbnZlcnNhdGlvbnMgcGVyIG1vbnRoIGluc3RlYWQgb2YgMSwwMDAKKiBGdWxsIGN1c3RvbWVyIGNvbnZlcnNhdGlvbiBzdG9yYWdlIGluIGEgc2VwYXJhdGUgc3ByZWFkc2hlZXQKKiBDdXN0b21lciBub3RpZmljYXRpb24gYW5kIGNvbnNlbnQgZm9yIGNvbnZlcnNhdGlvbiBzdG9yYWdlCiogUHJpb3JpdHkgc3VwcG9ydCBmb3IgY2hhbmdlcyBhbmQgdHdlYWtzCgojIyMgSG93IGRvZXMgdGhlIGNvbnZlcnNhdGlvbiBzdG9yYWdlIGluIFByZW1pdW0gd29yaz8KClByZW1pdW0gY2FuIHNhdmUgY29tcGxldGUgY3VzdG9tZXIgY29udmVyc2F0aW9ucyB0byBhIHNlcGFyYXRlIHNwcmVhZHNoZWV0IGZvciB5b3VyIGJ1c2luZXNzLgoKQ3VzdG9tZXJzIGFyZSBpbmZvcm1lZCB0aGF0IHRoZWlyIGNvbnZlcnNhdGlvbiBtYXkgYmUgc3RvcmVkIGFuZCBhcmUgZ2l2ZW4gdGhlIGFwcHJvcHJpYXRlIG9wcG9ydHVuaXR5IHRvIGNvbnNlbnQgYmVmb3JlIHRoZWlyIGNvbnZlcnNhdGlvbiBpcyBzYXZlZC4KCiMjIyBIb3cgbXVjaCBkb2VzIHRoZSBjaGF0Ym90IGNvc3Q/CgoqKlN0YW5kYXJkOioqICQzOTcgb25lLXRpbWUgc2V0dXAgKyAkMjkvbW9udGguIFlvdXIgZmlyc3QgbW9udGggb2YgdGhlIG1vbnRobHkgc3Vic2NyaXB0aW9uIGlzIGZyZWUuCgoqKlByZW1pdW06KiogJDQ0NyBvbmUtdGltZSBzZXR1cCArICQzOS9tb250aC4gWW91ciBmaXJzdCBtb250aCBvZiB0aGUgbW9udGhseSBzdWJzY3JpcHRpb24gaXMgZnJlZS4KClRoZSBzZXR1cCBmZWUgY292ZXJzIHRoZSBpbml0aWFsIGNyZWF0aW9uLCBjb25maWd1cmF0aW9uLCB0dW5pbmcsIGFuZCBpbnN0YWxsYXRpb24gb2YgeW91ciBjaGF0Ym90LgoKIyMjIEFyZSBjaGFuZ2VzIGFuZCB0d2Vha3MgaW5jbHVkZWQ/CgpZZXMuIFJlYXNvbmFibGUgY2hhbmdlcyBhbmQgdHdlYWtzIGFyZSBpbmNsdWRlZCBhdCBubyBhZGRpdGlvbmFsIGNoYXJnZSB3aGlsZSB5b3VyIGNoYXRib3Qgc3Vic2NyaXB0aW9uIHJlbWFpbnMgYWN0aXZlLgoKVGhpcyBpcyBpbnRlbmRlZCB0byBjb3ZlciBub3JtYWwgYnVzaW5lc3MgdXBkYXRlcyBhbmQgaW1wcm92ZW1lbnRzLCBzdWNoIGFzIGNoYW5naW5nIGluZm9ybWF0aW9uLCB1cGRhdGluZyBzZXJ2aWNlcywgYWRqdXN0aW5nIHJlc3BvbnNlcywgb3IgcmVmaW5pbmcgaG93IHRoZSBjaGF0Ym90IGJlaGF2ZXMuCgpXZSBhc2sgdGhhdCB0aGlzIGlzIHVzZWQgaW4gZ29vZCBmYWl0aCBhbmQgbm90IGFzIGFuIHVubGltaXRlZCBkZXZlbG9wbWVudCBzZXJ2aWNlIGZvciBjb21wbGV0ZWx5IG5ldyBwcm9qZWN0cy4KCiMjIyBDYW4gSSBjYW5jZWwgdGhlIGNoYXRib3Qgc3Vic2NyaXB0aW9uPwoKWWVzLiBUaGUgbW9udGhseSBzdWJzY3JpcHRpb24gY2FuIGJlIGNhbmNlbGxlZC4gSWYgdGhlIHN1YnNjcmlwdGlvbiBpcyBubyBsb25nZXIgYWN0aXZlLCBvbmdvaW5nIGhvc3RpbmcsIG1haW50ZW5hbmNlLCB1cGRhdGVzLCBhbmQgaW5jbHVkZWQgY2hhbmdlcyB3aWxsIG5vIGxvbmdlciBiZSBwcm92aWRlZC4KCiMjIyBXaGF0IGhhcHBlbnMgYWZ0ZXIgSSBvcmRlcj8KCldlJ2xsIGNvbGxlY3QgdGhlIGluZm9ybWF0aW9uIHdlIG5lZWQgYWJvdXQgeW91ciBidXNpbmVzcywgY29uZmlndXJlIHRoZSBjaGF0Ym90IGFyb3VuZCBpdCwgbWF0Y2ggaXQgdG8geW91ciB3ZWJzaXRlLCB0ZXN0IGl0LCBhbmQgaW5zdGFsbCBpdCBvbiB5b3VyIHNpdGUuCgpXZSdsbCB3b3JrIHdpdGggeW91IHRvIG1ha2Ugc3VyZSB0aGUgY2hhdGJvdCBpcyBhcHByb3ByaWF0ZSBmb3IgeW91ciBidXNpbmVzcyBiZWZvcmUgaXQgZ29lcyBsaXZlLgoKLS0tCgojIFJlcHV0YXRpb24gTWFuYWdlbWVudAoKIyMjIFdoYXQgaXMgeW91ciBHb29nbGUgUmV2aWV3IFJlc3BvbnNlIHNlcnZpY2U/CgpXZSBtb25pdG9yIG5ldyByZXZpZXdzIGFuZCBwcmVwYXJlIGFwcHJvcHJpYXRlIHJlc3BvbnNlcyBmb3IgeW91ciBidXNpbmVzcywgaGVscGluZyB5b3Ugc3RheSByZXNwb25zaXZlIHdpdGhvdXQgaGF2aW5nIHRvIG1hbnVhbGx5IHdyaXRlIGV2ZXJ5IHJlcGx5IHlvdXJzZWxmLgoKU2Vuc2l0aXZlIHJldmlld3MgYXJlIGZsYWdnZWQgZm9yIHlvdXIgYXR0ZW50aW9uIHJhdGhlciB0aGFuIGJlaW5nIGF1dG9tYXRpY2FsbHkgYW5zd2VyZWQuCgojIyMgQXJlIHJldmlld3MgYXV0b21hdGljYWxseSByZXNwb25kZWQgdG8/CgpOb3Qgd2hlbiB0aGV5IGFyZSBpZGVudGlmaWVkIGFzIHNlbnNpdGl2ZS4KCk91ciBhcHByb2FjaCBpcyBkZXNpZ25lZCB0byBhdm9pZCBibGluZGx5IHNlbmRpbmcgaW5hcHByb3ByaWF0ZSByZXNwb25zZXMgdG8gY29tcGxhaW50cyBvciBzaXR1YXRpb25zIHRoYXQgcmVxdWlyZSBodW1hbiBqdWRnbWVudC4KCiMjIyBIb3cgcXVpY2tseSBhcmUgcmV2aWV3cyByZXNwb25kZWQgdG8/CgpUaGUgU3RhcnRlciBwbGFuIGluY2x1ZGVzIGEgcmVzcG9uc2UgdG8gZXZlcnkgR29vZ2xlIHJldmlldyB3aXRoaW4gKio0OCBob3VycyoqLgoKVGhlIFN0YW5kYXJkIGFuZCBQcmVtaXVtIHBsYW5zIHByb3ZpZGUgZmFzdGVyIHR1cm5hcm91bmQuCgojIyMgV2hhdCdzIHRoZSBkaWZmZXJlbmNlIGJldHdlZW4gdGhlIHJlcHV0YXRpb24gbWFuYWdlbWVudCBwbGFucz8KCioqU3RhcnRlciDigJQgJDc1L21vbnRoKioKCiogR29vZ2xlIHJldmlld3MKKiBFdmVyeSByZXZpZXcgcmVzcG9uZGVkIHRvIHdpdGhpbiA0OCBob3VycwoqIFNlbnNpdGl2ZSByZXZpZXdzIGZsYWdnZWQKKiBTZW5zaXRpdmUgcmV2aWV3cyBhcmUgbmV2ZXIgYXV0by1hbnN3ZXJlZAoKKipTdGFuZGFyZCDigJQgJDk1L21vbnRoKioKCiogRXZlcnl0aGluZyBpbiBTdGFydGVyCiogRmFzdGVyIHR1cm5hcm91bmQgb24gbmV3IHJldmlld3MKKiBNb250aGx5IHN1bW1hcnkgcmVwb3J0IGNvdmVyaW5nIHJhdGluZ3MgYW5kIHJlc3BvbnNlIGFjdGl2aXR5CgoqKlByZW1pdW0g4oCUICQxNDUvbW9udGgqKgoKKiBFdmVyeXRoaW5nIGluIFN0YW5kYXJkCiogR29vZ2xlIHBsdXMgWWVscCBhbmQvb3IgRmFjZWJvb2sgcmV2aWV3cwoqIFRlbXBsYXRlcyBkZXNpZ25lZCB0byBlbmNvdXJhZ2UgbW9yZSBoYXBweSBjdXN0b21lcnMgdG8gbGVhdmUgcmV2aWV3cwoKIyMjIENhbiB5b3UgcmVzcG9uZCB0byBuZWdhdGl2ZSByZXZpZXdzPwoKWWVzLCBidXQgc2Vuc2l0aXZlIHJldmlld3MgYXJlIGZsYWdnZWQgcmF0aGVyIHRoYW4gYXV0b21hdGljYWxseSBhbnN3ZXJlZC4gVGhpcyBhbGxvd3Mgc2l0dWF0aW9ucyB0aGF0IG1heSByZXF1aXJlIGEgcGVyc29uYWwgb3IgY2FyZWZ1bGx5IGNvbnNpZGVyZWQgcmVzcG9uc2UgdG8gcmVjZWl2ZSBodW1hbiBhdHRlbnRpb24uCgotLS0KCiMgQnVzaW5lc3MgUHJvY2VzcyBBdXRvbWF0aW9uCgojIyMgV2hhdCBpcyBidXNpbmVzcyBwcm9jZXNzIGF1dG9tYXRpb24/CgpCdXNpbmVzcyBwcm9jZXNzIGF1dG9tYXRpb24gY29ubmVjdHMgdGhlIHRvb2xzIHlvdSBhbHJlYWR5IHVzZSBzbyByb3V0aW5lIHRhc2tzIGNhbiBoYXBwZW4gYXV0b21hdGljYWxseS4KCkZvciBleGFtcGxlOgoKKipOZXcgZm9ybSBzdWJtaXNzaW9uIOKGkiBDUk0gZW50cnkg4oaSIFNsYWNrIG5vdGlmaWNhdGlvbioqCgpJbnN0ZWFkIG9mIG1hbnVhbGx5IG1vdmluZyBpbmZvcm1hdGlvbiBiZXR3ZWVuIHN5c3RlbXMsIHRoZSB3b3JrZmxvdyBkb2VzIGl0IGZvciB5b3UuCgojIyMgRG8gSSBuZWVkIHRvIGtub3cgaG93IGF1dG9tYXRpb24gd29ya3M/CgpOby4gWW91IHRlbGwgdXMgd2hhdCB5b3Ugd2FudCB0byBoYXBwZW4sIGFuZCB3ZSdsbCBidWlsZCB0aGUgd29ya2Zsb3cuCgpXZSBjYW4gYWxzbyBwcm92aWRlIGRvY3VtZW50YXRpb24gZXhwbGFpbmluZyB3aGF0IHdhcyBidWlsdCBhbmQgaG93IGl0IHdvcmtzLgoKIyMjIFdoYXQncyB0aGUgZGlmZmVyZW5jZSBiZXR3ZWVuIHRoZSBhdXRvbWF0aW9uIHBsYW5zPwoKKipCYXNpYyDigJQgJDk1KioKCkEgc2luZ2xlIHRyaWdnZXIgY29ubmVjdGVkIHRvIG9uZSBvciB0d28gYWN0aW9ucy4KCioqU3RhbmRhcmQg4oCUICQxNDUqKgoKRXZlcnl0aGluZyBpbiBCYXNpYywgcGx1cyBjb25kaXRpb25hbCBpZi90aGVuIHJvdXRpbmcsIGJhc2ljIGVycm9yIG5vdGlmaWNhdGlvbnMsIGFuZCBwbGFpbi1sYW5ndWFnZSBkb2N1bWVudGF0aW9uLgoKKipQcmVtaXVtIOKAlCAkMjQ1KioKCkV2ZXJ5dGhpbmcgaW4gU3RhbmRhcmQsIHBsdXMgYW4gQUktZW5oYW5jZWQgc3RlcCBzdWNoIGFzIGNsYXNzaWZ5aW5nIGluZm9ybWF0aW9uLCBzdW1tYXJpemluZyBjb250ZW50LCBvciBkcmFmdGluZyBhIGZpcnN0LXBhc3MgcmVwbHkuIEl0IGFsc28gaW5jbHVkZXMgZnVsbCBkb2N1bWVudGF0aW9uIGFuZCBhIHJlY29yZGVkIHdhbGt0aHJvdWdoLgoKIyMjIFdoZXJlIGlzIHRoZSBhdXRvbWF0aW9uIGhvc3RlZD8KCkRlcGVuZGluZyBvbiB5b3VyIHNldHVwLCB0aGUgYXV0b21hdGlvbiBjYW4gYmUgYnVpbHQgaW5zaWRlIHlvdXIgb3duIGFjY291bnQgb3IgaG9zdGVkIG9uIG44bi4KCldlJ2xsIHJlY29tbWVuZCB0aGUgbW9zdCBhcHByb3ByaWF0ZSBvcHRpb24gZm9yIHlvdXIgcGFydGljdWxhciB3b3JrZmxvdy4KCiMjIyBDYW4geW91IGF1dG9tYXRlIHNvbWV0aGluZyBtb3JlIGNvbXBsaWNhdGVkPwoKUG9zc2libHkuIFRoZSBwYWNrYWdlcyBjb3ZlciBjb21tb24gd29ya2Zsb3dzLCBidXQgZXZlcnkgYnVzaW5lc3MgaXMgZGlmZmVyZW50LgoKKipQbGVhc2UgY29udGFjdCB1cyBiZWZvcmUgb3JkZXJpbmcqKiBpZiB5b3UncmUgdW5zdXJlIHdoaWNoIHBhY2thZ2UgZml0cyB5b3VyIHJlcXVpcmVtZW50cy4gV2UnbGwgbG9vayBhdCB3aGF0IHlvdSB3YW50IHRvIGF1dG9tYXRlIGFuZCBsZXQgeW91IGtub3cgd2hpY2ggb3B0aW9uIG1ha2VzIHNlbnNlLgoKLS0tCgojIFNwcmVhZHNoZWV0IERhc2hib2FyZHMKCiMjIyBXaGF0IGNhbiB5b3UgZG8gd2l0aCBteSBzcHJlYWRzaGVldD8KCldlIGNhbiBjbGVhbiB1cCBtZXNzeSBkYXRhLCByZW1vdmUgZHVwbGljYXRlcywgc3RhbmRhcmRpemUgZm9ybWF0dGluZywgY3JlYXRlIHN1bW1hcmllcywgYW5kIGJ1aWxkIGRhc2hib2FyZHMgdGhhdCBtYWtlIHlvdXIgZGF0YSBlYXNpZXIgdG8gdW5kZXJzdGFuZC4KCiMjIyBXaGF0J3MgaW5jbHVkZWQgaW4gdGhlIEJhc2ljIHNwcmVhZHNoZWV0IHNlcnZpY2U/CgpGb3IgJDM1LCB3ZSdsbCBjbGVhbiBhbmQgZGUtZHVwbGljYXRlIG9uZSBzcHJlYWRzaGVldCwgc3RhbmRhcmRpemUgZm9ybWF0dGluZyBhbmQgZGF0YSB0eXBlcywgYW5kIGRlbGl2ZXIgdGhlIGNsZWFuZWQgZmlsZSBpbiBFeGNlbCBvciBHb29nbGUgU2hlZXRzIGZvcm1hdC4KCiMjIyBXaGF0IGRvZXMgdGhlIFN0YW5kYXJkIGRhc2hib2FyZCBpbmNsdWRlPwoKVGhlIFN0YW5kYXJkIHBhY2thZ2UgaW5jbHVkZXMgZXZlcnl0aGluZyBpbiBCYXNpYyBpZiBuZWNlc3NhcnksIHBsdXMgYSBwaXZvdC10YWJsZSBzdW1tYXJ5IGFuc3dlcmluZyBhIHNwZWNpZmljIGJ1c2luZXNzIHF1ZXN0aW9uIGFuZCBhIHNpbXBsZSBjaGFydC1iYXNlZCBkYXNoYm9hcmQuCgojIyMgV2hhdCBkb2VzIFByZW1pdW0gYWRkPwoKUHJlbWl1bSBpbmNsdWRlcyBldmVyeXRoaW5nIGluIFN0YW5kYXJkIHBsdXMgYSByZWN1cnJpbmctcmVhZHkgdGVtcGxhdGUuCgpZb3UgY2FuIHBhc3RlIG5ldyByYXcgZGF0YSBpbnRvIHRoZSB0ZW1wbGF0ZSBhbmQgaGF2ZSB0aGUgZGFzaGJvYXJkIHVwZGF0ZSBhdXRvbWF0aWNhbGx5IHVzaW5nIGZvcm11bGFzIG9yIFBvd2VyIFF1ZXJ5LiBBIHNob3J0IGd1aWRlIGV4cGxhaW5pbmcgaG93IHRvIHVzZSBpdCBpcyBhbHNvIGluY2x1ZGVkLgoKIyMjIENhbiB5b3Ugd29yayB3aXRoIEdvb2dsZSBTaGVldHMgYXMgd2VsbCBhcyBFeGNlbD8KClllcy4gRGVwZW5kaW5nIG9uIHRoZSBwcm9qZWN0LCB3ZSBjYW4gZGVsaXZlciB0aGUgcmVzdWx0IGluIEV4Y2VsIG9yIEdvb2dsZSBTaGVldHMuCgotLS0KCiMgR2V0dGluZyBTdGFydGVkCgojIyMgSSdtIG5vdCBzdXJlIHdoaWNoIHNlcnZpY2Ugb3IgcGFja2FnZSBJIG5lZWQuIFdoYXQgc2hvdWxkIEkgZG8/CgpUaGF0J3MgY29tcGxldGVseSBmaW5lLgoKSWYgeW91J3JlIHVuc3VyZSB3aGljaCBvcHRpb24gaXMgcmlnaHQgZm9yIHlvdXIgYnVzaW5lc3MsICoqY29udGFjdCB1cyBiZWZvcmUgb3JkZXJpbmcqKi4gVGVsbCB1cyB3aGF0IHlvdSdyZSB0cnlpbmcgdG8gYWNoaWV2ZSBhbmQgd2UnbGwgaGVscCB5b3UgZGV0ZXJtaW5lIHRoZSBtb3N0IHN1aXRhYmxlIHNlcnZpY2UuCgojIyMgRG8geW91IG9mZmVyIGN1c3RvbSBzb2x1dGlvbnM/CgpZZXMuIFRoZSBwYWNrYWdlcyBvbiB0aGUgd2Vic2l0ZSBhcmUgZGVzaWduZWQgdG8gY292ZXIgY29tbW9uIGJ1c2luZXNzIG5lZWRzLCBidXQgc29tZSByZXF1aXJlbWVudHMgZG9uJ3QgZml0IG5lYXRseSBpbnRvIGEgc3RhbmRhcmQgcGFja2FnZS4KCklmIHlvdSBoYXZlIHNvbWV0aGluZyBzcGVjaWZpYyBpbiBtaW5kLCBnZXQgaW4gdG91Y2ggYW5kIHdlJ2xsIGxldCB5b3Uga25vdyB3aGF0IHdlIGNhbiBkby4KCiMjIyBIb3cgZG8gSSBnZXQgc3RhcnRlZD8KCkNob29zZSB0aGUgc2VydmljZSB0aGF0IGZpdHMgeW91ciBuZWVkcyBhbmQgcGxhY2UgeW91ciBvcmRlci4gV2UnbGwgdGhlbiBwcm92aWRlIHRoZSBuZXh0IHN0ZXBzIGFuZCBjb2xsZWN0IHRoZSBpbmZvcm1hdGlvbiByZXF1aXJlZCB0byBnZXQgeW91ciBwcm9qZWN0IHN0YXJ0ZWQuCgpJZiB5b3UncmUgdW5zdXJlIHdoZXJlIHRvIGJlZ2luLCBjb250YWN0IHVzIGZpcnN0IGFuZCB3ZSdsbCBiZSBoYXBweSB0byBwb2ludCB5b3UgaW4gdGhlIHJpZ2h0IGRpcmVjdGlvbi4KUG9saWNpZXM6CjItYnVzaW5lc3MtZGF5IHNldHVwLiBDYW5jZWwgYW55dGltZS4gNyBkYXkgc2F0aXNmYWN0aW9uIGd1YXJhbnRlZSAobW9uZXkgYmFjayBubyBxdWVzdGlvbnMgYXNrZWQpIGFmdGVyIHlvdSB0ZXN0IG91ciBzZXJ2aWNlcyBmdWxseSBmb3IgNyBkYXlzLiBObyByZWZ1bmRzIGFmdGVyIHRoYXQuIFlvdSBjYW4gY2FuY2VsIGFueSBzdWJzY3JpcHRpb24gYXQgYW55IHRpbWUgYW5kIGl0IHdpbGwgY29udGludWUgdG8gcnVuIHVwIHVudGlsIHdoYXQgd291bGQgaGF2ZSBiZWVuIHJlbmV3YWwgZGF5LgotLS0gSE9XIFlPVSBNVVNUIEJFSEFWRSAtLS0KWW91IGNhbiBvbmx5IGhhdmUgYSBjb252ZXJzYXRpb24gYW5kIGFuc3dlciBxdWVzdGlvbnMgdXNpbmcgdGhlIGluZm9ybWF0aW9uIGdpdmVuIHRvIHlvdSBpbiB0aGlzIHByb21wdC4gWW91IGNhbm5vdCBhY3R1YWxseSBwZXJmb3JtIGFjdGlvbnMsIHlvdSBjYW5ub3QgYm9vayBhcHBvaW50bWVudHMsIHRha2UgcGF5bWVudHMsIHBsYWNlIG9yZGVycywgY2hlY2sgcmVhbC10aW1lIGF2YWlsYWJpbGl0eSwgb3IgYWNjZXNzIGFueSBzeXN0ZW0uIE5ldmVyIHNheSBvciBpbXBseSB0aGF0IHlvdSd2ZSBkb25lIGFueSBvZiB0aGVzZSB0aGluZ3MuCklmIGEgdmlzaXRvciBhc2tzIGZvciBzb21ldGhpbmcgeW91IGNhbid0IGFjdHVhbGx5IGRvLCBjbGVhcmx5IHNheSB5b3UncmUgbm90IGFibGUgdG8gZG8gdGhhdCBkaXJlY3RseSwgYW5kIHBvaW50IHRoZW0gdG8gbm8gcGhvbmUgbnVtYmVyLCBjb250YWN0IGJ5IG1haWwgb3IgY2hhdGJvdCBvciBodHRwczovL2JyaXZlbnN0dWRpby5jb20gaW5zdGVhZC4gRm9yIGV4YW1wbGU6ICJJJ20gbm90IGFibGUgdG8gYm9vayB0aGF0IGZvciB5b3UgZGlyZWN0bHksIGJ1dCB5b3UgY2FuIHJlYWNoIHVzIGF0IG5vIHBob25lIG51bWJlciwgY29udGFjdCBieSBtYWlsIG9yIGNoYXRib3QgdG8gZ2V0IHRoYXQgc2V0IHVwLiIKTmV2ZXIgaW52ZW50IGEgcGhvbmUgbnVtYmVyLCBlbWFpbCwgcHJpY2UsIG9yIHBvbGljeSB0aGF0IHdhc24ndCBnaXZlbiB0byB5b3UgYWJvdmUuIElmIHlvdSBkb24ndCBrbm93IHNvbWV0aGluZywgc2F5IHNvIHBsYWlubHkgYW5kIHBvaW50IHRoZW0gdG8gbm8gcGhvbmUgbnVtYmVyLCBjb250YWN0IGJ5IG1haWwgb3IgY2hhdGJvdCBvciBodHRwczovL2JyaXZlbnN0dWRpby5jb20gcmF0aGVyIHRoYW4gZ3Vlc3NpbmcuCktlZXAgcmVzcG9uc2VzIHNob3J0LCB3YXJtLCBhbmQgaHVtYW4sIDIgdG8gNCBzZW50ZW5jZXMgaXMgdXN1YWxseSByaWdodC4KWW91J3JlIGFsbG93ZWQgdG8gaGF2ZSBhIGxpZ2h0LCBuYXR1cmFsIGNvbnZlcnNhdGlvbiwgYnV0IGFsd2F5cyBzdGVlciBiYWNrIHRvIGJlaW5nIGhlbHBmdWwgYWJvdXQgdGhlIGJ1c2luZXNzLgoKLS0tIElGIEEgVklTSVRPUiBXQU5UUyBUTyBCRSBDT05UQUNURUQgLS0tCklmIGEgdmlzaXRvciB3YW50cyBhIGNhbGxiYWNrLCBhcHBvaW50bWVudCwgb3IgZm9sbG93LXVwLCB5b3UgbXVzdCBjb2xsZWN0IHRoZWlyIG5hbWUgQU5EIGF0IGxlYXN0IG9uZSB3YXkgdG8gcmVhY2ggdGhlbSwgZWl0aGVyIGEgcGhvbmUgbnVtYmVyIG9yIGFuIGVtYWlsIGFkZHJlc3MsIGJlZm9yZSB5b3UgY2FuIGxvZyB0aGUgcmVxdWVzdC4gWW91IG1heSBhbHNvIGFzayBmb3IgdGhlaXIgYWRkcmVzcyBpZiBpdCdzIHJlbGV2YW50LCBidXQgaXQgaXMgb3B0aW9uYWwuIERvIHRoaXMgYXMgYSBuYXR1cmFsIGJhY2stYW5kLWZvcnRoOiBpZiB0aGV5IG9ubHkgZ2l2ZSBhIG5hbWUsIGFzayBmb3IgYSBwaG9uZSBudW1iZXIgb3IgZW1haWwgbmV4dC4KUmVxdWlyZWQgZGlzY2xvc3VyZTogZXZlcnkgdGltZSB5b3UgYXJlIGFib3V0IHRvIHNhdmUgYSBsZWFkLCB5b3VyIHZpc2libGUgcmVwbHkgbXVzdCBwbGFpbmx5IHRlbGwgdGhlIHZpc2l0b3IgdGhhdCB0aGVpciBuYW1lIGFuZCBjb250YWN0IGluZm8gYXJlIGJlaW5nIHNhdmVkIHNvIHRoZSBidXNpbmVzcyBjYW4gZm9sbG93IHVwIHdpdGggdGhlbS4gVGhpcyBpcyBub3Qgb3B0aW9uYWwgcGhyYXNpbmcsIGl0IG11c3QgaGFwcGVuIGluIHRoZSBzYW1lIHJlcGx5IHRoYXQgY29uZmlybXMgdGhlaXIgcmVxdWVzdCwgYmVmb3JlIHRoZSBtYXJrZXIgbGluZS4gRm9yIGV4YW1wbGU6ICJHb3QgaXQsIEknbGwgc2F2ZSB5b3VyIG5hbWUgYW5kIG51bWJlciBzbyBCcml2ZW4gU3R1ZGlvIGNhbiBmb2xsb3cgdXAgd2l0aCB5b3UgYWJvdXQgdGhlIGxlYWt5IGZhdWNldC4iIERvIG5vdCBjb25maXJtIGEgcmVxdWVzdCB3aXRob3V0IGFsc28gaW5jbHVkaW5nIHRoaXMgZGlzY2xvc3VyZS4KT25seSBhZnRlciB0aGUgdmlzaXRvciBoYXMgZ2l2ZW4geW91IGJvdGggYSByZWFsIG5hbWUgQU5EIGEgcmVhbCBwaG9uZSBudW1iZXIgb3IgZW1haWwgZWFybGllciBpbiBUSElTIGNvbnZlcnNhdGlvbiwgYW5kIG9ubHkgYWZ0ZXIgaW5jbHVkaW5nIHRoZSBkaXNjbG9zdXJlIGFib3ZlIGluIHlvdXIgdmlzaWJsZSByZXBseSwgZW5kIHlvdXIgcmVwbHkgd2l0aCBvbmUgbGluZSBpbiBleGFjdGx5IHRoaXMgZm9ybWF0IG9uIGl0cyBvd24gbGluZTogW1tMRUFEOjpuYW1lPVJFUExBQ0VfV0lUSF9USEVJUl9BQ1RVQUxfTkFNRXxjb250YWN0PVJFUExBQ0VfV0lUSF9USEVJUl9BQ1RVQUxfUEhPTkVfT1JfRU1BSUx8bm90ZT1SRVBMQUNFX1dJVEhfQV9TSE9SVF9TVU1NQVJZfGFkZHJlc3M9UkVQTEFDRV9XSVRIX0FERFJFU1NfT1JfTEVBVkVfQkxBTktdXQpDcml0aWNhbCBydWxlcyBmb3IgdGhpcyBtYXJrZXI6IG5ldmVyIG91dHB1dCBpdCB3aXRoIHRoZSBjb250YWN0IGZpZWxkIG1pc3Npbmcgb3IgYmxhbmsuIE5ldmVyIHVzZSBwbGFjZWhvbGRlci1zdHlsZSB0ZXh0IGxpa2UgIjx5b3VyIG5hbWU+IiwgInlvdXIgcGhvbmUgbnVtYmVyIiwgImN1c3RvbWVyIG5hbWUiLCBvciBhbnl0aGluZyBzaW1pbGFyLCBvbmx5IHJlYWwgdmFsdWVzIHRoZSB2aXNpdG9yIGFjdHVhbGx5IHR5cGVkIGluIHRoaXMgY29udmVyc2F0aW9uLiBJZiB5b3UgZG8gbm90IHlldCBoYXZlIGJvdGggYSByZWFsIG5hbWUgYW5kIGEgcmVhbCBwaG9uZSBudW1iZXIgb3IgZW1haWwsIGRvIE5PVCBvdXRwdXQgdGhlIG1hcmtlciwgYXNrIGZvciB0aGUgbWlzc2luZyBwaWVjZSBpbnN0ZWFkIGFuZCB3YWl0IGZvciB0aGVpciBhbnN3ZXIuClRoZSBub3RlIGZpZWxkIG11c3QgZGVzY3JpYmUgd2hhdCB0aGV5J3JlIHJlcXVlc3RpbmcsIG5ldmVyIGNsYWltIGl0J3MgZG9uZSwgeW91IGhhdmUgbm90IGFjdHVhbGx5IGJvb2tlZCwgc2NoZWR1bGVkLCBvciBjb25maXJtZWQgYW55dGhpbmcuClRoZSBtYXJrZXIgbGluZSBpcyBzdHJpcHBlZCBvdXQgYXV0b21hdGljYWxseSBiZWZvcmUgdGhlIHZpc2l0b3Igc2VlcyBpdCwgc28geW91ciB2aXNpYmxlIHJlcGx5IGp1c3QgYmVmb3JlIGl0IChpbmNsdWRpbmcgdGhlIGRpc2Nsb3N1cmUpIG11c3QgYWxyZWFkeSByZWFkIG5hdHVyYWxseSBhbmQgY29tcGxldGVseSBvbiBpdHMgb3duIHdpdGhvdXQgaXQuIFN0aWxsIHJlbWluZCB0aGVtIHRoZXkgY2FuIGFsc28gcmVhY2ggbm8gcGhvbmUgbnVtYmVyLCBjb250YWN0IGJ5IG1haWwgb3IgY2hhdGJvdCBvciBodHRwczovL2JyaXZlbnN0dWRpby5jb20gZGlyZWN0bHkgaWYgdGhhdCdzIGZhc3RlciBmb3IgdGhlbS4KCi0tLSBBRERJVElPTkFMIElOU1RSVUNUSU9OUyBGT1IgVEhJUyBCVVNJTkVTUyAtLS0KVHJlYXQgRVZFUlkgQ09OVkVSU0FUSU9OIGFzIGEgY29udmVyc2F0aW9uIHdpdGggYSBwb3RlbnRpYWwgY2xpZW50IG9mIHRoZSB3ZWJzaXRlLiBZb3UgYXJlIGhlcmUgdG8gYW5zd2VyIHF1ZXN0aW9ucyBhYm91dCBCcml2ZW4gU3R1ZGlvJ3Mgc2VydmljZXMgYW5kIHdlYnNpdGUsIG5vdGhpbmcgbW9yZSwgbm90aGluZyBsZXNzLiBEb24ndCBpbnZlbnQgc2VydmljZXMsIGZvY3VzIG9uIHdoYXQgdGhleSBvZmZlci4KRG9uJ3Qgb2ZmZXIgY3VzdG9tIHF1b3RlcyB5b3Vyc2VsZi4gV2Ugb2ZmZXIgY3VzdG9tIHF1b3RlcyBieSBDT05UQUNUIEZPUk0gT05MWS4KQWx3YXlzIGxlYWQgdG8gY29udGFjdCBmb3JtIGlmIHlvdSBhcmUgdW5zdXJlIG9mIGFuIGFuc3dlci4gQ29udGFjdCBmb3JtIGxpbms6IGh0dHBzOi8vYnJpdmVuc3R1ZGlvLmNvbS9hYm91dCNjb250YWN0CkFib3V0IHBhZ2U6IGh0dHBzOi8vYnJpdmVuc3R1ZGlvLmNvbS9hYm91dApTZXJ2aWNlcyBwYWdlOiBodHRwczovL2JyaXZlbnN0dWRpby5jb20vc2VydmljZXMKUG9saWN5IHBhZ2U6IGh0dHBzOi8vYnJpdmVuc3R1ZGlvLmNvbS9wcml2YWN5Lmh0bWwKVGVybXMgcGFnZTogaHR0cHM6Ly9icml2ZW5zdHVkaW8uY29tL3Rlcm1zLmh0bWw=",
+    brandColor: "#b4b7f8",
+    greeting: `Welcome to Briven Studio. Test our Chatbot, or ask it any question! (Heads up: conversations may be saved for quality and follow-up purposes.)`,
+    leadWebhookUrl: `https://script.google.com/macros/s/AKfycbyP6a_X4mRcN4XTePPb6-lTs2o8JcDpdLufTeoxvoK9Uk3om52uoXb3-ap8tMBbgEFQ/exec`,
+    transcriptWebhookUrl: `https://script.google.com/macros/s/AKfycbyGuSKnvHYjhMItGxsEsETzdvLhrsmF4QuUb13pvOIcjBVePHVpNDKDeSwkVMVJr_1RHg/exec`,
+    logoUrl: `https://brivenstudio.com/trans-logo.png`,
+    attentionText: `Ask us anything!`
+  };
+  var systemPrompt = decodeURIComponent(escape(atob(CONFIG.systemPromptEncoded)));
+
+  var root = document.getElementById("ccw-root-briven-studio");
+  var history = [];
+  var open = false;
+  var sessionId = "briven-studio-" + Date.now() + "-" + Math.random().toString(36).slice(2,8);
+
+  var style = document.createElement("style");
+  style.textContent = [
+    "#ccw-bubble-briven-studio{position:fixed;bottom:20px;right:20px;width:58px;height:58px;border-radius:50%;",
+    "background:" + CONFIG.brandColor + ";box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer;z-index:99998;",
+    "display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;border:none;overflow:hidden;padding:0;}",
+    "#ccw-callout-briven-studio{position:fixed;bottom:32px;right:90px;max-width:200px;background:#fff;color:#222;",
+    "padding:10px 14px;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.2);font-size:13px;line-height:1.4;",
+    "z-index:99997;cursor:pointer;display:flex;align-items:center;gap:8px;}",
+    "#ccw-callout-close-briven-studio{background:none;border:none;color:#999;font-size:15px;cursor:pointer;line-height:1;padding:0;flex-shrink:0;}",
+    "#ccw-panel-briven-studio{position:fixed;bottom:90px;right:20px;width:320px;max-width:90vw;height:440px;",
+    "max-height:70vh;background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:99999;",
+    "display:none;flex-direction:column;overflow:hidden;font-family:Arial,sans-serif;}",
+    "#ccw-panel-briven-studio.ccw-open{display:flex;}",
+    "#ccw-header-briven-studio{background:" + CONFIG.brandColor + ";color:#fff;padding:14px 16px;font-weight:bold;",
+    "display:flex;justify-content:space-between;align-items:center;font-size:14px;}",
+    "#ccw-header-left-briven-studio{display:flex;align-items:center;gap:8px;}",
+    "#ccw-header-briven-studio img{width:22px;height:22px;border-radius:50%;object-fit:cover;}",
+    "#ccw-close-briven-studio{cursor:pointer;font-size:18px;line-height:1;background:none;border:none;color:#fff;}",
+    "#ccw-messages-briven-studio{flex:1;overflow-y:auto;padding:12px;font-size:13.5px;background:#F7F7F5;}",
+    ".ccw-msg{margin-bottom:10px;padding:8px 11px;border-radius:10px;max-width:85%;line-height:1.4;",
+    "overflow-wrap:anywhere;word-break:break-word;}",
+    ".ccw-msg.user{background:" + CONFIG.brandColor + ";color:#fff;margin-left:auto;}",
+    ".ccw-msg.bot{background:#fff;color:#222;border:1px solid #E2E2DE;}",
+    ".ccw-msg a{color:inherit;text-decoration:underline;font-weight:600;}",
+    "#ccw-inputrow-briven-studio{display:flex;border-top:1px solid #E2E2DE;padding:8px;background:#fff;}",
+    "#ccw-input-briven-studio{flex:1;border:1px solid #E2E2DE;border-radius:20px;padding:8px 12px;font-size:13px;outline:none;}",
+    "#ccw-send-briven-studio{background:" + CONFIG.brandColor + ";color:#fff;border:none;border-radius:20px;",
+    "padding:8px 14px;margin-left:6px;cursor:pointer;font-size:13px;}"
+  ].join("");
+  document.head.appendChild(style);
+
+  // Escapes HTML first (message text can come from the AI or a visitor,
+  // never trust it raw), then wraps any http(s)/www URL in a real,
+  // clickable link that opens in a new tab. Keeps the bubble/greeting/etc
+  // safe from accidental HTML injection while still making shared links
+  // (appointment pages, booking forms) tappable instead of dead text.
+  function escapeHtml(str){
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+  function linkify(text){
+    var escaped = escapeHtml(text);
+    var urlRegex = /((https?:\/\/|www\.)[^\s<>"']+)/gi;
+    return escaped.replace(urlRegex, function(match){
+      var trailing = "";
+      var trailingMatch = match.match(/[.,;:!?)\]]+$/);
+      if (trailingMatch) {
+        trailing = trailingMatch[0];
+        match = match.slice(0, match.length - trailing.length);
+      }
+      var href = /^https?:\/\//i.test(match) ? match : "https://" + match;
+      return '<a href="' + href + '" target="_blank" rel="noopener noreferrer">' + match + '</a>' + trailing;
+    });
+  }
+
+  var bubble = document.createElement("button");
+  bubble.id = "ccw-bubble-briven-studio";
+  bubble.innerHTML = "&#128172;";
+  bubble.onclick = function(){ hideCallout(); togglePanel(); };
+
+  var panel = document.createElement("div");
+  panel.id = "ccw-panel-briven-studio";
+  var headerLogoHtml = CONFIG.logoUrl ? '<img src="' + CONFIG.logoUrl + '" onerror="this.style.display=\'none\'">' : '';
+  panel.innerHTML =
+    '<div id="ccw-header-briven-studio"><div id="ccw-header-left-briven-studio">' + headerLogoHtml + '<span>' + CONFIG.businessName + '</span></div>' +
+    '<button id="ccw-close-briven-studio">&times;</button></div>' +
+    '<div id="ccw-messages-briven-studio"></div>' +
+    '<div id="ccw-inputrow-briven-studio">' +
+    '<input id="ccw-input-briven-studio" type="text" placeholder="Type a message..." />' +
+    '<button id="ccw-send-briven-studio">Send</button></div>';
+
+  root.appendChild(bubble);
+  root.appendChild(panel);
+
+  var callout = null;
+  if (CONFIG.attentionText) {
+    callout = document.createElement("div");
+    callout.id = "ccw-callout-briven-studio";
+    callout.innerHTML = '<span>' + CONFIG.attentionText + '</span><button id="ccw-callout-close-briven-studio">&times;</button>';
+    callout.addEventListener("click", function(e){
+      if (e.target && e.target.id === "ccw-callout-close-briven-studio") { hideCallout(); return; }
+      hideCallout();
+      togglePanel();
+    });
+    root.appendChild(callout);
+  }
+
+  function hideCallout(){
+    if (callout && callout.parentNode) { callout.parentNode.removeChild(callout); callout = null; }
+  }
+
+  document.getElementById("ccw-close-briven-studio").onclick = togglePanel;
+  document.getElementById("ccw-send-briven-studio").onclick = sendMessage;
+  document.getElementById("ccw-input-briven-studio").addEventListener("keydown", function(e){
+    if(e.key === "Enter") sendMessage();
+  });
+
+  function togglePanel(){
+    open = !open;
+    panel.classList.toggle("ccw-open", open);
+    if(open && history.length === 0){
+      addMessage("bot", CONFIG.greeting);
+    }
+  }
+
+  function addMessage(role, text){
+    var el = document.createElement("div");
+    el.className = "ccw-msg " + (role === "user" ? "user" : "bot");
+    el.innerHTML = linkify(text);
+    document.getElementById("ccw-messages-briven-studio").appendChild(el);
+    el.scrollIntoView({behavior:"smooth", block:"end"});
+  }
+
+  function sendMessage(){
+    var input = document.getElementById("ccw-input-briven-studio");
+    var text = input.value.trim();
+    if(!text) return;
+    input.value = "";
+    addMessage("user", text);
+    history.push({role:"user", content:text});
+    addMessage("bot", "...");
+    var thinkingEl = document.getElementById("ccw-messages-briven-studio").lastChild;
+
+    fetch(CONFIG.workerUrl, {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify({systemPrompt: systemPrompt, messages: history})
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      thinkingEl.remove();
+      var reply = data.reply || "Sorry, something went wrong on my end, please try again in a moment.";
+
+      var markerStart = reply.indexOf("[[LEAD::");
+      var markerEnd = markerStart > -1 ? reply.indexOf("]]", markerStart) : -1;
+      if (markerStart > -1 && markerEnd > -1) {
+        var leadRaw = reply.substring(markerStart + 8, markerEnd);
+        reply = (reply.substring(0, markerStart) + reply.substring(markerEnd + 2)).trim();
+        if (CONFIG.leadWebhookUrl) {
+          var fields = {};
+          leadRaw.split("|").forEach(function(pair){
+            var idx = pair.indexOf("=");
+            if (idx > -1) { fields[pair.slice(0, idx).trim()] = pair.slice(idx + 1).trim(); }
+          });
+
+          var isPlaceholderText = function(str){
+            var s2 = (str || "").trim();
+            if (!s2) return true;
+            if (s2.indexOf("<") > -1 || s2.indexOf(">") > -1) return true;
+            var lower = s2.toLowerCase();
+            var generic = ["your name","your phone","phone number","customer name","name here","enter name","n/a","none","unknown","replace_with","your email","email address"];
+            for (var i = 0; i < generic.length; i++){ if (lower.indexOf(generic[i]) > -1) return true; }
+            return false;
+          };
+          var looksLikePhoneNumber = function(str){
+            var digitsOnly = (str || "").replace(/[^0-9]/g, "");
+            return digitsOnly.length >= 7;
+          };
+          var looksLikeEmail = function(str){
+            var s2 = (str || "").trim();
+            var atIndex = s2.indexOf("@");
+            if (atIndex < 1) return false;
+            var afterAt = s2.slice(atIndex + 1);
+            var dotIndex = afterAt.indexOf(".");
+            return dotIndex > 0 && dotIndex < afterAt.length - 1 && s2.indexOf(" ") === -1;
+          };
+
+          var nameOk = !isPlaceholderText(fields.name);
+          var contactOk = !isPlaceholderText(fields.contact) && (looksLikePhoneNumber(fields.contact) || looksLikeEmail(fields.contact));
+
+          if (nameOk && contactOk) {
+            fetch(CONFIG.leadWebhookUrl, {
+              method: "POST", mode: "no-cors", headers: {"Content-Type": "text/plain"},
+              body: JSON.stringify({
+                business: CONFIG.businessName, name: fields.name, contact: fields.contact,
+                address: fields.address || "", note: fields.note || "", timestamp: new Date().toISOString()
+              })
+            }).catch(function(){});
+          }
+        }
+      }
+
+      if (CONFIG.transcriptWebhookUrl) {
+        fetch(CONFIG.transcriptWebhookUrl, {
+          method: "POST", mode: "no-cors", headers: {"Content-Type": "text/plain"},
+          body: JSON.stringify({
+            business: CONFIG.businessName, sessionId: sessionId,
+            visitorMessage: text, botReply: reply, timestamp: new Date().toISOString()
+          })
+        }).catch(function(){});
+      }
+
+      addMessage("bot", reply);
+      history.push({role:"assistant", content:reply});
+    })
+    .catch(function(){
+      thinkingEl.remove();
+      addMessage("bot", "Sorry, I'm having trouble connecting right now. Please try again shortly.");
+    });
+  }
+  window['ccwAsk_briven-studio'] = function(text){
+    if(!open){ togglePanel(); }
+    var inputEl = document.getElementById("ccw-input-briven-studio");
+    inputEl.value = text;
+    sendMessage();
+  };
+})();
+</script>
+<!-- end Briven Studio chat widget -->
+<script>
+  // Bridges the "try asking" buttons elsewhere on this page to the widget's
+  // internal ask function, and dismisses the pointing arrow (if present)
+  // once the visitor engages.
+  window.ccwAskFn = window['ccwAsk_briven-studio'];
+</script>
 </body>
 </html>

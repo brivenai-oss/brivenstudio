@@ -1,10 +1,10 @@
 {
-  "name": "Sterling Home Plumbing: Lead Capture, CRM & Routing",
+  "name": "Local Plumbing Service: Lead Capture, CRM & Routing",
   "nodes": [
     {
       "parameters": {
         "httpMethod": "POST",
-        "path": "sterling-lead-form",
+        "path": "new-lead-form",
         "responseMode": "onReceived",
         "options": {}
       },
@@ -13,7 +13,7 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [-40, 260],
-      "notes": "Fires the instant a visitor submits the quote-request form on sterlinghomeplumbing.com. Webhook URL is registered with the site's form tool."
+      "notes": "Fires the instant a visitor submits the quote-request form on example.com. Webhook URL is registered with the site's form tool."
     },
     {
       "parameters": {
@@ -103,7 +103,7 @@
         "resource": "message",
         "operation": "send",
         "toList": [{ "phone": "={{ $json.body.phone }}" }],
-        "message": "Hi {{ $json.body.name }}, thanks for reaching out to Sterling Home Plumbing! We received your request and will call you back shortly."
+        "message": "Hi {{ $json.body.name }}, thanks for reaching out to Local Plumbing Service! We received your request and will call you back shortly."
       },
       "id": "1a2b3c4d-0006-4a1a-9b1a-000000000006",
       "name": "Auto-Reply SMS to Customer",

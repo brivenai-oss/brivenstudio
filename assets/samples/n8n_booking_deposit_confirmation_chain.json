@@ -1,0 +1,378 @@
+{
+  "name": "Photography Studio: Booking to Deposit to Confirmation Chain",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "studio-new-booking",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "3c4d5e6f-0001-4c3c-9d3c-000000000001",
+      "name": "New Booking Submitted",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [-60, 400],
+      "notes": "Fires the instant a client submits the booking form on example.com (session type, date, package price)."
+    },
+    {
+      "parameters": {
+        "resource": "contact",
+        "operation": "upsert",
+        "email": "={{ $json.body.email }}",
+        "additionalFields": {
+          "firstName": "={{ $json.body.first_name }}",
+          "lastName": "={{ $json.body.last_name }}",
+          "phone": "={{ $json.body.phone }}"
+        }
+      },
+      "id": "3c4d5e6f-0002-4c3c-9d3c-000000000002",
+      "name": "Create/Update Contact (CRM)",
+      "type": "n8n-nodes-base.hubspot",
+      "typeVersion": 2,
+      "position": [200, 400],
+      "notes": "Creates the client record if new, or updates it if they have booked before. Every booking is tracked as a deal in the CRM pipeline."
+    },
+    {
+      "parameters": {
+        "resource": "deal",
+        "operation": "create",
+        "dealName": "={{ $json.body.first_name }} {{ $json.body.last_name }}, {{ $json.body.session_type }}",
+        "additionalFields": {
+          "amount": "={{ $json.body.package_price }}",
+          "dealStage": "booking_deposit_pending",
+          "closeDate": "={{ $json.body.session_date }}"
+        }
+      },
+      "id": "3c4d5e6f-0003-4c3c-9d3c-000000000003",
+      "name": "Create Deal (Deposit Pending)",
+      "type": "n8n-nodes-base.hubspot",
+      "typeVersion": 2,
+      "position": [440, 400],
+      "notes": "Deal stage doubles as the studio's at-a-glance status tracker across every open booking."
+    },
+    {
+      "parameters": {
+        "resource": "invoice",
+        "operation": "create",
+        "customer": "={{ $json.body.email }}",
+        "amount": "={{ Math.round($json.body.package_price * 0.3 * 100) / 100 }}",
+        "description": "=30% deposit, {{ $json.body.session_type }} session on {{ $json.body.session_date }}",
+        "dueDate": "={{ $now.plus({days: 5}).toISODate() }}"
+      },
+      "id": "3c4d5e6f-0004-4c3c-9d3c-000000000004",
+      "name": "Create 30% Deposit Invoice",
+      "type": "n8n-nodes-base.stripe",
+      "typeVersion": 1,
+      "position": [680, 400],
+      "notes": "Deposit is always 30% of the package price, calculated at send time rather than hardcoded per package."
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.body.email }}",
+        "subject": "=Your studio booking, deposit invoice enclosed",
+        "message": "=Hi {{ $json.body.first_name }}, thanks for booking your {{ $json.body.session_type }} session! To lock in {{ $json.body.session_date }}, please pay the attached deposit invoice within 5 days. We'll follow up automatically as the date approaches."
+      },
+      "id": "3c4d5e6f-0005-4c3c-9d3c-000000000005",
+      "name": "Send Invoice Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [920, 400],
+      "notes": "Confirms receipt of the booking immediately, before any payment status is known."
+    },
+    {
+      "parameters": {
+        "amount": 5,
+        "unit": "days"
+      },
+      "id": "3c4d5e6f-0006-4c3c-9d3c-000000000006",
+      "name": "Wait Until Invoice Due",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [1160, 400],
+      "notes": "Pauses the workflow execution itself, no separate scheduled workflow needed to check back in."
+    },
+    {
+      "parameters": {
+        "resource": "invoice",
+        "operation": "get",
+        "invoiceId": "={{ $('Create 30% Deposit Invoice').item.json.id }}"
+      },
+      "id": "3c4d5e6f-0007-4c3c-9d3c-000000000007",
+      "name": "Check Invoice Payment Status",
+      "type": "n8n-nodes-base.stripe",
+      "typeVersion": 1,
+      "position": [1400, 400],
+      "notes": "Reads the live invoice status directly from Stripe rather than trusting a local flag."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "loose" },
+          "conditions": [
+            {
+              "id": "paid-1",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "paid",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "3c4d5e6f-0008-4c3c-9d3c-000000000008",
+      "name": "IF Invoice Paid",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1640, 400],
+      "notes": "Splits the workflow into a confirmed path and a reminder/escalation path."
+    },
+    {
+      "parameters": {
+        "calendar": "={{ 'studio-bookings@example.com' }}",
+        "start": "={{ $('New Booking Submitted').item.json.body.session_date }}",
+        "summary": "=Session, {{ $('New Booking Submitted').item.json.body.first_name }} {{ $('New Booking Submitted').item.json.body.last_name }}"
+      },
+      "id": "3c4d5e6f-0009-4c3c-9d3c-000000000009",
+      "name": "Confirm Session on Calendar",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [1900, 220],
+      "notes": "Only ever added to the studio calendar once the deposit clears, so the calendar never shows unconfirmed holds as real bookings."
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('New Booking Submitted').item.json.body.email }}",
+        "subject": "You're confirmed! Session details enclosed",
+        "message": "Deposit received, your session is officially on the calendar. We'll send a prep guide 48 hours before your shoot."
+      },
+      "id": "3c4d5e6f-0010-4c3c-9d3c-00000000000a",
+      "name": "Send Confirmation Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [2140, 220],
+      "notes": "Distinct from the initial booking email, confirms the deposit specifically."
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": { "__rl": true, "value": "#studio-bookings", "mode": "name" },
+        "text": "=Session confirmed: {{ $('New Booking Submitted').item.json.body.first_name }} {{ $('New Booking Submitted').item.json.body.last_name }}, {{ $('New Booking Submitted').item.json.body.session_type }} on {{ $('New Booking Submitted').item.json.body.session_date }}.",
+        "otherOptions": {}
+      },
+      "id": "3c4d5e6f-0011-4c3c-9d3c-00000000000b",
+      "name": "Notify Studio Team",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [2380, 220],
+      "notes": "Keeps the whole team aware of new confirmed sessions without anyone needing to check the CRM manually."
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('New Booking Submitted').item.json.body.email }}",
+        "subject": "Friendly reminder: deposit still pending",
+        "message": "=Hi {{ $('New Booking Submitted').item.json.body.first_name }}, just a reminder that your deposit invoice for {{ $('New Booking Submitted').item.json.body.session_date }} is still outstanding. Let us know if you'd like a different payment method or have any questions."
+      },
+      "id": "3c4d5e6f-0012-4c3c-9d3c-00000000000c",
+      "name": "Send Payment Reminder Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [1900, 580],
+      "notes": "First reminder, kept friendly and low-pressure rather than an automatic penalty notice."
+    },
+    {
+      "parameters": {
+        "amount": 48,
+        "unit": "hours"
+      },
+      "id": "3c4d5e6f-0013-4c3c-9d3c-00000000000d",
+      "name": "Wait 48 Hours",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [2140, 580],
+      "notes": "Gives the reminder email time to land before checking payment status again."
+    },
+    {
+      "parameters": {
+        "resource": "invoice",
+        "operation": "get",
+        "invoiceId": "={{ $('Create 30% Deposit Invoice').item.json.id }}"
+      },
+      "id": "3c4d5e6f-0014-4c3c-9d3c-00000000000e",
+      "name": "Re-check Payment Status",
+      "type": "n8n-nodes-base.stripe",
+      "typeVersion": 1,
+      "position": [2380, 580],
+      "notes": "Second live status check rather than assuming the reminder worked."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "loose" },
+          "conditions": [
+            {
+              "id": "still-unpaid-1",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "paid",
+              "operator": { "type": "string", "operation": "notEquals" }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "3c4d5e6f-0015-4c3c-9d3c-00000000000f",
+      "name": "IF Still Unpaid",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [2620, 580],
+      "notes": "Second branch point. A late payment here still reconnects to the confirmed path rather than staying stuck."
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": { "__rl": true, "value": "#studio-bookings-urgent", "mode": "name" },
+        "text": "=Deposit still unpaid after reminder: {{ $('New Booking Submitted').item.json.body.first_name }} {{ $('New Booking Submitted').item.json.body.last_name }}, session date {{ $('New Booking Submitted').item.json.body.session_date }}. Recommend a personal follow-up.",
+        "otherOptions": {}
+      },
+      "id": "3c4d5e6f-0016-4c3c-9d3c-000000000010",
+      "name": "Escalate to Owner",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [2860, 460],
+      "notes": "Escalations go to a separate, higher-attention channel than routine booking confirmations."
+    },
+    {
+      "parameters": {
+        "resource": "deal",
+        "operation": "update",
+        "dealId": "={{ $('Create Deal (Deposit Pending)').item.json.id }}",
+        "additionalFields": {
+          "dealStage": "at_risk_unpaid_deposit"
+        }
+      },
+      "id": "3c4d5e6f-0017-4c3c-9d3c-000000000011",
+      "name": "Flag Deal At-Risk in CRM",
+      "type": "n8n-nodes-base.hubspot",
+      "typeVersion": 2,
+      "position": [2860, 640],
+      "notes": "So the studio's pipeline view reflects reality without anyone updating it by hand."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "loose" },
+          "conditions": [
+            {
+              "id": "missing-1",
+              "leftValue": "={{ $json.body.session_date }}",
+              "rightValue": "",
+              "operator": { "type": "string", "operation": "empty" }
+            },
+            {
+              "id": "missing-2",
+              "leftValue": "={{ $json.body.email }}",
+              "rightValue": "",
+              "operator": { "type": "string", "operation": "empty" }
+            }
+          ],
+          "combinator": "or"
+        }
+      },
+      "id": "3c4d5e6f-0018-4c3c-9d3c-000000000012",
+      "name": "Missing Required Booking Field?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [200, 620],
+      "notes": "Error-handling branch, catches a malformed booking submission before it creates a broken CRM record or invoice."
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": { "__rl": true, "value": "#automation-alerts", "mode": "name" },
+        "text": "=Booking form submitted with a missing session date or email. Raw payload: {{ JSON.stringify($json.body) }}. Please follow up manually.",
+        "otherOptions": {}
+      },
+      "id": "3c4d5e6f-0019-4c3c-9d3c-000000000013",
+      "name": "Notify - Malformed Booking",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [440, 620],
+      "notes": "Fallback so a bad submission is surfaced to a human instead of silently creating a broken deal or invoice."
+    }
+  ],
+  "connections": {
+    "New Booking Submitted": {
+      "main": [
+        [
+          { "node": "Create/Update Contact (CRM)", "type": "main", "index": 0 },
+          { "node": "Missing Required Booking Field?", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Create/Update Contact (CRM)": {
+      "main": [[{ "node": "Create Deal (Deposit Pending)", "type": "main", "index": 0 }]]
+    },
+    "Create Deal (Deposit Pending)": {
+      "main": [[{ "node": "Create 30% Deposit Invoice", "type": "main", "index": 0 }]]
+    },
+    "Create 30% Deposit Invoice": {
+      "main": [[{ "node": "Send Invoice Email", "type": "main", "index": 0 }]]
+    },
+    "Send Invoice Email": {
+      "main": [[{ "node": "Wait Until Invoice Due", "type": "main", "index": 0 }]]
+    },
+    "Wait Until Invoice Due": {
+      "main": [[{ "node": "Check Invoice Payment Status", "type": "main", "index": 0 }]]
+    },
+    "Check Invoice Payment Status": {
+      "main": [[{ "node": "IF Invoice Paid", "type": "main", "index": 0 }]]
+    },
+    "IF Invoice Paid": {
+      "main": [
+        [{ "node": "Confirm Session on Calendar", "type": "main", "index": 0 }],
+        [{ "node": "Send Payment Reminder Email", "type": "main", "index": 0 }]
+      ]
+    },
+    "Confirm Session on Calendar": {
+      "main": [[{ "node": "Send Confirmation Email", "type": "main", "index": 0 }]]
+    },
+    "Send Confirmation Email": {
+      "main": [[{ "node": "Notify Studio Team", "type": "main", "index": 0 }]]
+    },
+    "Send Payment Reminder Email": {
+      "main": [[{ "node": "Wait 48 Hours", "type": "main", "index": 0 }]]
+    },
+    "Wait 48 Hours": {
+      "main": [[{ "node": "Re-check Payment Status", "type": "main", "index": 0 }]]
+    },
+    "Re-check Payment Status": {
+      "main": [[{ "node": "IF Still Unpaid", "type": "main", "index": 0 }]]
+    },
+    "IF Still Unpaid": {
+      "main": [
+        [
+          { "node": "Escalate to Owner", "type": "main", "index": 0 },
+          { "node": "Flag Deal At-Risk in CRM", "type": "main", "index": 0 }
+        ],
+        [{ "node": "Confirm Session on Calendar", "type": "main", "index": 0 }]
+      ]
+    },
+    "Missing Required Booking Field?": {
+      "main": [
+        [{ "node": "Notify - Malformed Booking", "type": "main", "index": 0 }],
+        []
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "portfolioSample": true,
+    "instructions": "Sample workflow for portfolio purposes. Replace the HubSpot, Stripe, Gmail, Google Calendar, and Slack credentials with the client's own before deploying live. The late-payment branch reconnects into the same confirmed-session path rather than dead-ending, so a client who pays after the reminder still gets booked normally."
+  }
+}

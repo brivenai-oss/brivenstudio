@@ -1,10 +1,10 @@
 {
-  "name": "Coastal Outfitters: AI Support Ticket Triage",
+  "name": "Retail Company: AI Support Ticket Triage",
   "nodes": [
     {
       "parameters": {
         "pollTimes": { "item": [{ "mode": "everyMinute" }] },
-        "mailbox": "support@coastaloutfitters.com",
+        "mailbox": "support@example.com",
         "postProcessAction": "read",
         "options": {}
       },

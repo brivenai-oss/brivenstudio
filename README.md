@@ -55,24 +55,37 @@ Pricing is intentionally left off (`services.html`, all twelve `.plan-card` bloc
 
 ## Privacy Policy & Terms of Use — please review before launch
 
-I drafted `privacy.html` and `terms.html` based on how the site and services actually work (contact form fields, no cookies/analytics currently, how chatbot conversation data is handled for clients, etc.). Two things need your input before these go live:
+I drafted `privacy.html` and `terms.html` based on how the site and services actually work (contact form fields, no cookies/analytics currently, how chatbot conversation data is handled for clients, etc.), with governing law set to Romania and EU law. One thing still worth knowing:
 
-1. **Governing law** — `terms.html` has a placeholder: `[Governing Jurisdiction]`. Fill in the country/state your business is registered or operating in.
-2. **I'm not a lawyer** — these are solid, standard-form drafts, not legal advice. If you'll be handling EU/UK or California client data at any real volume, it's worth a short review with an actual lawyer for GDPR/CCPA specifics — there's a note left in `privacy.html` flagging this for you.
+**I'm not a lawyer** — these are solid, standard-form drafts, not legal advice. If you'll be handling EU/UK or California client data at any real volume, it's worth a short review with an actual lawyer for GDPR/CCPA specifics.
 
 Both pages are linked in the footer on every page.
 
 ## Notes on the chat demo animation
 
-The looping chat exchange in the hero and on the services page is decorative (`data-chat-demo` attribute, JSON array of `{role, text}` pairs, handled in `script.js`). It's not connected to any live chatbot — it's just showing what the product looks like. To change the example conversation, edit the JSON in the `data-chat-demo` attribute directly in the HTML.
+The looping chat exchange in the homepage hero is decorative (`data-chat-demo` attribute, JSON array of `{role, text}` pairs, handled in `script.js`). It's not connected to any live chatbot, it's just showing what the product looks like. To change the example conversation, edit the JSON in the `data-chat-demo` attribute directly in the HTML.
+
+This is separate from the real, live chat widget described below.
+
+## The live chat widget (every page)
+
+Your actual chatbot embed is live at the bottom of every page (`<div id="ccw-root-briven-studio">` plus its script, right before `</body>`). It's the exact code you provided, with one small addition: a compatible `window['ccwAsk_briven-studio']` bridge function (copied verbatim from your own demo-landing-page.html) appended just before the closing `})();`, plus the small helper script that exposes it as `window.ccwAskFn`. This is what makes the "try asking" buttons on `portfolio.html` able to open the widget and ask a question programmatically. Nothing else about the widget was changed.
+
+Since it's pasted identically into all six pages, if you ever need to update the widget config (worker URL, business info, colors), you'll need to update it in all six files, or ask me to do it in one pass.
 
 ## Our Work page (portfolio.html)
 
-Real sample work, not mockup placeholders: three before/after Google review responses, two live-formula spreadsheet dashboards you can flip to a "Raw Data" tab to see actual rows from the workbook, and two n8n automation workflows shown as a flow diagram with a "View raw workflow JSON" toggle that expands the actual exported file inline. Every download button on that page (`.xlsx` / `.json`) points to a real file sitting in `assets/samples/` — nothing is a dead link.
+Real sample work, not mockup placeholders:
+- **AI Chatbot** — not a screenshot, the actual live widget running on the page, with a few "try asking" example buttons.
+- **3 before/after Google review responses** — Family Dental Office, Bistro Restaurant, Local Plumbing Service.
+- **3 live-formula spreadsheet dashboards** — Retail Company (single sales table), Property Management Company, and a flagship Multi-Location Restaurant Group example spanning 4 cross-referenced tables. Each has a "Raw Data" tab showing actual rows from the real workbook.
+- **3 n8n automation workflows** — Local Plumbing Service (lead capture), Retail Company (AI-enhanced support triage), and a flagship Photography Studio booking-to-deposit-to-confirmation chain with nested payment branches. Each has a "View raw workflow JSON" toggle showing the actual exported file.
 
-`services.html` features one condensed example per service (reviews, automation, dashboards) inline, each linking to the fuller version on `portfolio.html`. If you swap in real client work later, replace the business names/data in both places — the featured version on `services.html` and the full version on `portfolio.html` currently duplicate the same example by design, so update both or they'll drift out of sync.
+All business names are intentionally generic (no real companies, no trademark risk). Every download button (`.xlsx` / `.json`) points to a real file in `assets/samples/` — nothing is a dead link.
 
-The disclaimer line above the closing CTA on `portfolio.html` ("illustrative sample builds... not real clients") should stay until these are replaced with actual client work, or be adjusted the moment any of them become real.
+`services.html` features one condensed example per service (reviews, automation, dashboards) inline, each linking to the fuller version on `portfolio.html`. The featured examples currently duplicate data from `portfolio.html` by design — if you swap any of these for real client work later, update both spots or they'll drift out of sync.
+
+The disclaimer line above the closing CTA on `portfolio.html` ("generic placeholders... not real clients") should stay until these are replaced with actual client work.
 
 ## Accessibility / robustness notes
 
