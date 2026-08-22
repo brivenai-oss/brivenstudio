@@ -114,6 +114,57 @@
       });
     }
 
+    // Splits an already-linkified HTML string into a sequence of atomic
+    // "reveal steps": whole tags stay atomic (never split mid-tag), HTML
+    // entities (produced by escapeHtml, e.g. "&amp;") stay atomic too, so
+    // a gradual reveal can never leave a half-formed tag or entity on
+    // screen even mid-animation. Everything else is one character per step.
+    function tokenizeForReveal(html) {
+      var parts = html.split(/(<[^>]+>)/);
+      var steps = [];
+      for (var i = 0; i < parts.length; i++) {
+        var part = parts[i];
+        if (!part) continue;
+        if (part.charAt(0) === "<") {
+          steps.push(part);
+        } else {
+          var chars = part.match(/&[^;\s]+;|[\s\S]/g) || [];
+          for (var j = 0; j < chars.length; j++) steps.push(chars[j]);
+        }
+      }
+      return steps;
+    }
+
+    // "LLM-style" gradual text reveal, purely cosmetic (the full reply has
+    // already arrived from the relay by the time this runs, nothing here
+    // touches the network or changes token usage). Speed scales with
+    // message length so a short reply and a long reply both finish
+    // revealing in roughly the same amount of time, rather than a long
+    // reply taking noticeably longer to finish appearing.
+    var REVEAL_TICK_MS = 16;
+    var REVEAL_TARGET_MS = 700;
+    function revealGradually(el, html) {
+      var steps = tokenizeForReveal(html);
+      if (steps.length === 0) return;
+      var totalTicks = Math.max(1, Math.round(REVEAL_TARGET_MS / REVEAL_TICK_MS));
+      var perTick = Math.max(1, Math.ceil(steps.length / totalTicks));
+      var i = 0;
+      var acc = "";
+      var timer = setInterval(function () {
+        var chunk = 0;
+        while (i < steps.length && chunk < perTick) {
+          acc += steps[i];
+          i++;
+          chunk++;
+        }
+        el.innerHTML = acc;
+        el.scrollIntoView({ behavior: "instant", block: "end" });
+        if (i >= steps.length) {
+          clearInterval(timer);
+        }
+      }, REVEAL_TICK_MS);
+    }
+
     var bubble = document.createElement("button");
     bubble.id = "ccw-bubble";
     bubble.innerHTML = "&#128172;";
@@ -183,9 +234,17 @@
     function addMessage(role, text) {
       var el = document.createElement("div");
       el.className = "ccw-msg " + (role === "user" ? "user" : "bot");
-      el.innerHTML = linkify(text);
       document.getElementById("ccw-messages").appendChild(el);
-      el.scrollIntoView({ behavior: "smooth", block: "end" });
+
+      // Only animate real bot replies. User messages and the "..." typing
+      // indicator render instantly, same as before.
+      if (role === "bot" && text !== "...") {
+        revealGradually(el, linkify(text));
+      } else {
+        el.innerHTML = linkify(text);
+        el.scrollIntoView({ behavior: "smooth", block: "end" });
+      }
+      return el;
     }
 
     function sendMessage() {
