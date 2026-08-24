@@ -13,7 +13,7 @@ export default {
       .on("body", {
         element(element) {
           element.append(
-            '<script src="/chatbot.js" defer></script>',
+            '<script src="https://brivenstudio.com/widget.js" data-client="briven-studio" defer></script>',
             { html: true }
           );
         }
