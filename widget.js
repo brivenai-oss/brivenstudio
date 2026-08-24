@@ -368,5 +368,17 @@
           addMessage("bot", "Sorry, I'm having trouble connecting right now. Please try again shortly.");
         });
     }
+
+    // Lets buttons/links elsewhere on the client's own page (e.g. "Try
+    // asking..." chips) drive the widget without needing to know any of
+    // its internals. Unlike the old per-client slug-based bridge (which
+    // needed a unique name per client since multiple widgets could in
+    // theory share a page), this is safe to expose as a single plain
+    // global: widget.js only ever loads one client's widget per page.
+    window.ccwAskFn = function (text) {
+      if (!open) togglePanel();
+      document.getElementById("ccw-input").value = text;
+      sendMessage();
+    };
   }
 })();
