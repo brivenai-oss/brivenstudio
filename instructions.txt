@@ -1,0 +1,16 @@
+To finish the setup:
+
+chatbot.js → upload to your site's root, same level as index.html
+_middleware.js → upload into a functions folder at your project root 
+(you've already got this part done)
+Remove the old <div id="ccw-root-briven-studio"> + 
+<script> block from every page it's currently pasted into
+Upload everything together and redeploy
+
+One thing worth knowing for later: 
+your actual widget config (business info, pricing, webhook URLs) now lives inside chatbot.js, 
+not spread across five HTML files. So next time you want to update anything, 
+either edit this file directly, or regenerate a fresh snippet from chatbot_generator.html 
+and swap the CONFIG block in — just keep the root-creation bit near the top 
+(the part that creates its own <div>) since that's specific to this standalone-file setup, 
+not something the Generator outputs by default.
