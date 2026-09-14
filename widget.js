@@ -57,10 +57,25 @@
     root.id = "ccw-root";
     document.body.appendChild(root);
 
+    // Derives a slightly darker shade of the one configured brand color, so the
+    // bubble/header/user-messages/send-button can use a subtle gradient instead of
+    // a single flat fill, without needing a second color from whoever sets this up.
+    function shadeColor(hex, percent){
+      hex = String(hex).replace('#','');
+      if (hex.length === 3) hex = hex.split('').map(function(c){ return c+c; }).join('');
+      var num = parseInt(hex, 16) || 0;
+      var r = Math.max(0, Math.min(255, (num >> 16) + Math.round(255 * percent)));
+      var g = Math.max(0, Math.min(255, ((num >> 8) & 0x00FF) + Math.round(255 * percent)));
+      var b = Math.max(0, Math.min(255, (num & 0x0000FF) + Math.round(255 * percent)));
+      return "#" + (0x1000000 + r * 0x10000 + g * 0x100 + b).toString(16).slice(1);
+    }
+    var brandDeep = shadeColor(CONFIG.brandColor, -0.16);
+    var brandGradient = "linear-gradient(135deg, " + CONFIG.brandColor + " 0%, " + brandDeep + " 100%)";
+
     var style = document.createElement("style");
     style.textContent = [
       "#ccw-bubble{position:fixed;bottom:20px;right:20px;width:58px;height:58px;border-radius:50%;",
-      "background:" + CONFIG.brandColor + ";box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer;z-index:99998;",
+      "background:" + brandGradient + ";box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer;z-index:99998;",
       "display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;border:none;overflow:hidden;padding:0;}",
       "#ccw-callout{position:fixed;bottom:32px;right:90px;max-width:200px;background:#fff;color:#222;",
       "padding:10px 14px;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.2);font-size:13px;line-height:1.4;",
@@ -68,22 +83,29 @@
       "#ccw-callout-close{background:none;border:none;color:#999;font-size:15px;cursor:pointer;line-height:1;padding:0;flex-shrink:0;}",
       "#ccw-panel{position:fixed;bottom:90px;right:20px;width:320px;max-width:90vw;height:440px;",
       "max-height:70vh;background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:99999;",
-      "display:none;flex-direction:column;overflow:hidden;font-family:Arial,sans-serif;}",
+      "display:none;flex-direction:column;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;}",
       "#ccw-panel.ccw-open{display:flex;}",
-      "#ccw-header{background:" + CONFIG.brandColor + ";color:#fff;padding:14px 16px;font-weight:bold;",
+      "#ccw-header{background:" + brandGradient + ";color:#fff;padding:14px 16px;font-weight:bold;",
       "display:flex;justify-content:space-between;align-items:center;font-size:14px;}",
       "#ccw-header-left{display:flex;align-items:center;gap:8px;}",
       "#ccw-header img{width:22px;height:22px;border-radius:50%;object-fit:cover;}",
       "#ccw-close{cursor:pointer;font-size:18px;line-height:1;background:none;border:none;color:#fff;}",
       "#ccw-messages{flex:1;overflow-y:auto;padding:12px;font-size:13.5px;background:#F7F7F5;}",
-      ".ccw-msg{margin-bottom:10px;padding:8px 11px;border-radius:10px;max-width:85%;line-height:1.4;",
-      "overflow-wrap:anywhere;word-break:break-word;}",
-      ".ccw-msg.user{background:" + CONFIG.brandColor + ";color:#fff;margin-left:auto;}",
+      ".ccw-row{display:flex;align-items:flex-end;gap:6px;margin-bottom:10px;max-width:92%;}",
+      ".ccw-avatar{width:24px;height:24px;border-radius:50%;flex-shrink:0;overflow:hidden;",
+      "background:" + brandGradient + ";display:flex;align-items:center;justify-content:center;",
+      "font-size:14px;color:#fff;line-height:1;}",
+      ".ccw-avatar img{width:100%;height:100%;object-fit:cover;}",
+      ".ccw-msg{padding:8px 11px;border-radius:10px;max-width:85%;line-height:1.4;margin-bottom:10px;",
+      "overflow-wrap:anywhere;word-break:break-word;display:flex;flex-direction:column;}",
+      ".ccw-msg.user{background:" + brandGradient + ";color:#fff;margin-left:auto;}",
       ".ccw-msg.bot{background:#fff;color:#222;border:1px solid #E2E2DE;}",
+      ".ccw-row .ccw-msg{margin-bottom:0;}",
       ".ccw-msg a{color:inherit;text-decoration:underline;font-weight:600;}",
+      ".ccw-msg-time{font-size:10px;opacity:.55;margin-top:3px;}",
       "#ccw-inputrow{display:flex;border-top:1px solid #E2E2DE;padding:8px;background:#fff;}",
       "#ccw-input{flex:1;border:1px solid #E2E2DE;border-radius:20px;padding:8px 12px;font-size:13px;outline:none;}",
-      "#ccw-send{background:" + CONFIG.brandColor + ";color:#fff;border:none;border-radius:20px;",
+      "#ccw-send{background:" + brandGradient + ";color:#fff;border:none;border-radius:20px;",
       "padding:8px 14px;margin-left:6px;cursor:pointer;font-size:13px;}",
     ].join("");
     document.head.appendChild(style);
@@ -231,20 +253,55 @@
       }
     }
 
+    function formatMsgTime(d) {
+      var h = d.getHours(), m = d.getMinutes();
+      var ampm = h >= 12 ? "PM" : "AM";
+      h = h % 12; if (h === 0) h = 12;
+      return h + ":" + (m < 10 ? "0" : "") + m + " " + ampm;
+    }
+
     function addMessage(role, text) {
-      var el = document.createElement("div");
-      el.className = "ccw-msg " + (role === "user" ? "user" : "bot");
-      document.getElementById("ccw-messages").appendChild(el);
+      var container = document.getElementById("ccw-messages");
+      var bubble = document.createElement("div");
+      bubble.className = "ccw-msg " + (role === "user" ? "user" : "bot");
+
+      var textEl = document.createElement("span");
+      textEl.className = "ccw-msg-text";
+      bubble.appendChild(textEl);
+
+      var timeEl = document.createElement("span");
+      timeEl.className = "ccw-msg-time";
+      timeEl.textContent = formatMsgTime(new Date());
+      bubble.appendChild(timeEl);
+
+      var appendTarget = bubble;
+      if (role !== "user" && CONFIG.avatarEnabled) {
+        var row = document.createElement("div");
+        row.className = "ccw-row";
+        var avatar = document.createElement("div");
+        avatar.className = "ccw-avatar";
+        // Same speech-balloon icon as the launcher bubble, so the fallback reads
+        // as "generic chat icon" rather than an intentional logo/branding choice.
+        if (CONFIG.logoUrl) {
+          avatar.innerHTML = '<img src="' + CONFIG.logoUrl + '" onerror="this.parentNode.innerHTML=\'&#128172;\'">';
+        } else {
+          avatar.innerHTML = "&#128172;";
+        }
+        row.appendChild(avatar);
+        row.appendChild(bubble);
+        appendTarget = row;
+      }
+      container.appendChild(appendTarget);
 
       // Only animate real bot replies. User messages and the "..." typing
       // indicator render instantly, same as before.
       if (role === "bot" && text !== "...") {
-        revealGradually(el, linkify(text));
+        revealGradually(textEl, linkify(text));
       } else {
-        el.innerHTML = linkify(text);
-        el.scrollIntoView({ behavior: "smooth", block: "end" });
+        textEl.innerHTML = linkify(text);
+        appendTarget.scrollIntoView({ behavior: "smooth", block: "end" });
       }
-      return el;
+      return bubble;
     }
 
     function sendMessage() {
