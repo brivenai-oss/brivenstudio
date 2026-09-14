@@ -189,7 +189,7 @@
 
     var bubble = document.createElement("button");
     bubble.id = "ccw-bubble";
-    bubble.innerHTML = "&#128172;";
+    bubble.innerHTML = CONFIG.icon || "&#128172;";
     bubble.onclick = function () {
       hideCallout();
       togglePanel();
@@ -280,12 +280,14 @@
         row.className = "ccw-row";
         var avatar = document.createElement("div");
         avatar.className = "ccw-avatar";
-        // Same speech-balloon icon as the launcher bubble, so the fallback reads
-        // as "generic chat icon" rather than an intentional logo/branding choice.
+        // Same icon as the launcher bubble (CONFIG.icon, chosen in the generator),
+        // so the fallback reads as "generic chat icon" rather than an intentional
+        // logo/branding choice.
+        var fallbackIcon = CONFIG.icon || "&#128172;";
         if (CONFIG.logoUrl) {
-          avatar.innerHTML = '<img src="' + CONFIG.logoUrl + '" onerror="this.parentNode.innerHTML=\'&#128172;\'">';
+          avatar.innerHTML = '<img src="' + CONFIG.logoUrl + '" onerror="this.parentNode.innerHTML=\'' + fallbackIcon + '\'">';
         } else {
-          avatar.innerHTML = "&#128172;";
+          avatar.innerHTML = fallbackIcon;
         }
         row.appendChild(avatar);
         row.appendChild(bubble);
