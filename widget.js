@@ -88,14 +88,16 @@
       "#ccw-header{background:" + brandGradient + ";color:#fff;padding:14px 16px;font-weight:bold;",
       "display:flex;justify-content:space-between;align-items:center;font-size:14px;}",
       "#ccw-header-left{display:flex;align-items:center;gap:8px;}",
-      "#ccw-header img{width:22px;height:22px;border-radius:50%;object-fit:cover;}",
+      "#ccw-header img{height:22px;width:auto;max-width:70px;border-radius:4px;",
+      "object-fit:contain;background:#fff;padding:2px;box-sizing:border-box;}",
       "#ccw-close{cursor:pointer;font-size:18px;line-height:1;background:none;border:none;color:#fff;}",
       "#ccw-messages{flex:1;overflow-y:auto;padding:12px;font-size:13.5px;background:#F7F7F5;}",
       ".ccw-row{display:flex;align-items:flex-end;gap:6px;margin-bottom:10px;max-width:92%;}",
       ".ccw-avatar{width:24px;height:24px;border-radius:50%;flex-shrink:0;overflow:hidden;",
       "background:" + brandGradient + ";display:flex;align-items:center;justify-content:center;",
       "font-size:14px;color:#fff;line-height:1;}",
-      ".ccw-avatar img{width:100%;height:100%;object-fit:cover;}",
+      ".ccw-avatar img{width:100%;height:100%;object-fit:contain;background:#fff;",
+      "padding:2px;box-sizing:border-box;}",
       ".ccw-msg{padding:8px 11px;border-radius:10px;max-width:85%;line-height:1.4;margin-bottom:10px;",
       "overflow-wrap:anywhere;word-break:break-word;display:flex;flex-direction:column;}",
       ".ccw-msg.user{background:" + brandGradient + ";color:#fff;margin-left:auto;}",
@@ -164,7 +166,7 @@
     // revealing in roughly the same amount of time, rather than a long
     // reply taking noticeably longer to finish appearing.
     var REVEAL_TICK_MS = 16;
-    var REVEAL_TARGET_MS = 700;
+    var REVEAL_TARGET_MS = CONFIG.revealSpeed || 700;
     function revealGradually(el, html) {
       var steps = tokenizeForReveal(html);
       if (steps.length === 0) return;
@@ -189,7 +191,7 @@
 
     var bubble = document.createElement("button");
     bubble.id = "ccw-bubble";
-    bubble.innerHTML = CONFIG.icon || "&#128172;";
+    bubble.innerHTML = CONFIG.bubbleIcon || CONFIG.icon || "&#128172;";
     bubble.onclick = function () {
       hideCallout();
       togglePanel();
@@ -280,10 +282,10 @@
         row.className = "ccw-row";
         var avatar = document.createElement("div");
         avatar.className = "ccw-avatar";
-        // Same icon as the launcher bubble (CONFIG.icon, chosen in the generator),
-        // so the fallback reads as "generic chat icon" rather than an intentional
-        // logo/branding choice.
-        var fallbackIcon = CONFIG.icon || "&#128172;";
+        // Independent of the launcher bubble's icon: the bubble usually wants the
+        // most recognizable "this is a chat" mark, while in here the visitor already
+        // knows they're in a chat, so the avatar can carry more personality.
+        var fallbackIcon = CONFIG.avatarIcon || CONFIG.icon || "&#128172;";
         if (CONFIG.logoUrl) {
           avatar.innerHTML = '<img src="' + CONFIG.logoUrl + '" onerror="this.parentNode.innerHTML=\'' + fallbackIcon + '\'">';
         } else {
