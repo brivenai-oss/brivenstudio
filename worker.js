@@ -9,6 +9,16 @@ export default {
       return response;
     }
 
+    // Don't inject the Briven Studio bot on client demo pages — those ship
+    // with their own self-contained client-specific widget already built in
+    // by the Generator (generateLandingPage / buildWidgetTemplate). This is
+    // path-based, so anything placed under /demo/ is covered automatically,
+    // now and for every future demo, no per-file change needed.
+    const url = new URL(request.url);
+    if (url.pathname.startsWith("/demo/")) {
+      return response;
+    }
+
     return new HTMLRewriter()
       .on("body", {
         element(element) {
