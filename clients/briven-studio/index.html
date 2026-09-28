@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chat Usage</title>
+<style>
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f7f7f8;margin:0;padding:40px 20px;color:#222;}
+  .card{max-width:420px;margin:0 auto;background:#fff;border-radius:14px;padding:32px;box-shadow:0 2px 10px rgba(0,0,0,0.08);}
+  h1{font-size:18px;margin:0 0 4px;}
+  .sub{color:#888;font-size:13px;margin-bottom:20px;}
+  .status{font-size:16px;line-height:1.5;}
+  .bar-track{background:#eee;border-radius:8px;overflow:hidden;height:14px;margin:16px 0;}
+  .bar-fill{height:100%;}
+  .bar-label{font-size:13px;color:#666;}
+  .error{color:#888;}
+</style>
+</head>
+<body>
+  <div class="card" id="card">
+    <div class="status">Loading usage&hellip;</div>
+  </div>
+  <script>
+    (function(){
+      var card = document.getElementById('card');
+      fetch("https://widget-relay.brivenstudio.com/client-usage?client=briven-studio&token=d2c99acab99aa922c0d09df115dac5de")
+        .then(function(r){ return r.json().then(function(d){ return {ok:r.ok, d:d}; }); })
+        .then(function(res){
+          if(!res.ok){
+            card.innerHTML = '<div class="status error">' + (res.d.error || 'Usage is temporarily unavailable.') + '</div>';
+            return;
+          }
+          var d = res.d;
+          var html = '<h1>' + escapeHtml(d.businessName) + '</h1>' +
+            '<div class="sub">Chatbot usage &middot; ' + escapeHtml(d.monthLabel) + '</div>';
+          if (d.cap) {
+            var pct = Math.min(100, Math.round((d.conversations / d.cap) * 100));
+            var barColor = pct >= 100 ? '#C0392B' : (pct >= 85 ? '#D98A1B' : d.brandColor);
+            html += '<div class="status"><strong>' + d.conversations.toLocaleString() + '</strong> of <strong>' + d.cap.toLocaleString() + '</strong> conversations used this month</div>' +
+              '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%;background:' + barColor + ';"></div></div>' +
+              '<div class="bar-label">' + pct + '% of this month\'s plan</div>';
+          } else {
+            html += '<div class="status"><strong>' + d.conversations.toLocaleString() + '</strong> conversations this month &mdash; no monthly cap on this plan</div>';
+          }
+          card.innerHTML = html;
+        })
+        .catch(function(){
+          card.innerHTML = '<div class="status error">Usage is temporarily unavailable.</div>';
+        });
+      function escapeHtml(s){
+        return String(s).replace(/[&<>"']/g, function(c){
+          return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
