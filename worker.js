@@ -16,7 +16,7 @@ export default {
     // automatically, now and for every future demo or client, no
     // per-file change needed.
     const url = new URL(request.url);
-    if (url.pathname.startsWith("/demo/") || url.pathname.startsWith("/clients/")) {
+    if (url.pathname.startsWith("/demo/") || url.pathname.startsWith("/invitatie-botez-sebi/") || url.pathname.startsWith("/clients/")) {
       return response;
     }
 
