@@ -6,6 +6,12 @@
 <title>Briven AI Studio — AI services for small business</title>
 <meta name="description" content="Briven AI Studio builds AI chatbots and automation for small businesses, trained on your business and live on your site in days. No developer required.">
 
+<meta property="og:site_name" content="Briven AI Studio">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Briven AI Studio — AI services for small business">
+<meta property="og:description" content="Briven AI Studio builds AI chatbots and automation for small businesses, trained on your business and live on your site in days. No developer required.">
+<meta name="theme-color" content="#F7F7FB">
+
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
@@ -17,6 +23,8 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
 
 <header class="site-header">
   <div class="container nav">
@@ -32,19 +40,19 @@
     </nav>
     <div class="nav-cta">
       <a href="about.html#contact" class="btn btn-accent btn-sm">Get in touch</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-controls="nav-links" aria-expanded="false"><span></span></button>
     </div>
   </div>
 </header>
 
-<main>
+<main id="main">
 
   <!-- ================= HERO ================= -->
   <section class="hero">
     <div class="container hero-grid">
       <div>
         <span class="eyebrow">AI SERVICES FOR SMALL BUSINESS</span>
-        <h1>Answer every customer.<br>Even when you're closed.</h1>
+        <h1><span class="line">Answer every customer.</span> <span class="line accent">Even when you're closed.</span></h1>
         <p class="lede">We build the AI chatbot that lives on your website and answers questions instantly, day or night, so no lead slips through the cracks while you're busy running the business.</p>
         <div class="hero-actions">
           <a href="services.html" class="btn btn-primary">
@@ -60,7 +68,7 @@
         </div>
       </div>
 
-      <div class="browser-mock reveal">
+      <div class="browser-mock reveal" aria-hidden="true">
         <div class="browser-bar">
           <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
           <span class="browser-url">yourbusiness.com</span>
@@ -149,7 +157,7 @@
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">HOW IT WORKS</span>
-        <h2>From a quick chat to a <span style="color:var(--periwinkle);">live assistant</span></h2>
+        <h2>From a quick chat to a <span style="color:var(--periwinkle-deep);">live assistant</span></h2>
         <p class="lede">A real four-step process, in the order it actually happens.</p>
       </div>
 
@@ -261,15 +269,15 @@
         <p>AI services for small businesses: chatbots, automation, and tools that quietly save you time.</p>
       </div>
       <div>
-        <h4>Site</h4>
+        <h3>Site</h3>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="portfolio.html">Our Work</a>
         <a href="about.html">About &amp; Contact</a>
       </div>
       <div>
-        <h4>Get in touch</h4>
-        <a>hello [@] brivenstudio.com</a>
+        <h3>Get in touch</h3>
+        <a href="mailto:hello@brivenstudio.com">hello@brivenstudio.com</a>
         <a href="about.html#contact">Contact form</a>
       </div>
     </div>

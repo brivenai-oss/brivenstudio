@@ -6,6 +6,12 @@
 <title>About &amp; Contact — Briven AI Studio</title>
 <meta name="description" content="Briven AI Studio is a small, independent studio building AI chatbots and automation for small businesses. Get in touch to see it on your own business.">
 
+<meta property="og:site_name" content="Briven AI Studio">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About &amp; Contact — Briven AI Studio">
+<meta property="og:description" content="Briven AI Studio is a small, independent studio building AI chatbots and automation for small businesses. Get in touch to see it on your own business.">
+<meta name="theme-color" content="#F7F7FB">
+
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
@@ -17,6 +23,8 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
 
 <header class="site-header">
   <div class="container nav">
@@ -32,12 +40,12 @@
     </nav>
     <div class="nav-cta">
       <a href="about.html#contact" class="btn btn-accent btn-sm">Get in touch</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-controls="nav-links" aria-expanded="false"><span></span></button>
     </div>
   </div>
 </header>
 
-<main>
+<main id="main">
 
   <section class="page-hero" style="padding-bottom:0; border-bottom:none;">
     <div class="container">
@@ -46,7 +54,7 @@
       </div>
       <div class="showcase-mobile-fallback">
         <span class="eyebrow">ABOUT</span>
-        <h1 style="max-width:20ch;">A small studio, meant to <span style="color:var(--periwinkle);">move fast</span></h1>
+        <h1 style="max-width:20ch;">A small studio, meant to <span style="color:var(--periwinkle-deep);">move fast</span></h1>
         <p class="lede">No account managers. No handoffs. No bloated processes. <strong style="color:var(--ink); font-weight:600;">Just a lean studio that builds, tests, and tunes every AI tool by hand</strong>, so it fits your business, works in the real world, and makes an impact from day one.</p>
       </div>
     </div>
@@ -168,7 +176,7 @@
       <form id="contact-form" class="form-grid reveal" action="https://formsubmit.co/322a071e2b8e95ea6d611c73b2606ccf" method="POST">
         <input type="hidden" name="_subject" value="New inquiry from brivenstudio.com">
         <input type="hidden" name="_template" value="table">
-        <input type="text" name="_honey" style="position:absolute; left:-9999px;" tabindex="-1" autocomplete="off">
+        <input type="text" name="_honey" style="position:absolute; left:-9999px;" tabindex="-1" aria-hidden="true" autocomplete="off">
         <div class="field">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required autocomplete="name">
@@ -207,15 +215,15 @@
         <p>AI services for small businesses: chatbots, automation, and tools that quietly save you time.</p>
       </div>
       <div>
-        <h4>Site</h4>
+        <h3>Site</h3>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="portfolio.html">Our Work</a>
         <a href="about.html">About &amp; Contact</a>
       </div>
       <div>
-        <h4>Get in touch</h4>
-        <a>hello [@] brivenstudio.com</a>
+        <h3>Get in touch</h3>
+        <a href="mailto:hello@brivenstudio.com">hello@brivenstudio.com</a>
         <a href="about.html#contact">Contact form</a>
       </div>
     </div>
