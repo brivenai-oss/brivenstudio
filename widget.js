@@ -107,6 +107,8 @@
       ".ccw-msg-time{font-size:10px;opacity:.55;margin-top:3px;}",
       "#ccw-inputrow{display:flex;border-top:1px solid #E2E2DE;padding:8px;background:#fff;}",
       "#ccw-input{flex:1;border:1px solid #E2E2DE;border-radius:20px;padding:8px 12px;font-size:13px;outline:none;}",
+      "#ccw-bubble:focus-visible,#ccw-close:focus-visible,#ccw-send:focus-visible,#ccw-input:focus-visible,#ccw-callout-close:focus-visible{outline:2px solid #4650B8;outline-offset:2px;}",
+      "#ccw-close:focus-visible{outline-color:#fff;}",
       "#ccw-send{background:" + brandGradient + ";color:#fff;border:none;border-radius:20px;",
       "padding:8px 14px;margin-left:6px;cursor:pointer;font-size:13px;}",
     ].join("");
@@ -191,6 +193,9 @@
 
     var bubble = document.createElement("button");
     bubble.id = "ccw-bubble";
+    bubble.setAttribute("type", "button");
+    bubble.setAttribute("aria-label", "Open chat");
+    bubble.setAttribute("aria-expanded", "false");
     bubble.innerHTML = CONFIG.bubbleIcon || CONFIG.icon || "&#128172;";
     bubble.onclick = function () {
       hideCallout();
@@ -199,6 +204,8 @@
 
     var panel = document.createElement("div");
     panel.id = "ccw-panel";
+    panel.setAttribute("role", "dialog");
+    panel.setAttribute("aria-label", "Chat with " + (CONFIG.businessName || "us"));
     var headerLogoHtml = CONFIG.logoUrl
       ? '<img src="' + CONFIG.logoUrl + '" onerror="this.style.display=\'none\'">'
       : "";
@@ -208,11 +215,11 @@
       "<span>" +
       escapeHtml(CONFIG.businessName || "") +
       "</span></div>" +
-      '<button id="ccw-close">&times;</button></div>' +
-      '<div id="ccw-messages"></div>' +
+      '<button id="ccw-close" type="button" aria-label="Close chat">&times;</button></div>' +
+      '<div id="ccw-messages" role="log" aria-live="polite" aria-relevant="additions"></div>' +
       '<div id="ccw-inputrow">' +
-      '<input id="ccw-input" type="text" placeholder="Type a message..." />' +
-      '<button id="ccw-send">Send</button></div>';
+      '<input id="ccw-input" type="text" placeholder="Type a message..." aria-label="Type your message" />' +
+      '<button id="ccw-send" type="button">Send</button></div>';
 
     root.appendChild(bubble);
     root.appendChild(panel);
@@ -222,7 +229,7 @@
       callout = document.createElement("div");
       callout.id = "ccw-callout";
       callout.innerHTML =
-        "<span>" + escapeHtml(CONFIG.attentionText) + '</span><button id="ccw-callout-close">&times;</button>';
+        "<span>" + escapeHtml(CONFIG.attentionText) + '</span><button id="ccw-callout-close" type="button" aria-label="Dismiss">&times;</button>';
       callout.addEventListener("click", function (e) {
         if (e.target && e.target.id === "ccw-callout-close") {
           hideCallout();
@@ -242,6 +249,9 @@
     }
 
     document.getElementById("ccw-close").onclick = togglePanel;
+    panel.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && open) togglePanel();
+    });
     document.getElementById("ccw-send").onclick = sendMessage;
     document.getElementById("ccw-input").addEventListener("keydown", function (e) {
       if (e.key === "Enter") sendMessage();
@@ -250,6 +260,14 @@
     function togglePanel() {
       open = !open;
       panel.classList.toggle("ccw-open", open);
+      bubble.setAttribute("aria-expanded", open ? "true" : "false");
+      bubble.setAttribute("aria-label", open ? "Close chat" : "Open chat");
+      if (open) {
+        var inputEl = document.getElementById("ccw-input");
+        if (inputEl) inputEl.focus();
+      } else {
+        bubble.focus();
+      }
       if (open && history.length === 0) {
         addMessage("bot", CONFIG.greeting || "Hi! How can I help?");
       }
